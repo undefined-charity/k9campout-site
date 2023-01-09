@@ -1,0 +1,19 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Tickets"
+    url: /tickets
+  - title: "Telegram"
+    url: /telegram
+  - title: "Schedule"
+    url: /schedule
+  - title: "Attending"
+    url: /attending
+  - title: "Posts"
+    url: /posts/
+  # - title: "Categories"
+  #   url: /categories/
+  # - title: "Tags"
+  #   url: /tags/
+  - title: "About"
+    url: /about
