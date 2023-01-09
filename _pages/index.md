@@ -2,14 +2,11 @@
 layout: splash
 author_profile: false
 permalink: /
-feature_row:
-  - image_path: /assets/images/k9campout.png
-    alt: "K9 Campout"
-    title: "<div class='logofont'>K9 Campout</div>"
+header:
+  image: /assets/images/k9campout_banner.jpg
 ---
-{% include feature_row  type="center"%}
 
-K9 Campout is a human pup and handler event. The event is for LGBTQ+ persons, who enjoy human pups and those who love them. The event will be hosted at CampTRC, WA, USA - Aug 4-6 2023.
+K9 Campout is a human pup and handler event. The event is for LGBTQ+ persons, who enjoy human pups and those who love them. 2023 is the second year in a row for this event - and we look forward to seeing you all at TRC, Aug 4-6.
 
 ![image-center](/assets/images/2023-flyer.jpg){: .align-center width="50%"}
 
