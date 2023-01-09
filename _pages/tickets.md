@@ -4,6 +4,9 @@ title: Tickets
 permalink: /tickets
 ---
 
+## Notes
+This year, TRC is not doing reserved tent sites (its first come first served, outside of group bookings). Camping with the pack will get you a reserved tent site, alongside other attendees. 
+
 <div id="eventbrite-widget-container-510405575817"></div>
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
