@@ -1,6 +1,7 @@
 ---
 layout: splash
 author_profile: false
+description: "Welcome to K9 Campout - a human pup and handler event at TRC"
 permalink: /
 header:
   image: /assets/images/k9campout_banner.jpg

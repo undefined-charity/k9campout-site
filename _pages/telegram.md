@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Telegram
+description: "Stay in contact"
 permalink: /telegram
 ---
 For the most up-to-date information we highly recommend you join us on telegram. We will keep this running all year!

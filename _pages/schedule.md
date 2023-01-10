@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Schedule
+description: "The what when and where"
 permalink: /schedule
 ---
 For 2023, please check back later.

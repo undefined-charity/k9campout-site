@@ -1,12 +1,16 @@
 ---
 layout: single
 title: Attending
+description: "What you need to attend"
 permalink: /attending
 ---
 In order to attend this event you will need to do the following:
 
-Signup for a CampTRC membership. Limited membership is free, or you could be a full regular member. Please signup at [https://camptrc.org/](https://camptrc.org/){:target="_blank"}
+## Signup for a CampTRC membership
+Limited membership is free, or you could be a full regular member. Please signup at [https://camptrc.org/](https://camptrc.org/){:target="_blank"}
 Get tickets for this event! – please see the Tickets page.
+
+**Note:** You must also **RENEW** each year as well, including for limited (free) membership. 
 
 ### Important notes:
 

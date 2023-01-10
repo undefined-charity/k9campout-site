@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Tickets
+description: "Get your tickets here!"
 permalink: /tickets
 ---
 

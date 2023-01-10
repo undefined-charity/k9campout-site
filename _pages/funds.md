@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Funds
+description: "A breakdown of costs and income"
 permalink: /funds
 ---
 While we are not a charity or registered non-profit (there is just to much overhead in doing so), "The Puppies of TRC" aims to operate in the spirit of such an organization. We do not make a profit, and aim to keep costs as low as possible while providing you a great event. 

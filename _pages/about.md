@@ -1,6 +1,7 @@
 ---
 layout: single
 title: About
+description: "About the Pups of TRC"
 permalink: /about
 ---
 
