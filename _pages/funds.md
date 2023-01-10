@@ -13,7 +13,10 @@ The following data may not be fully complete - as some individuals and groups do
 
 **Notably missing**: Trader Dicks and Cascadia both did not accept reimbursement for hard liquor, instead this was donated to TRC.
 
+**Income**:
 - Eventbrite payouts: $3,460
+
+**Expenses**:
 - TRC Camping Fees Collected: $1,060
 - Prizes and things for Scavenger hunt: $125
 - Donation for the music mix: $100
@@ -23,4 +26,7 @@ The following data may not be fully complete - as some individuals and groups do
 - Permitting: $25
 - Venmo Refunds (due to expired cards): $100
 - TRC Donation: $669.05
+
+**Total**: $3,460
+
 
