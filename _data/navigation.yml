@@ -15,5 +15,7 @@ main:
   #   url: /categories/
   # - title: "Tags"
   #   url: /tags/
+  - title: "Funds"
+    url: /funds
   - title: "About"
     url: /about
