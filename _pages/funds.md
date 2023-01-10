@@ -11,8 +11,6 @@ The following data may not be fully complete - as some individuals and groups do
 
 ## 2022 Breakdown
 
-**Notably missing**: Trader Dicks and Cascadia both did not accept reimbursement for hard liquor, instead this was donated to TRC.
-
 **Income**:
 - Eventbrite payouts: $3,460
 
@@ -25,8 +23,9 @@ The following data may not be fully complete - as some individuals and groups do
 - Flyers and Wristbands: $148.70
 - Permitting: $25
 - Venmo Refunds (due to expired cards): $100
-- TRC Donation: $669.05
+- TRC Donation**: $669.05
 
 **Total**: $3,460
 
+**We would like to thank TRC for all the assistance they gave us in running the event this first year. We were originally planning to host more things around Junkyard dogs, but with some poor weather we did get a little stuck. TRC kindly offered up site 500 (something we originally declined due to cost), and helped us relocate our main party to Trader Dicks. This "donation" was the available funds remaining to cover these activities, as well as the money that both Cascadia and Trader Dicks preferred to go to TRC vs their sites to cover the costs of hosting us.
 
