@@ -10,7 +10,7 @@ Please note this is still in draft and changing often - so check back often.
 - 4pm-8pm: Check-in [@Junkyard Dogs]
 - 6.30pm-8pm: Food!! (and some drink)- still working this out and taking requests [@Junkyard Dogs]
 - 8.30pm-Late: Welcome Meet & Sniff – All good pups roll call! Drinks will be provided while they last [@Cascadia]
-- Midnight: Howl! – This weekend is a full moon, so release your inner awoo at the stroke of midnight [@Southern-X-posure]
+- Midnight: Howl! – Its back again and the bangcock lounge will be open [@Southern-X-posure]
 - After Party: Chill till the power goes out, possible snacks and drinks[@Junkyard Dogs]
 ### Saturday
 - 9am+: Check-In [@Junkyard Dogs]
