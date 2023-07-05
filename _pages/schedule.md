@@ -5,7 +5,9 @@ description: "The what when and where"
 permalink: /schedule
 ---
 ## 2023's Schedule
-Please note this is still in draft and changing often - so check back often.
+
+Things might change - but we are fairly well set now
+
 ### Friday
 - 4pm-8pm: Check-in [@Junkyard Dogs]
 - 6.30pm-8pm: Puppy Chow – Join us for a welcoming cocktail and some dinner to kick the weekend off [@Junkyard Dogs]
