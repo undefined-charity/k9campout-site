@@ -10,6 +10,28 @@ As with all events, none of this would be possible with out the additional suppo
 
 The following data may not be fully complete - as some individuals and groups do provide items out of pocket. We do also give free event passes (excluding camping) to folks who host events, or run activities, so income != number of attendees.
 
+## 2023 Breakdown
+
+This is still yet to be finalized.. but here is the work in progress:
+
+**Income**:
+- Eventbrite: $4795.00
+
+**Expenses**:
+- TRC Donation: $505.60
+- Permitting: $25
+- Booze: $700
+- TRC Site Donations: $150
+- Prizes: $180
+- Site 500 Meals: $400
+- TRC Camping Fees: $2010
+- Music Mix: $150
+- Dog Tags: $150
+- Propane: $80
+- Food Prep and Sausages: $280
+- Flyers and Printing: $164.4
+
+
 ## 2022 Breakdown
 
 **Income**:
