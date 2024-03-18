@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Getting Closer"
-date:   2023-06-15 9:00:00 +0980
+date:   2023-06-15 9:00:00 +0900
 categories: updates
 ---
 So things are starting to pick up, we have allocated over 1/2 the tickets already and things are looking great for camping at TRC!
