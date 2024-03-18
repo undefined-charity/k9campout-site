@@ -11,7 +11,8 @@ This year, TRC is not doing reserved tent sites (its first come first served, ou
 - Camping with the pack tickets include all camping costs
 - BYO Event tickets require you have another camping arrangement with TRC (RV, Seasonal Site, First Come Tent Site ect)
 
-<div id="eventbrite-widget-container-510405575817"></div>
+
+<div id="eventbrite-widget-container-865227818697"></div>
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 
@@ -23,8 +24,8 @@ This year, TRC is not doing reserved tent sites (its first come first served, ou
     window.EBWidgets.createWidget({
         // Required
         widgetType: 'checkout',
-        eventId: '510405575817',
-        iframeContainerId: 'eventbrite-widget-container-510405575817',
+        eventId: '865227818697',
+        iframeContainerId: 'eventbrite-widget-container-865227818697',
 
         // Optional
         iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
