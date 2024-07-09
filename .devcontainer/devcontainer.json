@@ -20,10 +20,10 @@
 	"postCreateCommand": "sh .devcontainer/post-create.sh",
 	"customizations": {
 		"vscode": {
-			"extensions": [
-				"streetsidesoftware.code-spell-checker",
-				"github.vscode-github-actions"
-			]
+ | "extensions": [
+ | 	"streetsidesoftware.code-spell-checker",
+ | 	"github.vscode-github-actions"
+ | ]
 		}
 	}
 
