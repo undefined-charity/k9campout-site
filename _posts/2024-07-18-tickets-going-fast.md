@@ -1,7 +1,7 @@
 ---
 layout: single
-title:  "Tickets Going Fast - One Month To Go"
-date:   2024-07-18 08:00:00 +0900
+title: "Tickets Going Fast - One Month To Go"
+date: 2024-07-18 08:00:00 +0900
 categories: updates
 ---
 ## Ticket Sales Are Live Again
