@@ -10,23 +10,22 @@ A Work in Progress...
 
 ### Friday
 - 4pm-8pm: Check-in [@Junkyard Dogs]
-- 6.30pm-8pm: Food
-- 8.30pm-Late: Welcome Meet & Sniff
-- Midnight: Howl! - TBC [@Southern-X-posure]
-- After Party: Chill till the power goes out, possible snacks and drinks[@Junkyard Dogs]
+- 7pm-8pm: Hamburgers and Handjobs [@Site 500]
+- 9pm-12am: Welcome Meet & Sniff [@Cascadia]
+- Midnight: Howl! [@Southern-X-posure]
+- Afters: Snacks and Social [@Junkyard Dogs]
 ### Saturday
-- 9am+: Check-In [@Junkyard Dogs]
-- 11.30am-12.30pm: Brunch/Lunch 
-- Puppy Swim
-- Treasure Hunt
-- Training Time 
-- Mosh and Chill
-- Food
-- 9pm+: Dance Party – Thumping music, professional lights, and bar will be open. [@Trader Dicks]
-- After Party: Chill till the power goes out, possible snacks and drinks[@Junkyard Dogs]
+- 10am+: Check-In [@Junkyard Dogs]
+- 11.30am: French toast, bascon & eggs [@Site 500]
+- 1pm: Puppy Swim [@The Beach]
+- 3.30pm-5pm: Pup Games w/prizes [Starting @The Beach]
+- 4.30pm-7pm: Training / Demos / Mosh [@Junkyard Dogs] 
+- 7.30pm-9pm: Grilled Cheese & Blowjobs [@Site 500]
+- 9pm+: Paws on the Floor Dance Party [@Trader Dicks]
+- Afters: Drinks and Dogs [@Junkyard Dogs]
 ### Sunday
-- Closing remarks, Prizes
-- Noon-ish: Beach Time & Bye Barks
+- 10:30am: Brunch, closing re-barks, awards [@Junkyard Dogs]
+- 12pm+: Beach Time & Bye Barks [@The Beach]
 - 3pm+: Cleanup/Packup
 
 ## Previous Years
