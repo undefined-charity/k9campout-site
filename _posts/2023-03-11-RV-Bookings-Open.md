@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "RV Bookings Open"
+title:  "2023 RV Bookings Open"
 date:   2023-03-11 8:00:00 +0900
 categories: updates
 ---

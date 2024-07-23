@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "COVID Update"
+title:  "2023 COVID Update"
 date:   2023-02-21 8:00:00 +0900
 categories: updates
 ---

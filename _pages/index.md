@@ -20,7 +20,7 @@ K9 Campout is a human pup and handler event. The event is for LGBTQ+ persons, wh
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
+  {% for post in posts limit:3 %}
     {% include archive-single.html type=entries_layout %}
   {% endfor %}
 </div>

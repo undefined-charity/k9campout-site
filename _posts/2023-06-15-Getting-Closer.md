@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Getting Closer"
+title:  "2023 Getting Closer"
 date:   2023-06-15 9:00:00 +0900
 categories: updates
 ---
