@@ -17,15 +17,7 @@
 	],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sh .devcontainer/post-create.sh",
-	"customizations": {
-		"vscode": {
- | "extensions": [
- | 	"streetsidesoftware.code-spell-checker",
- | 	"github.vscode-github-actions"
- | ]
-		}
-	}
+	"postCreateCommand": "sh .devcontainer/post-create.sh"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

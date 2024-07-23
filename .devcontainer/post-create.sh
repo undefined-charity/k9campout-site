@@ -10,7 +10,3 @@ fi
 if [ -f Gemfile ]; then
     bundle install
 fi
-
-git config --global user.email "github@jv.ag"
-git config --global user.name "Jake Vis"
-
