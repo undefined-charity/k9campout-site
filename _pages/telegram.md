@@ -10,4 +10,4 @@ The announcement channel is:
 [https://t.me/k9campout](https://t.me/k9campout){:target="_blank"}
 
 The discussion channel is:
-[https://t.me/+E4oKXVRJ3Do0YWJh](https://t.me/+E4oKXVRJ3Do0YWJh){:target="_blank"}
+[https://t.me/+PQFJN5H3b8MxZGYx](https://t.me/+PQFJN5H3b8MxZGYx){:target="_blank"}
