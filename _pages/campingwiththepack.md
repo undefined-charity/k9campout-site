@@ -1,9 +1,9 @@
----
+<!-- ---
 layout: single
 title: Camping with the Pack 2024
 description: "Data needed for Camping with the Pack"
 permalink: /campingwiththepack
----
+--- -->
 Thank you for selecting "Camping with the Pack". To allocate a campsite for you, we need a little bit of information.
 **Please only fill this form out once** if you have any questions please contact [puproar](https://t.me/puproar) or email puproar at outlook.com.
 
