@@ -4,10 +4,11 @@ title: Camping with the Pack 2024 Allocations
 description: "Site Allocations"
 permalink: /campingwiththepackallocations
 ---
-Thank you for selecting "Camping with the Pack". This is a **DRAFT**. Please contact [puproar](https://t.me/puproar) or email puproar at outlook.com if you see an error; you think you are missing; you are in a tent with someone you dont want to be, or you are hoping to swap with someone.
+Thank you for selecting "Camping with the Pack". This is a **DRAFT**. Please contact [puproar](https://t.me/puproar) or email puproar at outlook.com if you see an error; you think you are missing; you are in a tent with someone you dont want to me or I messed tha up, or you are hoping to swap with someone. Please also let me know if you **do not need a tent site** (and are in with someone else, have other arrangements).
 
-Once this is locked and final, please treat this like an airline seat... once all parties are there, if you want to swap feel free.. but please dont go taking someone elses site without asking first.
+Basically if anything is wrong contact [puproar](https://t.me/puproar).
 
+Once this is locked and final, please treat this like an airline seat... once all parties are there, if you want to swap feel free.. but please don't go taking someone elses site without asking first.
 
 
 Site Allocation | Description | TRC ID | Pupname
