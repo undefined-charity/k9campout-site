@@ -4,7 +4,7 @@ title: Camping with the Pack 2024 Allocations
 description: "Site Allocations"
 permalink: /campingwiththepackallocations
 ---
-Thank you for selecting "Camping with the Pack". This is a **DRAFT**. Please contact [puproar](https://t.me/puproar) or email puproar at outlook.com if you see an error; you think you are missing; you are in a tent with someone you dont want to me or I messed tha up, or you are hoping to swap with someone. Please also let me know if you **do not need a tent site** (and are in with someone else, have other arrangements).
+Thank you for selecting "Camping with the Pack". Please contact [puproar](https://t.me/puproar) or email puproar at outlook.com if you see an error; you think you are missing; you are in a tent with someone you dont want to me or I messed tha up, or you are hoping to swap with someone. Please also let me know if you **do not need a tent site** (and are in with someone else, have other arrangements).
 
 Basically if anything is wrong contact [puproar](https://t.me/puproar).
 
@@ -60,8 +60,8 @@ Site Allocation | Description | TRC ID | Pupname
 5A|One 8 person tent|75322548|Fiasco
 5B|One standard tent - fire pit adjacent|27473924|Pup Mojo
 5B|One standard tent - fire pit adjacent|75649549|Pongo
-5C|One standard tent - fire pit adjacent|76333851|Desmo
-5E|One standard tent||Shadow
+5C|One standard tent - fire pit adjacent||Shadow
+5E|One standard tent|76333851|Desmo
 5F|One 8 person tent|74734630|Alpha
 5G|One standard tent|38103554|Bruises
 5H|One 8 person tent or two smaller tents|75398886|Rover
