@@ -9,5 +9,6 @@ For the most up-to-date information we highly recommend you join us on telegram.
 The announcement channel is:
 [https://t.me/k9campout](https://t.me/k9campout){:target="_blank"}
 
-The discussion channel is:
-[https://t.me/+PQFJN5H3b8MxZGYx](https://t.me/+Y25WMplq0bJjZTFh){:target="_blank"}
+The discussion channel is via:
+[https://t.me/+iOLub6i75K83YTJh](hhttps://t.me/+iOLub6i75K83YTJh){:target="_blank"}
+The bot will ask you to solve the captcha, then check the rules for the join link to the main channel [sorry, need to keep the bots out]
