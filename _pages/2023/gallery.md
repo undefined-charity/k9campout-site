@@ -28,7 +28,7 @@ gallery:
     image_path: /assets/images/2023/IMG_0028.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
-    - url: /assets/images/2023/IMG_0027.jpeg
+  - url: /assets/images/2023/IMG_0027.jpeg
     image_path: /assets/images/2023/IMG_0027.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
@@ -52,7 +52,7 @@ gallery:
     image_path: /assets/images/2023/IMG_0022.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
-    - url: /assets/images/2023/IMG_0020.jpeg
+  - url: /assets/images/2023/IMG_0020.jpeg
     image_path: /assets/images/2023/IMG_0020.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
@@ -64,7 +64,7 @@ gallery:
     image_path: /assets/images/2023/IMG_0017.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
-    - url: /assets/images/2023/IMG_0016.jpeg
+  - url: /assets/images/2023/IMG_0016.jpeg
     image_path: /assets/images/2023/IMG_0016.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
