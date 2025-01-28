@@ -12,6 +12,10 @@ gallery:
     image_path: /assets/images/2023/k9_campout_map.png
     alt: "2023 K9 Campout Map"
     title: "2023 K9 Campout Map"
+  - url: /assets/images/2023/IMG_0035.jpeg
+    image_path: /assets/images/2023/IMG_0035.jpeg
+    alt: "K9 Campout 2023 Gallery"
+    title: "K9 Campout 2023 Gallery"  
 
 ---
 
