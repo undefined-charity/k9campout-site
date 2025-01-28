@@ -2,7 +2,7 @@
 layout: single
 title: Gallery
 permalink: /2023/gallery
-description: "The 2023 Event Gallery"
+description: "K9 Campout 2023 Gallery"
 gallery:
   - url: /assets/images/2023/k9_campout_schedule.png
     image_path: /assets/images/2023/k9_campout_schedule.png
