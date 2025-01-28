@@ -88,6 +88,10 @@ gallery:
     image_path: /assets/images/2023/IMG_0975.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
+  - url: /assets/images/2023/IMG_0034.jpeg
+    image_path: /assets/images/2023/IMG_0034.jpeg
+    alt: "K9 Campout 2023 Gallery"
+    title: "K9 Campout 2023 Gallery"
     
 ---
 
