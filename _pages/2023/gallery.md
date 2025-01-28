@@ -32,7 +32,7 @@ gallery:
     image_path: /assets/images/2023/IMG_0027.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
-- url: /assets/images/2023/IMG_0026.jpeg
+  - url: /assets/images/2023/IMG_0026.jpeg
     image_path: /assets/images/2023/IMG_0026.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
@@ -40,11 +40,11 @@ gallery:
     image_path: /assets/images/2023/IMG_0025.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
-    - url: /assets/images/2023/IMG_0024.jpeg
+  - url: /assets/images/2023/IMG_0024.jpeg
     image_path: /assets/images/2023/IMG_0024.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
-- url: /assets/images/2023/IMG_0023.jpeg
+  - url: /assets/images/2023/IMG_0023.jpeg
     image_path: /assets/images/2023/IMG_0023.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
@@ -56,7 +56,7 @@ gallery:
     image_path: /assets/images/2023/IMG_0020.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
-- url: /assets/images/2023/IMG_0018.jpeg
+  - url: /assets/images/2023/IMG_0018.jpeg
     image_path: /assets/images/2023/IMG_0018.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
@@ -68,7 +68,7 @@ gallery:
     image_path: /assets/images/2023/IMG_0016.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
-- url: /assets/images/2023/IMG_0012.jpeg
+  - url: /assets/images/2023/IMG_0012.jpeg
     image_path: /assets/images/2023/IMG_0012.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
@@ -76,11 +76,11 @@ gallery:
     image_path: /assets/images/2023/IMG_0011.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
-    - url: /assets/images/2023/IMG_0010.jpeg
+  - url: /assets/images/2023/IMG_0010.jpeg
     image_path: /assets/images/2023/IMG_0010.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
-- url: /assets/images/2023/IMG_0008.jpeg
+  - url: /assets/images/2023/IMG_0008.jpeg
     image_path: /assets/images/2023/IMG_0008.jpeg
     alt: "K9 Campout 2023 Gallery"
     title: "K9 Campout 2023 Gallery"
