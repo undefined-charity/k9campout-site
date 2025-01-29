@@ -1,4 +1,4 @@
----
+ ---
 layout: single
 title: Gallery
 permalink: /2024/gallery
