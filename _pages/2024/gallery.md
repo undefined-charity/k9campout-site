@@ -32,7 +32,22 @@ gallery:
     image_path: /assets/images/2024/IMG_0111.jpeg
     alt: "K9 2024 Bark Gallery"
     title: "K9 2024 Bark Gallery"
-    
+  - url: /assets/images/2024/IMG_0085.jpeg
+    image_path: /assets/images/IMG_0085.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 2024 Bark Gallery"
+  - url: /assets/images/2024/IMG_0083.jpeg
+    image_path: /assets/images/2024/IMG_0083.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 2024 Bark Gallery"
+  - url: /assets/images/2024/IMG_0082.jpeg
+    image_path: /assets/images/2024/IMG_0082.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 2024 Bark Gallery"
+  - url: /assets/images/2024/IMG_0081.jpeg
+    image_path: /assets/images/2024/IMG_0081.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 2024 Bark Gallery"
     
 ---
 
