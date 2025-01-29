@@ -1,8 +1,8 @@
 ---
 layout: single
 title: Gallery
-permalink: /gallery
-description: "The 2024 Event Gallery"
+permalink: /2024/gallery
+description: "K9 2024 Bark Gallery"
 gallery:
 
 ---
