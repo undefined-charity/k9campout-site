@@ -2,7 +2,7 @@
 layout: single
 title: Gallery
 permalink: /gallery
-description: "The 2023 Event Gallery"
+description: "The 2024 Event Gallery"
 gallery:
   # - url: /assets/images/2023/k9_campout_schedule.png
   #   image_path: /assets/images/2023/k9_campout_schedule.png
