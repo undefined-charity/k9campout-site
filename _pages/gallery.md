@@ -1,8 +1,8 @@
 ---
 layout: single
 title: Gallery
-permalink: /2024/gallery
-description: "K9 2024 Bark Gallery"
+permalink: /gallery
+description: "The 2023 Event Gallery"
 gallery:
   # - url: /assets/images/2023/k9_campout_schedule.png
   #   image_path: /assets/images/2023/k9_campout_schedule.png
