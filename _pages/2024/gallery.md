@@ -96,7 +96,7 @@ gallery:
     image_path: /assets/images/2024/IMG_0095.jpeg
     alt: "K9 2024 Bark Gallery"
     title: "K9 2024 Bark Gallery"
-  - url: /assets/images/2024/IMG_0094
+  - url: /assets/images/2024/IMG_0094.jpeg
     image_path: /assets/images/2024/IMG_0094.jpeg
     alt: "K9 2024 Bark Gallery"
     title: "K9 2024 Bark Gallery"
