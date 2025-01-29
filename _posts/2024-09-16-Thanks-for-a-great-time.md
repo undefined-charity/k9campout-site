@@ -10,6 +10,7 @@ We want to thank everyone that attended K9 Campout and to those who took their t
 layout: single
 title: Cabin
 permalink: /2024/gallery
+description: "K9 2024 Cabin"
 gallery:
   - url: /assets/images/2024/IMG_0119.jpeg
     image_path: /assets/images/2024/IMG_0119.jpeg
