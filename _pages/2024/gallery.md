@@ -48,6 +48,42 @@ gallery:
     image_path: /assets/images/2024/IMG_0081.jpeg
     alt: "K9 2024 Bark Gallery"
     title: "K9 2024 Bark Gallery"
+  - url: /assets/images/2024/IMG_0119.jpeg
+    image_path: /assets/images/IMG_0119.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 2024 Bark Gallery"
+  - url: /assets/images/2024/IMG_107.jpeg
+    image_path: /assets/images/2024/IMG_0107.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 2024 Bark Gallery"
+  - url: /assets/images/2024/IMG_106.jpeg
+    image_path: /assets/images/2024/IMG_0106.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 Bark Gallery"
+  - url: /assets/images/2024/IMG_105.jpeg
+    image_path: /assets/images/2024/IMG_105.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 2024 Bark Gallery"
+  - url: /assets/images/2024/IMG_104.jpeg
+    image_path: /assets/images/2024/IMG_104.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 2024 Bark Gallery"
+  - url: /assets/images/2024/IMG_103.jpeg
+    image_path: /assets/images/IMG_103.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 Bark Gallery"
+  - url: /assets/images/2024/IMG_102.jpeg
+    image_path: /assets/images/2024/IMG_102.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 2024 Bark Gallery"
+  - url: /assets/images/2024/IMG_101.jpeg
+    image_path: /assets/images/2024/IMG_101.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 2024 Bark Gallery"
+  - url: /assets/images/2024/IMG_100.jpeg
+    image_path: /assets/images/2024/IMG_100.jpeg
+    alt: "K9 2024 Bark Gallery"
+    title: "K9 2024 Bark Gallery"
     
 ---
 
