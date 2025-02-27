@@ -17,7 +17,9 @@ On this page you will see your membership level - **take note! - it will say "Li
 
 **3.** On the same page,  it will say **Renewal due on** - make sure this date is after August 15, 2025. There might be a button there to renew if you are due; please renew if you are due; even Free membership needs to be renewed
 
-**4.** If you have someone else staying in your tent, add the "Existing Tent" ticket type for each additional person (or have them place an order selecting "Existing Tent" - and provide your site number during checkout).
+**4.** If you have someone else staying in your tent, add the "Existing Tent" ticket type for each additional person (or have them place an order selecting "Existing Tent" - and provide your site number during checkout). TRC Charges per person, not per campsite. Everyone needs a camping arrangement (Camping with the pack, existing booking or a booking/arrangement directly with TRC).
+
+**5.** Please note, that after checkout, you will not be able to change your Tag Name, or TRC member details. We will reach out to everyone ~60days before the event to provide update a method to update these.
 
 **With this information you are ready to book! Please click "Get Tickets".**
 
