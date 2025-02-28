@@ -4,7 +4,7 @@ title: " Tickets Go On Sale March 01 2025!"
 date: 2025-02-22 18:00:00 +0900
 categories: updates
 ---
-TICKET SALES BEGIN MARCH 1
+TICKET SALES BEGIN MARCH 01 2025
 
 We plan to start ticket sales in ONE week! Ticket costs will start at $35 + TRC Camping fees. Costs will go up after April 1st. 
 We have a waiting list so hurry and join! Get notified when we start sales!!!
