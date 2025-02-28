@@ -12,3 +12,5 @@ Please vote for your 3-5 favorite ideas and activities for our time in the woods
 Click on the link in order to enter 😊
 
 [Activities Poll](https://t.me/k9campout/103)
+
+<script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="k9campout/103" data-width="100%"></script>
