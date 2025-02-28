@@ -10,4 +10,4 @@ While we do have activities for the event. We also WANT y’all’s suggestions.
 Please vote for your 3-5 favorite ideas and activities for our time in the woods together.
 
 Click on the link to telegram in order to enter 😊
-[Activties Poll](https://t.me/k9campout/103)
+[Activities Poll](https://t.me/k9campout/103)
