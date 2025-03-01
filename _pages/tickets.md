@@ -11,7 +11,7 @@ permalink: /tickets
 
 If not, please go here: [https://camptrc.org/Join](https://camptrc.org/Join) and get a limited membership - it's Free! - but of course you could become a regular member of the campground and support the amazing TRC community if you wish.
 
-**2.** If you have camped before (or just signed up), please go to [https://camptrc.org/Sys/Profile](https://camptrc.org/Sys/Profile])
+**2.** If you have camped before (or just signed up), please go to [https://camptrc.org/Sys/Profile](https://camptrc.org/Sys/Profile)
 
 On this page you will see your membership level - **take note! - it will say "Limited Membership - Free", or "Regular Membership"**, and a little further down it will say **User ID, again, take note! - you need this number.**
 
