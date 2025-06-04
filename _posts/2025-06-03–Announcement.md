@@ -14,6 +14,6 @@ We’ve worked to keep K9 Campout accessible & affordable. Now with our nonprofi
 
 Please fill out this survey so we can best support the pack!!
 
-Click on the link in order to enter the survey
+Click on the link in order to enter
 
 [Survey](https://t.me/k9campout/110)
