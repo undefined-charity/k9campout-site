@@ -10,6 +10,7 @@ header:
 K9 Campout is a human pup and handler event. The event is for LGBTQ+ people, who enjoy human pups and those who love them. 2025 is the fourth year in a row for this event - and we look forward to seeing you all at TRC, Aug 15-17.
 
 (https://t.me/k9campout/110)
+
 <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="k9campout/110" data-width="100%"></script>
 
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
