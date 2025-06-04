@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Announcement"
-date: 2025-06-03 08:00:00 +0900
+title: "Announcement "
+date: 2025-06-02 08:00:00 +0900
 categories: updates
 ---
 We have fantastic news!
