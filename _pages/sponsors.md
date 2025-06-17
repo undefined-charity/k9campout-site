@@ -32,10 +32,11 @@ Pupifer's Paddles creates high-quality, innovative 3D printed accessories for th
 
 **Visit Pupifer's Paddles:**
 - **Website:** [pupiferspaddles.com](https://pupiferspaddles.com)
-- **Etsy Shop:** [PupifersPaddles on Etsy](https://www.etsy.com/shop/PupifersPaddles)
+- **Etsy Shop:** [PupifersPaddles on Etsy](https://pupiferspaddles.etsy.com?coupon=K9CAMPOUT)
 - **Instagram:** [@pupiferspaddles](https://www.instagram.com/pupiferspaddles)
 
-*Currently offering a Spring Sale - 25% off entire store!*
+**🎉 Exclusive K9 Campout Offer!**  
+*Use coupon code **"K9CAMPOUT"** for 25% off any purchases through the end of August! This exclusive discount is available to all K9 Campout guests.*
 
 ---
 
