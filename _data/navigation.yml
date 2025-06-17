@@ -11,6 +11,8 @@ main:
     url: /attending
   - title: "Posts"
     url: /posts/
+  - title: "Sponsors"
+    url: /sponsors
   - title: "Gallery"
     url: /gallery
   # - title: "Categories"
