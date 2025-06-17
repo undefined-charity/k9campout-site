@@ -1,54 +1,27 @@
 ---
 layout: single
-title: Funds
-description: "A breakdown of costs and income"
+title: Financial Transparency
+description: "Financial records and transparency for K9 Campout"
 permalink: /funds
 ---
-While we are not a charity or registered non-profit (there is just to much overhead in doing so), "The Puppies of TRC" aims to operate in the spirit of such an organization. We do not make a profit, and aim to keep costs as low as possible while providing you a great event. 
 
-As with all events, none of this would be possible with out the additional support and charity of individuals and groups in our community - particularly TRC Semi-Permanent sites who host us. Our thanks and gratitude goes to those parties that help this event be possible.
+K9 Campout is now proudly operated by **[Undefined](http://undefined.charity)**, a registered non-profit organization committed to transparency and community service. As a non-profit, we operate with full financial transparency and accountability to our community.
 
-The following data may not be fully complete - as some individuals and groups do provide items out of pocket. We do also give free event passes (excluding camping) to folks who host events, or run activities, so income != number of attendees.
+## Financial Records & Transparency
 
-## 2023 Breakdown
+All detailed financial records, including income, expenses, and financial reports for K9 Campout, are now maintained and published by undefined.charity. You can view complete financial transparency information at:
 
-This is still yet to be finalized.. but here is the work in progress:
+**[Undefined](http://undefined.charity)**
 
-**Income**:
-- Eventbrite: $4795.00
+## Our Commitment
 
-**Expenses**:
-- TRC Donation: $505.60
-- Permitting: $25
-- Booze: $700
-- TRC Site Donations: $150
-- Prizes: $180
-- Site 500 Meals: $400
-- TRC Camping Fees: $2010
-- Music Mix: $150
-- Dog Tags: $150
-- Propane: $80
-- Food Prep and Sausages: $280
-- Flyers and Printing: $164.4
+As a registered non-profit organization, undefined.charity ensures that:
+- All funds are used solely for event operations and community benefit
+- Complete financial transparency is maintained
+- No individual profits from the event
+- Costs are kept as low as possible while providing an exceptional experience
+- Financial records are publicly available and regularly updated
 
+## Community Support
 
-## 2022 Breakdown
-
-**Income**:
-- Eventbrite payouts: $3,460
-
-**Expenses**:
-- TRC Camping Fees Collected: $1,060
-- Prizes and things for Scavenger hunt: $125
-- Donation for the music mix: $100
-- Brunch and mixers: $420.99
-- Food and Beverages: $811.26
-- Flyers and Wristbands: $148.70
-- Permitting: $25
-- Venmo Refunds (due to expired cards): $100
-- TRC Donation**: $669.05
-
-**Total**: $3,460
-
-**We would like to thank TRC for all the assistance they gave us in running the event this first year. We were originally planning to host more things around Junkyard dogs, but with some poor weather we did get a little stuck. TRC kindly offered up site 500 (something we originally declined due to cost), and helped us relocate our main party to Trader Dicks. This "donation" was the available funds remaining to cover these activities, as well as the money that both Cascadia and Trader Dicks preferred to go to TRC vs their sites to cover the costs of hosting us.
-
+None of this would be possible without the additional support and generosity of individuals and groups in our community - particularly TRC Semi-Permanent sites who host us, our sponsors, and volunteers who donate their time and resources. Our heartfelt thanks and gratitude goes to all parties that help make this event possible.

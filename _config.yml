@@ -20,8 +20,8 @@ locale                   : "en-US"
 title                    : "K9 Campout"
 title_separator          : "-"
 subtitle                 : "Aug 15-17 2025 @ Camp TRC" # site tagline that appears below site title in masthead
-name                     : ""
-description              : ""
+name                     : "undefined.charity"
+description              : "K9 Campout - A community camping event for pups and handlers, operated by undefined.charity"
 url                      : https://k9campout.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -132,6 +132,9 @@ author:
 # Site Footer
 footer:
   links:
+    - label: "undefined.charity"
+      icon: "fas fa-fw fa-heart"
+      url: "http://undefined.charity"
     # - label: "Email ffl@woofyarms.com"
     #   icon: "fas fa-fw fa-envelope-square"
     #   url: "mailto:ffl@woofyarms.com"

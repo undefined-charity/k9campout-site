@@ -1,10 +1,12 @@
 ---
 layout: single
 title: About
-description: "About the Pups of TRC"
+description: "About K9 Campout and undefined.charity"
 permalink: /about
 ---
 
 Do you miss the days of camping with pups in years gone by? Well, we are here to make it a thing again.
 
-K9 Campout is ran by a group of pups that just want to enjoy romping around in the forest with other like-minded pups and handers. This is a private event that will be hosted at CampTRC - and is not affiliated with any PAH organization.
+K9 Campout is now proudly operated by **[undefined.charity](http://undefined.charity)**, a registered non-profit organization dedicated to supporting and fostering community events. Our mission is to bring together like-minded pups and handlers for an unforgettable camping experience in the forest.
+
+This is a private event hosted at CampTRC and is not affiliated with any PAH organization. As a non-profit, we are committed to keeping costs low, maintaining financial transparency, and ensuring all proceeds benefit the community and event experience.

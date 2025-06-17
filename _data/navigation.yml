@@ -19,7 +19,7 @@ main:
   #   url: /categories/
   # - title: "Tags"
   #   url: /tags/
-  - title: "Funds"
+  - title: "Transparency"
     url: /funds
   - title: "About"
     url: /about
