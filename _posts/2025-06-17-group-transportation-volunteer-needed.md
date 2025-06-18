@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Looking for Transportation Coordinators - Group Bus Service to K9 Campout"
-date: 2025-06-18
+date: 2025-06-17 08:00:00 +0900
 categories: updates
 tags: [transportation, volunteers, community]
 excerpt: "We're exploring group bus transportation to K9 Campout and need community volunteers to help coordinate this service."
