@@ -1,15 +1,17 @@
 ---
 layout: splash
 author_profile: false
-description: "Welcome to K9 Campout - a human pup and handler event at TRC"
+description: "Welcome to K9 Campout - a human pup and handler event at TRC, operated by Undefined"
 permalink: /
 header:
   image: /assets/images/k9campout_banner.jpg
 ---
 
-K9 Campout is a human pup and handler event. The event is for LGBTQ+ people, who enjoy human pups and those who love them. 2025 is the fourth year in a row for this event - and we look forward to seeing you all at TRC, Aug 15-17.
+K9 Campout is a human pup and handler event proudly operated by **[Undefined](http://undefined.charity)**. The event is for LGBTQ+ people who enjoy human pups and those who love them. 2025 marks the fourth year in a row for this amazing community gathering - and we look forward to seeing you all at TRC, August 15-17!
 
-(https://t.me/k9campout/110)
+As a registered non-profit, we're committed to keeping costs low, maintaining transparency, and creating an inclusive, safe space for all attendees.
+
+**Join our community:** [Telegram Channel](/telegram)
 
 <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="k9campout/110" data-width="100%"></script>
 

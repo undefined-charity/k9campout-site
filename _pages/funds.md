@@ -9,13 +9,13 @@ K9 Campout is now proudly operated by **[Undefined](http://undefined.charity)**,
 
 ## Financial Records & Transparency
 
-All detailed financial records, including income, expenses, and financial reports for K9 Campout, are now maintained and published by undefined.charity. You can view complete financial transparency information at:
+All detailed financial records, including income, expenses, and financial reports for K9 Campout, are now maintained and published by Undefined. You can view complete financial transparency information at:
 
-**[Undefined](http://undefined.charity)**
+**[undefined.charity](http://undefined.charity)**
 
 ## Our Commitment
 
-As a registered non-profit organization, undefined.charity ensures that:
+As a registered non-profit organization, Undefined ensures that:
 - All funds are used solely for event operations and community benefit
 - Complete financial transparency is maintained
 - No individual profits from the event
