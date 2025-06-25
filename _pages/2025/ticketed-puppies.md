@@ -151,6 +151,9 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****YFf | 60030379 | | Skittish |
 | BYO Camping | ****6GL | 60066576 | | Wolver |
 | Camping With The Pack | ****Se5 | 60072193 | Site 1-1D | Fin |
+| BYO Camping | ****CKN | 60104135 | | Jersh |
+| BYO Camping | ****nTh | Bark Park | | Handler Blue |
+| BYO Camping | ****Zt9 | Bark Park | | Pup Guzzler |
 
 ---
 
