@@ -34,7 +34,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****jYy | 54879712 | Site 2-2G | Cole Fox |
 | Camping With The Pack | ****yC5 | 54880353 | Site 2-2D | Pup Ranger |
 | Camping With The Pack | ****2Gd | 54908305 | Site 1-1G | Rus |
-| BYO Camping | ****dN5 | 54908224 | | Aaron |
+| BYO Camping | ****dN5 | 54908224 | | Cookie |
 | Camping With The Pack | ****25Z | 54908830 | Site 1-1D | Pup Kronos |
 | Camping With The Pack | ****fYa | 54909888 | Site 2-2F | Apollo |
 | Camping With The Pack | ****vF2 | 54910144 | Site 2-2F | Pup Dex |
@@ -42,7 +42,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****abn | 54910328 | Site 2-2F | Amos |
 | Camping With The Pack | ****j2q | 54910748 | Site 5-5B | Eleris |
 | BYO Camping | ****u9t | 54912508 | | Kiba |
-| BYO Camping | ****vxC | 54912825 | | Mai Tai |
+| BYO Camping | ****vxC | 54912825 | | Puck |
 | Camping With The Pack | ****V5C | 54912839 | Site 5-5H | Sir Alex |
 | BYO Camping | ****uCd | 54913255 | | John |
 | Camping With The Pack | ****vL5 | 54913405 | Site 5-5C | Reverb |
@@ -61,7 +61,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****euL | 54925854 | Site 6-6C | Baron |
 | Camping With The Pack | ****wTe | 54926868 | Rv site 19 | PUP RILEY |
 | Camping With The Pack | ****nSH | 54926966 | Rv site 19 | PUP LEGO |
-| Camping With The Pack | ****Vhv | 54927391 | Site 4-4E | Pup Archie |
+| Camping With The Pack | ****Vhv | 54927391 | Site 4-4D | Negasonic Archie |
 | Camping With The Pack | ****YSN | 54927391 | Site 4-4E | Alpha Saturn |
 | Camping With The Pack | ****3uA | 54927555 | Rv site 19 | DADDY TOD |
 | Camping With The Pack | ****xvh | 54928132 | Site 6-6E | J |
@@ -76,7 +76,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****CKu | 55010491 | Site 2-2J | Pup Flash |
 | Camping With The Pack | ****RQ4 | 55014411 | Site 3-3D | Tytan |
 | Camping With The Pack | ****J9y | 55035663 | Site 6-6B | Rosko |
-| Camping With The Pack | ****ku2 | 55055833 | Site 2-2I | Renny |
+| Camping With The Pack | ****ku2 | 55055833 | Site 2-2I | Renni |
 | BYO Camping | ****XUa | 55056609 | | tokie |
 | BYO Camping | ****thx | 55056784 | | Ein |
 | Camping With The Pack | ****T4K | 55058815 | Site 1-1B | tangles |
@@ -130,7 +130,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****v5h | 58451410 | Site 7-7C | |
 | Camping With The Pack | ****6qL | 58451594 | | |
 | BYO Camping | ****eKt | 58488925 | | |
-| Camping With The Pack | ****zb7 | 58653939 | | |
+| Camping With The Pack | ****zb7 | 58653939 | Site 4-4D | Gator |
 | BYO Camping | ****tnX | 58813651 | | |
 | BYO Camping | ****C2h | 58968988 | | Eric |
 | BYO Camping | ****p5c | 58969165 | | PUP OENO |
@@ -152,6 +152,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****6GL | 60066576 | | Wolver |
 | Camping With The Pack | ****Se5 | 60072193 | Site 1-1D | Fin |
 | BYO Camping | ****CKN | 60104135 | | Jersh |
+| BYO Camping | ****nV7 | 60114170 | | Kuda |
 | BYO Camping | ****nTh | Bark Park | | Handler Blue |
 | BYO Camping | ****Zt9 | Bark Park | | Pup Guzzler |
 
