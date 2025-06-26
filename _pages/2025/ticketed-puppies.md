@@ -78,7 +78,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****J9y | 55035663 | Site 6-6B | Rosko |
 | Camping With The Pack | ****ku2 | 55055833 | Site 2-2I | Renni |
 | BYO Camping | ****XUa | 55056609 | | tokie |
-| BYO Camping | ****thx | 55056784 | | Ein |
+| BYO Camping | ****thx | 55056784 | | ein |
 | Camping With The Pack | ****T4K | 55058815 | Site 1-1B | tangles |
 | Camping With The Pack | ****jbP | 55058815 | Site 1-1B | Skunk |
 | Camping With The Pack | ****bkF | 55060334 | Site 1-1C | eric |
@@ -87,7 +87,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****6J8 | 55135738 | | Mike |
 | Camping With The Pack | ****5Dd | 55272657 | Site 2-2L | Booster |
 | Camping With The Pack | ****sZe | 55286424 | Site 2-2A | Harar |
-| Camping With The Pack | ****FEU | 55358563 | Site 5-5F | Fiasco |
+| Camping With The Pack | ****FEU | 55358563 | Site 5-5F | Fiasco! |
 | BYO Camping | ****fxC | 55379794 | | Ghost |
 | Camping With The Pack | ****qnC | 55430324 | | Pizmo |
 | Camping With The Pack | ****6wp | 55436250 | Site 5-5E | Tasty Goatmeal |
@@ -122,16 +122,16 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****EPg | 58185989 | Site 3-3B | |
 | Camping With The Pack | ****7sT | 58220074 | | |
 | Camping With The Pack | ****ZWz | 58229499 | | |
-| Camping With The Pack | ****JdP | 58282543 | Site 7-7G | |
-| Camping With The Pack | ****3Lr | 58436711 | Site 7-7A | |
-| Camping With The Pack | ****g8z | 58436876 | | |
+| Camping With The Pack | ****JdP | 58282543 | Site 7-7G | Skystryder |
+| Camping With The Pack | ****3Lr | 58436711 | Site 7-7A | SneaX |
+| Camping With The Pack | ****g8z | 58436876 | Site 7-7A | Teiz |
 | Camping With The Pack | ****qxT | 58450828 | Site 7-7F | |
 | Camping With The Pack | ****RNQ | 58451410 | Site 7-7C | |
 | Camping With The Pack | ****v5h | 58451410 | Site 7-7C | |
 | Camping With The Pack | ****6qL | 58451594 | | |
 | BYO Camping | ****eKt | 58488925 | | |
 | Camping With The Pack | ****zb7 | 58653939 | Site 4-4D | Gator |
-| BYO Camping | ****tnX | 58813651 | | |
+| BYO Camping | ****tnX | 58813651 | | Twister |
 | BYO Camping | ****C2h | 58968988 | | Eric |
 | BYO Camping | ****p5c | 58969165 | | PUP OENO |
 | Camping With The Pack | ****w2b | 59053270 | Site 2-2B | Zerk |
