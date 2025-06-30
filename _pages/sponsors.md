@@ -11,18 +11,6 @@ We are incredibly grateful to our sponsors who help make K9 Campout possible. Th
 
 ## Our Sponsors
 
-### Shiny Dog Productions
-**Play Space Provider**
-
-![Shiny Dog Productions Logo](/assets/images/2025/shinydog.png)
-
-Thank you to Shiny Dog Productions for providing the equipment we need for our play space! Shiny Dog creates experiences for the Queer and Furry communities, from pop-up events to bar nights and weekend getaways. They build spaces where you can be yourself, and we're so lucky to have their support.
-
-**Visit Shiny Dog Productions:**
-- **Website:** [shinydogproductions.com](https://shinydogproductions.com)
-
----
-
 ### Pupifer's Paddles
 
 **Specializing in 3D Printed Pup Gear & Accessories**
@@ -51,6 +39,18 @@ Pupifer's Paddles creates high-quality, innovative 3D printed accessories for th
 
 **🎉 Exclusive K9 Campout Offer!**  
 *Use coupon code **"K9CAMPOUT"** for 25% off any purchases through the end of August! This exclusive discount is available to all K9 Campout guests.*
+
+---
+
+### Shiny Dog Productions
+**Play Space Provider**
+
+![Shiny Dog Productions Logo](/assets/images/2025/shinydog.png)
+
+Thank you to Shiny Dog Productions for providing the equipment we need for our play space! Shiny Dog creates experiences for the Queer and Furry communities, from pop-up events to bar nights and weekend getaways. They build spaces where you can be yourself, and we're so lucky to have their support.
+
+**Visit Shiny Dog Productions:**
+- **Website:** [shinydogproductions.com](https://shinydogproductions.com)
 
 ---
 
