@@ -164,6 +164,11 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****T9Q | Traders | | Charlie |
 | BYO Camping | ****aZB | Traders | | Loki |
 | BYO Camping | ****xgX | 60322377 | | Pup Amaro |
+| BYO Camping | ****cBq | 60324153 | | Voxel |
+| BYO Camping | ****vvr | 60324341 | | Shadow |
+| BYO Camping | ****Bps | 60324341 | | Atlas |
+| BYO Camping | ****Tjx | 60325442 | | Semeion |
+| BYO Camping | ****CSr | 60339378 | | Tadrith |
 
 ---
 
