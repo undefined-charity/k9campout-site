@@ -120,15 +120,15 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****RWs | 57935005 | | |
 | BYO Camping | ****WZt | 57944765 | | |
 | Camping With The Pack | ****EPg | 58185989 | Site 3-3B | |
-| Camping With The Pack | ****7sT | 58220074 | | |
-| Camping With The Pack | ****ZWz | 58229499 | | |
+| Camping With The Pack | ****7sT | 58220074 | Site 2-2H | FLUX |
+| Camping With The Pack | ****ZWz | 58229499 | Site 1-1G | Koda |
 | Camping With The Pack | ****JdP | 58282543 | Site 7-7G | Skystryder |
 | Camping With The Pack | ****3Lr | 58436711 | Site 7-7A | SneaX |
 | Camping With The Pack | ****g8z | 58436876 | Site 7-7A | Teiz |
-| Camping With The Pack | ****qxT | 58450828 | Site 7-7F | |
+| Camping With The Pack | ****qxT | 58450828 | Site 7-7F | KALI |
 | Camping With The Pack | ****RNQ | 58451410 | Site 7-7C | |
 | Camping With The Pack | ****v5h | 58451410 | Site 7-7C | |
-| Camping With The Pack | ****6qL | 58451594 | | |
+| Camping With The Pack | ****6qL | 58451594 | | Sparky |
 | BYO Camping | ****eKt | 58488925 | | |
 | Camping With The Pack | ****zb7 | 58653939 | Site 4-4D | Gator |
 | BYO Camping | ****tnX | 58813651 | | Twister |
@@ -169,6 +169,13 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****Bps | 60324341 | | Atlas |
 | BYO Camping | ****Tjx | 60325442 | | Semeion |
 | BYO Camping | ****CSr | 60339378 | | Tadrith |
+| BYO Camping | ****6v96 | 60538325 | | Bruises |
+| BYO Camping | ****dEc | 60538708 | | Alpha |
+| BYO Camping | ****uwb | 60563951 | | Azoth |
+| Camping With The Pack | ****2gD | 60684296 | Site 2-2D | Nico |
+| Camping With The Pack | ****qPp | 60684296 | Site 2-2D | Apollo |
+| BYO Camping | ****kXe | 60789276 | | Luxeh |
+| Camping With The Pack | ****q7x | 60845365 | Site 3-3C | Nova |
 
 ---
 
