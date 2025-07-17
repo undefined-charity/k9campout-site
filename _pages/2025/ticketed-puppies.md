@@ -44,7 +44,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****u9t | 54912508 | | Kiba |
 | BYO Camping | ****vxC | 54912825 | | Puck |
 | Camping With The Pack | ****V5C | 54912839 | Site 5-5H | Sir Alex |
-| BYO Camping | ****uCd | 54913255 | | John |
+| BYO Camping | ****uCd | 54913255 | | Evox |
 | Camping With The Pack | ****vL5 | 54913405 | Site 5-5C | Reverb |
 | BYO Camping | ****fNt | 54918091 | | Sir Chris |
 | Camping With The Pack | ****U2h | 54918811 | Site 2-2I | Chip |
