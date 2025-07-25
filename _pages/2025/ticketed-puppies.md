@@ -94,7 +94,6 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****nZn | 55561548 | Site 2-2F | Red |
 | Camping With The Pack | ****tw6 | 55918355 | Site 1-1A | Gruner |
 | BYO Camping | ****2Sh | 55933423 | | Zan |
-| BYO Camping | ****LwV | 55938966 | | Sir Brandon |
 | Camping With The Pack | ****6tj | 55939507 | Site 2-2M | Michael Derg |
 | Camping With The Pack | ****kVt | 55957424 | Site 6-6D | Ashton Hope |
 | Camping With The Pack | ****ZgA | 55959333 | Site 6-6D | Pup cash |
@@ -136,8 +135,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****p5c | 58969165 | | PUP OENO |
 | Camping With The Pack | ****w2b | 59053270 | Site 2-2B | Zerk |
 | Camping With The Pack | ****Vpg | 59053270 | Site 2-2B | Arc |
-| BYO Camping | ****3uk | 59089671 | | codak |
-| Camping With The Pack | ****8D8 | 59255141 | Site 7-7E | Pup Shutter |
+| BYO Camping | ****3uk | 59089671 | Site 7-7D | codak |
 | BYO Camping | ****ZLz | 59294605 | | Panda |
 | Camping With The Pack | ****RKA | 59333118 | Site 5-5G | Bismuth |
 | Camping With The Pack | ****2bJ | 59419256 | Site 3-3C | Hex |
@@ -171,16 +169,21 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****CSr | 60339378 | | Tadrith |
 | BYO Camping | ****6v96 | 60538325 | | Bruises |
 | BYO Camping | ****dEc | 60538708 | | Alpha |
-| BYO Camping | ****uwb | 60563951 | | Azoth |
+| Camping With The Pack | ****uwb | 60563951 | Site 4-4E | Azoth |
 | Camping With The Pack | ****2gD | 60684296 | Site 2-2D | Nico |
 | Camping With The Pack | ****qPp | 60684296 | Site 2-2D | Apollo |
 | BYO Camping | ****kXe | 60789276 | | Luxeh |
 | Camping With The Pack | ****q7x | 60845365 | Site 3-3C | Nova |
 | BYO Camping | ****eG9 | 60845365 | | |
-| BYO Camping | ****yqB | 60845365 | | koters |
+| BYO Camping | ****yqB | 60953552 | | koters |
 | BYO Camping | ****exq | 60981724 | | Bandit |
 | Camping With The Pack | ****V4V | 60998203 | Site 6-6B | BadCat |
 | Camping With The Pack | ****UGg | 60999067 | Site 2C | Dusk |
+| BYO Camping | ****3XL | 61215894 | | Fozzy Pup |
+| Camping With The Pack | ****Ard | 61226610 | Site 7-7E | Silva |
+| BYO Camping | ****rvU | 61232652 | | Odyssey |
+| BYO Camping | ****U69 | 61274761 | | Pup moto |
+| Camping With The Pack | ****rVc | 61318854 | Site 2-2G | Beansy |
 
 ---
 
