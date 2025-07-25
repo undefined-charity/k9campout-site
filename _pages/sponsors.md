@@ -57,7 +57,7 @@ Thank you to Shiny Dog Productions for providing the equipment we need for our p
 ### Mr. S Leather
 **Premium BDSM, Leather & Fetish Gear**
 
-![Mr. S Leather Logo](/assets/images/2025/mrsleather.svg)
+![Mr. S Leather Logo](/assets/images/2025/mrsleather.jpg)
 
 For over 40 years, Mr. S Leather has been the world's forerunner in the fetish industry. Founded in San Francisco in 1979, they continue their tradition of bringing you quality gear you can depend on. From their workshop and flagship store, they create exclusive designs using the finest materials, testing them extensively to ensure you're getting the best.
 
@@ -73,9 +73,6 @@ Mr. S Leather carries the world's top brands and offers the widest selection of 
 **Visit Mr. S Leather:**
 - **Website:** [mr-s-leather.com](https://www.mr-s-leather.com)
 - **Store Location:** 385 8th St, San Francisco, CA 94103 (Open Daily 12pm-7pm)
-- **Phone:** [(415) 863-7764](tel:+14158637764)
-- **Email:** [help@mr-s-leather.com](mailto:help@mr-s-leather.com)
-- **Social Media:** [Instagram](https://www.instagram.com/mr.s.leather/) | [Facebook](https://www.facebook.com/mr.s.leather.SF) | [X](https://twitter.com/MrSLeather)
 
 ---
 
