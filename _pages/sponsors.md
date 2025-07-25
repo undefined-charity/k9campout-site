@@ -54,6 +54,31 @@ Thank you to Shiny Dog Productions for providing the equipment we need for our p
 
 ---
 
+### Mr. S Leather
+**Premium BDSM, Leather & Fetish Gear**
+
+![Mr. S Leather Logo](/assets/images/2025/mrsleather.svg)
+
+For over 40 years, Mr. S Leather has been the world's forerunner in the fetish industry. Founded in San Francisco in 1979, they continue their tradition of bringing you quality gear you can depend on. From their workshop and flagship store, they create exclusive designs using the finest materials, testing them extensively to ensure you're getting the best.
+
+**Specializing in:**
+- Premium leather, rubber, and neoprene clothing
+- Bondage and BDSM gear
+- High-quality sex toys and accessories
+- Puppy Park collection for pup play enthusiasts
+- Custom and exclusive designs
+
+Mr. S Leather carries the world's top brands and offers the widest selection of fetish gear you'll find anywhere. Whether you're looking for chastity cages, electrical gear, or the perfect-fitting gear for play, they have you covered.
+
+**Visit Mr. S Leather:**
+- **Website:** [mr-s-leather.com](https://www.mr-s-leather.com)
+- **Store Location:** 385 8th St, San Francisco, CA 94103 (Open Daily 12pm-7pm)
+- **Phone:** [(415) 863-7764](tel:+14158637764)
+- **Email:** [help@mr-s-leather.com](mailto:help@mr-s-leather.com)
+- **Social Media:** [Instagram](https://www.instagram.com/mr.s.leather/) | [Facebook](https://www.facebook.com/mr.s.leather.SF) | [X](https://twitter.com/MrSLeather)
+
+---
+
 ## Become a Sponsor
 
 Interested in sponsoring K9 Campout and supporting our community? We'd love to hear from you! Sponsorship opportunities help us keep the event affordable and accessible while providing valuable exposure for businesses that serve our community.
