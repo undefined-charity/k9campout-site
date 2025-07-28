@@ -79,7 +79,7 @@ Mr. S Leather carries the world's top brands and offers the widest selection of 
 ### Doghouse Leathers
 **Quality Leathers & Kink Gear for the Community**
 
-![Doghouse Leathers Logo](/assets/images/2025/doghouse.png)
+![Doghouse Leathers Logo](/assets/images/2025/doghouse.jpg)
 
 Established in 2006, Doghouse Leathers has been serving Seattle's masculine presenting Leather, Kink and Bear Communities from their Capitol Hill location. Starting as a weekend outpost inside The Cuff, they've grown into a cornerstone of the community with their current large store at 715 East Pike Street, open daily from 12pm-9:30pm.
 
