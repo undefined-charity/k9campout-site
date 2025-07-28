@@ -76,6 +76,37 @@ Mr. S Leather carries the world's top brands and offers the widest selection of 
 
 ---
 
+### Doghouse Leathers
+**Quality Leathers & Kink Gear for the Community**
+
+![Doghouse Leathers Logo](/assets/images/2025/doghouse.png)
+
+Established in 2006, Doghouse Leathers has been serving Seattle's masculine presenting Leather, Kink and Bear Communities from their Capitol Hill location. Starting as a weekend outpost inside The Cuff, they've grown into a cornerstone of the community with their current large store at 715 East Pike Street, open daily from 12pm-9:30pm.
+
+Their mission is simple: provide quality leathers at fair prices while promoting and supporting local kinky craftsmen, artists, and authors. They're committed to building community "one bottom at a time."
+
+**Featured Products:**
+- Northwest's largest selection of Nasty Pig products
+- Custom leathers from their own team of crafters (Abby, Thumper and KC)
+- Clothing from Cellblock13 and Nasty Pig
+- Comprehensive pup gear including puppy tails and accessories
+- Full line of toys from Oxballs, Stockroom and Happy Holes
+- Floggers from Bare Leatherworks
+- Rope from Twisted Monk
+- T-shirts from Ajaxx63 and Burly Tee's
+- Complete selection of lubes, condoms and supplies
+
+Doghouse Leathers' commitment to supporting the leather and kink communities makes them a perfect fit for our K9 Campout family.
+
+**Visit Doghouse Leathers:**
+- **Website:** [doghouseleathers.com](https://www.doghouseleathers.com)
+- **Store Location:** 715 E Pike St, Seattle, WA 98122
+- **Phone:** (206) 257-0231
+- **Email:** sales@doghouseleathers.com
+- **Instagram:** [@doghouseleathers_craftingroom](https://www.instagram.com/doghouseleathers_craftingroom/)
+
+---
+
 ## Become a Sponsor
 
 Interested in sponsoring K9 Campout and supporting our community? We'd love to hear from you! Sponsorship opportunities help us keep the event affordable and accessible while providing valuable exposure for businesses that serve our community.
