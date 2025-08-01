@@ -180,12 +180,12 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****V4V | 60998203 | Site 6-6B | BadCat |
 | Camping With The Pack | ****UGg | 60999067 | Site 2C | Dusk |
 | BYO Camping | ****3XL | 61215894 | | Fozzy Pup |
-| Camping With The Pack | ****Ard | 61226610 | Site 7-7E | Silva |
+| Camping With The Pack | ****Ard | 61226610 | Tent end RV-1 (Scholarship) | Silva |
 | BYO Camping | ****rvU | 61232652 | | Odyssey |
 | BYO Camping | ****U69 | 61274761 | | Pup moto |
 | Camping With The Pack | ****rVc | 61318854 | Site 2-2G | Beansy |
-| Camping With The Pack | ****Lqd | 61385859 | Scholarship | Devyl Dawg |
-| Camping With The Pack | ****KFG | 61396502 | Scholarship | Pup Sebastian |
+| Camping With The Pack | ****Lqd | 61385859 | Site 7-7E (Scholarship) | Devyl Dawg |
+| Camping With The Pack | ****KFG | 61396502 | Site 7-7E (Scholarship) | Pup Sebastian |
 | Camping With The Pack | ****q9R | 61387410 | Site 2-? | Pup Coach |
 | BYO Camping | ****2QD | 61420885 | | Alan |
 | BYO Camping | ****e2u | 61420885 | | Adam |
