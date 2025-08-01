@@ -84,7 +84,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****bkF | 55060334 | Site 1-1C | eap |
 | BYO Camping | ****QV6 | 55100177 | | SIR STICH |
 | BYO Camping | ****VLL | 55101130 | | Burrbles |
-| BYO Camping | ****6J8 | 55135738 | | Mike |
+| BYO Camping | ****6J8 | 55135738 | | FOXXO |
 | Camping With The Pack | ****5Dd | 55272657 | Site 2-2L | Booster |
 | Camping With The Pack | ****sZe | 55286424 | Site 2-2A | Harar |
 | Camping With The Pack | ****FEU | 55358563 | Site 5-5F | Fiasco! |
@@ -118,7 +118,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****JSe | 57730430 | Site 7-7D | Pup Tachi |
 | BYO Camping | ****RWs | 57935005 | | EagleBear |
 | BYO Camping | ****WZt | 57944765 | | |
-| Camping With The Pack | ****EPg | 58185989 | Site 3-3B | |
+| Camping With The Pack | ****EPg | 58185989 | Site 3-3B | Keto |
 | Camping With The Pack | ****7sT | 58220074 | Site 2-2H | FLUX |
 | Camping With The Pack | ****ZWz | 58229499 | Site 1-1G | Koda |
 | Camping With The Pack | ****JdP | 58282543 | Site 7-7G | Skystryder |
@@ -184,6 +184,17 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****rvU | 61232652 | | Odyssey |
 | BYO Camping | ****U69 | 61274761 | | Pup moto |
 | Camping With The Pack | ****rVc | 61318854 | Site 2-2G | Beansy |
+| Camping With The Pack | ****Lqd | 61385859 | Scholarship | Devyl Dawg |
+| Camping With The Pack | ****KFG | 61396502 | Scholarship | Pup Sebastian |
+| Camping With The Pack | ****q9R | 61387410 | Site 2-? | Pup Coach |
+| BYO Camping | ****2QD | 61420885 | | Alan |
+| BYO Camping | ****e2u | 61420885 | | Adam |
+| BYO Camping | ****y6V | 61456257 | | Khonsu |
+| BYO Camping | ****RAC | 61460197 | | Haring |
+| BYO Camping | ****YKN | 61464651 | | Bolter |
+| BYO Camping | ****hrY | 61466858 | | GRRBEAR |
+| BYO Camping | ****Y46 | 61501443 | | Just Boogs |
+| BYO Camping | ****BD8 | 61546989 | | Connal |
 
 ---
 
