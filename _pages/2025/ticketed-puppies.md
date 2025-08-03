@@ -90,7 +90,6 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****FEU | 55358563 | Site 5-5F | Fiasco! |
 | BYO Camping | ****fxC | 55379794 | | Ghost |
 | Camping With The Pack | ****qnC | 55430324 | | Pizmo |
-| Camping With The Pack | ****6wp | 55436250 | Site 5-5E | Tasty Goatmeal |
 | Camping With The Pack | ****nZn | 55561548 | Site 2-2F | Red |
 | Camping With The Pack | ****tw6 | 55918355 | Site 1-1A | Gruner |
 | BYO Camping | ****2Sh | 55933423 | | Zan |
@@ -137,7 +136,6 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****Vpg | 59053270 | Site 2-2B | Arc |
 | BYO Camping | ****3uk | 59089671 | Site 7-7D | codak |
 | BYO Camping | ****ZLz | 59294605 | | Panda |
-| Camping With The Pack | ****RKA | 59333118 | Site 5-5G | Bismuth |
 | Camping With The Pack | ****2bJ | 59419256 | Site 3-3C | Hex |
 | Camping With The Pack | ****Z3r | 59424135 | Site 1-1F | Hans Camping |
 | Camping With The Pack | ****x2E | 59688816 | Site 4-4C | doggobrutus |
@@ -158,6 +156,11 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****Zt9 | Bark Park | | Pup Guzzler |
 | BYO Camping | ****T9Q | Traders | | Charlie |
 | BYO Camping | ****aZB | Traders | | Loki |
+| BYO Camping | ****XDJ | Junkyard Dogs | | Ollie |
+| BYO Camping | ****8mn | Junkyard dogs | | Beau |
+| BYO Camping | ****pfG | Junkyard dogs | | Ry Ry |
+| BYO Camping | ****rpc | heavy petting zoo | | Noname Lion |
+| BYO Camping | ****N2H | Heavy Petting Zoo | | Tora |
 | BYO Camping | ****xgX | 60322377 | | Pup Amaro |
 | BYO Camping | ****cBq | 60324153 | | Voxel |
 | BYO Camping | ****vvr | 60324341 | | Shadow |
@@ -192,6 +195,7 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****hrY | 61466858 | | GRRBEAR |
 | BYO Camping | ****Y46 | 61501443 | | Just Boogs |
 | BYO Camping | ****BD8 | 61546989 | | Pup Connal |
+| Camping With The Pack | ****yn8 | 61672716 | Site 1-1E | Yuki |
 
 ---
 
