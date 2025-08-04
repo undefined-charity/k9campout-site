@@ -124,8 +124,8 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****3Lr | 58436711 | Site 7-7A | SneaX |
 | Camping With The Pack | ****g8z | 58436876 | Site 7-7A | Teiz |
 | Camping With The Pack | ****qxT | 58450828 | Site 7-7F | KALI |
-| Camping With The Pack | ****RNQ | 58451410 | Site 7-7C | |
-| Camping With The Pack | ****v5h | 58451410 | Site 7-7C | |
+| Camping With The Pack | ****RNQ | 58451410 | Site 7-7C | Pongo |
+| Camping With The Pack | ****v5h | 58451410 | Site 7-7C | Mojo |
 | Camping With The Pack | ****6qL | 58451594 | Site 7-7F | Sparky |
 | BYO Camping | ****eKt | 58488925 | | |
 | Camping With The Pack | ****zb7 | 58653939 | Site 4-4D | Gator |
