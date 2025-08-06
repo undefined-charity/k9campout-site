@@ -1,6 +1,6 @@
 ---
 title: "Announcing the 2025 Pup Games - Sponsored by Mr. S Leather!"
-date: 2025-08-06T10:00:00-08:00
+date: 2025-08-05T10:00:00-08:00
 categories:
   - updates
   - events
