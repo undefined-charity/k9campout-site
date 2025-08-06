@@ -195,7 +195,10 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****hrY | 61466858 | | GRRBEAR |
 | BYO Camping | ****Y46 | 61501443 | | Just Boogs |
 | BYO Camping | ****BD8 | 61546989 | | Pup Connal |
-| Camping With The Pack | ****yn8 | 61672716 | Site 1-1E | Yuki |
+| BYO Camping | ****E7q | 61633274 | | Wildberry |
+| Camping With The Pack | ****3UP | 61672716 | Site 1-1E | Yuki |
+| BYO Camping | ****fjV | 61708821 | | Pupasaur |
+| BYO Camping | ****BCG | 61808476 | | Brutus |
 
 ---
 
