@@ -40,7 +40,6 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****vF2 | 54910144 | Site 2-2F | Pup Dex |
 | Camping With The Pack | ****gXU | 54910224 | Site 2-2F | Portal |
 | Camping With The Pack | ****abn | 54910328 | Site 2-2F | Amos |
-| Camping With The Pack | ****j2q | 54910748 | Site 5-5B | Eleris |
 | BYO Camping | ****u9t | 54912508 | | Kiba |
 | BYO Camping | ****vxC | 54912825 | | Puck |
 | Camping With The Pack | ****V5C | 54912839 | Site 5-5H | Sir Alex |
@@ -140,7 +139,6 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****Z3r | 59424135 | Site 1-1F | Hans Camping |
 | Camping With The Pack | ****x2E | 59688816 | Site 4-4C | doggobrutus |
 | Camping With The Pack | ****xx6 | 59737104 | Site 4-4D | good boy |
-| Camping With The Pack | ****Hvv | 59830278 | Site 5-5B | Soma |
 | Camping With The Pack | ****NFb | 59830671 | Site 7-7B | Ethos |
 | BYO Camping | ****RQv | 59868086 | | Demon Fox |
 | BYO Camping | ****VXB | 60015028 | | Sheppfox |
@@ -199,6 +197,19 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | Camping With The Pack | ****3UP | 61672716 | Site 1-1E | Yuki |
 | BYO Camping | ****fjV | 61708821 | | Pupasaur |
 | BYO Camping | ****BCG | 61808476 | | Brutus |
+| BYO Camping | ****yce | 61873963 | | Violet |
+| BYO Camping | ****T3 | 61873963 | | Sino |
+| BYO Camping | ****yv2 | 61874024 | | Pup Metro |
+| BYO Camping | ****CyH | 61912825 | | Bobby |
+| BYO Camping | ****Xua | 61912825 | | Pickle |
+| BYO Camping | ****JA | 61915103 | | Near |
+| BYO Camping | ****XAZ | 61952915 | | Alchi |
+| BYO Camping | ****Gxg | 61981579 | | Rio |
+| BYO Camping | ****Qy7 | 61981865 | | Ruck |
+| BYO Camping | ****3G9 | 61981865 | | Coach |
+| BYO Camping | ****dy4 | 61981865 | | Bull |
+| BYO Camping | ****sn3 | 61988207 | | Chase |
+| BYO Camping | ****Dfb | 61988207 | | Vera |
 
 ---
 
