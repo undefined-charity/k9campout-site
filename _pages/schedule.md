@@ -4,9 +4,9 @@ title: Schedule
 description: "The what when and where"
 permalink: /schedule
 ---
-## 2025's Schedule (DRAFT)
+## 2025's Schedule
 
-**Please note: This is a draft schedule and events are likely to change.** We'll update this as we get closer to the event. Please be flexible with us, as weather and site conditions may also change the timing or location of events.
+ Please be flexible with us, as weather and site conditions may also change the timing or location of events.
 
 ### Friday
 - 4pm-8pm: Check-in [@Junkyard Dogs]

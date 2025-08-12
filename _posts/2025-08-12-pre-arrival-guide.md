@@ -1,15 +1,11 @@
 ---
 title: "🐾 Your K9 Campout Pre-Arrival Guide! for 2025"
-date: 2025-08-12 10:00:00 -0800
+date: 2025-08-12T10:00:00-08:00
 categories:
   - updates
+  - events
 tags:
-  - 2025
-  - arrival
-  - guide
-  - volunteers
-  - parking
-  - check-in
+  - activities
 ---
 
 We're just about ready to wag our tails — K9 Campout is almost here! To make your arrival smooth and stress-free, here's everything you need to know before you head out next weekend.
