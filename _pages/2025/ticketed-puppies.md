@@ -16,7 +16,9 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 **Action Required:**
 - If you **do NOT** have a tent to stay in, we need to swap you to a first-come-first-served site
 
-**Update Your Information:** To update your site assignment (for "Existing Tent" tickets) or pup tag name, please fill out the form at: **[http://woofy.link/k9campout-update](http://woofy.link/k9campout-update)**
+~~**Update Your Information:** To update your site assignment (for "Existing Tent" tickets) or pup tag name, please fill out the form at: **[http://woofy.link/k9campout-update](http://woofy.link/k9campout-update)**~~
+
+**All updates are now closed.**
 
 ## Complete Attendee List
 
@@ -210,6 +212,11 @@ Below is the complete list of all registered attendees for K9 Campout 2025 (so f
 | BYO Camping | ****dy4 | 61981865 | | Bull |
 | BYO Camping | ****sn3 | 61988207 | | Chase |
 | BYO Camping | ****Dfb | 61988207 | | Vera |
+| BYO Camping | ****TLB | Southern-Xposure | | Maximus |
+| BYO Camping | ****wfP | Southern-Xposure | | Tholar |
+| BYO Camping | ****pny | Southern-X-posure | | Stitch |
+| BYO Camping | ****Qwy | Heavy Petting Zoo | | Skuff Pup |
+| BYO Camping | ****Wqq | 62025777 | | Otter Pop |
 
 ---
 
