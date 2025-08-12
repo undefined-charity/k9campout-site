@@ -13,8 +13,6 @@ As a registered non-profit, we're committed to keeping costs low, maintaining tr
 
 **Join our community:** [Telegram Channel](/telegram)
 
-<script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="k9campout/110" data-width="100%"></script>
-
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
 {% if paginator %}
