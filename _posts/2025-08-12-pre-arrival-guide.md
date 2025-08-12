@@ -18,6 +18,20 @@ Online ticket sales are now closed, but we do have a little extra space for last
 
 We could use a few more hands (and paws!) for Meet & Greet, Setup, and Pup Games. If you have some capacity, please sign up at [http://woofy.link/helpingpaws](http://woofy.link/helpingpaws). Volunteers get automatic entry into the K9 Campout Volunteer Prize Draw and exclusive Early Bird ticket discounts for next year — the more shifts you help with, the bigger the discount.
 
+## 🍽️ Meals & Schedule
+
+One quick extra note before we see you next weekend — our schedule is now finalized (check it out here: [https://k9campout.com/schedule](https://k9campout.com/schedule)) and we'll be providing four meals during camp:
+
+- **Friday Dinner** – Hot dogs 🌭
+- **Saturday Brunch & Dinner**
+- **Sunday Brunch**
+
+There will be vegetarian options available at all meals. Unfortunately, that's the only dietary restriction we can guarantee to cater for at this scale and budget.
+
+If you have any other dietary needs, please plan to prepare and pack your own food. We have a BBQ/Grill (actually two!) up at Junkyard Dogs that you're welcome to use, so you can still cook and eat with the rest of the pack.
+
+
+
 ## 🛠 What to Bring & Weather
 
 You can check the full list of suggested items here: [https://camptrc.org/What-to-Bring](https://camptrc.org/What-to-Bring). Right now, the forecast is calling for rain Friday afternoon and Saturday morning, though it's changing constantly. Remember to pack rain gear, your tent rain fly or a tarp, and be ready for things to get a little muddy.
