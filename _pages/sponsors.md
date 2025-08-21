@@ -107,24 +107,6 @@ Doghouse Leathers' commitment to supporting the leather and kink communities mak
 
 ---
 
-### D̶J̶ Pup Skittish
-**DJ - Entertainment Sponsor**
-
-![Skittish Logo](/assets/images/2025/skittish.jpg)
-
-D̶J̶ Pup Skittish is one half of the Twitch Partnered DJ and producer duo Skittish and Bus. They've played underground festivals and events including Burning Man, Element 11, Treefort Music Festival, TwitchCon, DefCon, and QueerCon. This is their first K9 experience and they are very excited to take their paws out for a test spin both on the decks and around camp.
-
-**Connect with D̶J̶ Pup Skittish:**
-- **Twitch:** [twitch.tv/skittishandbus](https://twitch.tv/skittishandbus)
-- **Discord:** [discord.gg/skittishandbus](https://discord.gg/skittishandbus)
-- **Instagram:** [@skittishandbus](https://instagram.com/skittishandbus)
-- **Bluesky:** [skittishandbus.bsky.social](https://bsky.app/profile/skittishandbus.bsky.social)
-- **Spotify:** [Skittish and Bus on Spotify](https://open.spotify.com/artist/4nwnj85yyefnPzMJNeUXDP)
-- **SoundCloud:** [skittishandbus on SoundCloud](https://soundcloud.com/skittishandbus)
-- **Mixcloud:** [skittishandbus on Mixcloud](https://mixcloud.com/skittishandbus)
-
----
-
 ## Become a Sponsor
 
 Interested in sponsoring K9 Campout and supporting our community? We'd love to hear from you! Sponsorship opportunities help us keep the event affordable and accessible while providing valuable exposure for businesses that serve our community.
