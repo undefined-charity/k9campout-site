@@ -10,5 +10,5 @@ The announcement channel is:
 [https://t.me/k9campout](https://t.me/k9campout){:target="_blank"}
 
 The discussion channel is via:
-[https://t.me/+iOLub6i75K83YTJh](https://t.me/+iOLub6i75K83YTJh){:target="_blank"}
-The bot will ask you to solve the captcha, then check the rules for the join link to the main channel [sorry, need to keep the bots out]
+[[https://t.me/+QPs1XZLdxhpiMmM5](https://t.me/+QPs1XZLdxhpiMmM5)](https://t.me/+QPs1XZLdxhpiMmM5){:target="_blank"}
+Ms Rose will message with you to prove your not a bot. [sorry, need to keep the bots out]
