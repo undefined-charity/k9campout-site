@@ -5,7 +5,7 @@ categories:
   - updates
 tags:
   - tickets
-  - 2026
+  - "2026"
 ---
 
 Hey everyone — we've got good news from camp! Reports are in and things are looking great up at TRC. Most of the site infrastructure is intact, though there's still plenty of cleanup to tackle before August. We're on it! 💪
