@@ -2,7 +2,7 @@
 layout: single
 title: Schedule
 description: "The what when and where"
-permalink: /schedule
+permalink: /2024/schedule
 ---
 This is for a previous year. Please go [here](/schedule) for the current.
 

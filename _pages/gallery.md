@@ -2,32 +2,20 @@
 layout: single
 title: Gallery
 permalink: /gallery
-description: "The 2025 Event Gallery"
+description: "The 2026 Event Gallery"
 gallery:
-  # - url: /assets/images/2023/k9_campout_schedule.png
-  #   image_path: /assets/images/2023/k9_campout_schedule.png
-  #   alt: "2023 K9 Campout Schedule"
-  #   title: "2023 K9 Campout Schedule"
-  # - url: /assets/images/2023/k9_campout_map.png
-  #   image_path: /assets/images/2023/k9_campout_map.png
-  #   alt: "2023 K9 Campout Map"
-  #   title: "2023 K9 Campout Map"
+  # Gallery images will be added after the 2026 event
 
 ---
 
-If you have photos you wish to have added, please reach out to an admin on [Telegram](/telegram) and we would love to add them (they must be SFW, and have the concent of identifiable individuals in them). If you have a concern about any photo on here, please also do the same and we will correct it.
+If you have photos you wish to have added, please reach out to an admin on [Telegram](/telegram) and we would love to add them (they must be SFW, and have the consent of identifiable individuals in them). If you have a concern about any photo on here, please also do the same and we will correct it.
 
-## 2025
-{% include gallery caption="K9 2025 Bark Gallery" layout="half" %}
+## 2026
+{% include gallery caption="K9 2026 Bark Gallery" layout="half" %}
 
-## 2024
+## Previous Years
 
-[2024's Gallery](2024/gallery)
-
-## 2023
-
-[2023's Gallery](2023/gallery)
-
-## 2022
-
-[2022's Gallery](2022/gallery)
+- [2025's Gallery](/2025/gallery)
+- [2024's Gallery](/2024/gallery)
+- [2023's Gallery](/2023/gallery)
+- [2022's Gallery](/2022/gallery)

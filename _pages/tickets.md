@@ -5,15 +5,17 @@ description: "Get your tickets here!"
 permalink: /tickets
 ---
 
-# K9 Campout 2025 - Online Ticket Sales Closed
+# K9 Campout 2026 - Tickets
 
-## ⚠️ Online Ticket Sales Are Now Closed
+## 🎟 Tickets Go On Sale May 4th!
 
-{: .notice--warning}
-**Online ticket sales have closed.** 
+{: .notice--info}
+**Mark your calendars — tickets go on sale May the 4th (be with you)!** ✨
 
-**Still want to attend?** You can still join us! 
+**Camping with the Pack sold out last year**, so if you want a guaranteed group campsite, be ready to grab your ticket early.
 
-👉 **Book camping directly with TRC** at: [https://camptrc.org/event-6061750](https://camptrc.org/event-6061750)
+If you miss out on pack camping, don't stress — TRC has **heaps** of space available, you just won't be guaranteed a spot in the pack area.
 
-Then pay **$50 onsite** for the event.
+**Coming with a large pack?** Reach out to [Pup Roar on Telegram](https://t.me/puproar) so we can help coordinate campsite placement.
+
+📅 **August 14–16, 2026** at Camp TRC
