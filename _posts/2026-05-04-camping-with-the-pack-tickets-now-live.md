@@ -12,7 +12,7 @@ tags:
 
 👉 [Grab your tickets here](https://tickets.undefined.charity/events/undefined/2197072){:target="_blank"}
 
-**Event Only** tickets will be released closer to the camp date — [join the waitlist](/tickets) to be emailed when they drop.
+**Event Only** tickets will be released closer to the camp date — [join the waitlist](/tickets) or [sign up to our announcement list](https://mail.undefined.charity/subscription/form){:target="_blank"} to be the first to know when they drop.
 
 💡 **TRC Regular members** — use your TRC member number as a voucher code at checkout to get camping at the **$10 per night group rate**.
 
