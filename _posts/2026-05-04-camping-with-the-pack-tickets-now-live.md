@@ -1,6 +1,6 @@
 ---
 title: "🎟 Camping with the Pack Tickets Are Now Live!"
-date: 2026-05-04T12:00:00-08:00
+date: 2026-05-04T19:00:00+00:00
 categories:
   - updates
 tags:
