@@ -10,7 +10,7 @@ tags:
 
 **Camping with the Pack** tickets for K9 Campout 2026 are now live! 🎉
 
-👉 [Grab your tickets here](https://tickets.undefined.charity){:target="_blank"}
+👉 [Grab your tickets here](https://tickets.undefined.charity/events/undefined/2197072){:target="_blank"}
 
 **Event Only** tickets will be released closer to the camp date — [join the waitlist](/tickets) to be emailed when they drop.
 
