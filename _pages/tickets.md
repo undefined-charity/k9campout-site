@@ -9,6 +9,9 @@ permalink: /tickets
 
 # K9 Campout 2026 - Tickets
 
+{: .notice--warning}
+⚡ **Camping with the Pack sites — Round 1 is sold out!** More sites will be released early June. [Sign up to our announcement list](https://mail.undefined.charity/subscription/form){:target="_blank"} to be notified when the next round goes live.
+
 ## 🎟 Tickets Are Now Available!
 
 {: .notice--success}
