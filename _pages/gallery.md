@@ -4,7 +4,10 @@ title: Gallery
 permalink: /gallery
 description: "The 2026 Event Gallery"
 gallery:
-  # Gallery images will be added after the 2026 event
+  - url: /assets/images/2026/k9campout_poster_2026.png
+    image_path: /assets/images/2026/k9campout_poster_2026.png
+    alt: "K9 Campout 2026 Poster"
+    title: "K9 Campout 2026"
 
 ---
 

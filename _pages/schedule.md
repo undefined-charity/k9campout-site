@@ -6,9 +6,35 @@ permalink: /schedule
 ---
 ## 2026 Schedule
 
-The 2026 schedule is coming soon! It will follow a similar format to previous years with a few fun twists. Stay tuned for details.
-
 **K9 Campout 2026: Friday, August 14 – Sunday, August 16**
+
+Please be flexible with us, as weather and site conditions may also change the timing or location of events.
+
+## This is still a draft
+
+### Friday
+- 4pm-7pm: Check-in [@The Host Hut]
+- 7pm-8pm: Sloppy Sliders - BBQ Pulled Pork Sliders [@Site 500]
+- 9pm-12am: Welcome Meet & Sniff [@Cascadia]
+- Midnight: Howl! [@Southern-X-posure]
+- Afters: The AfterGrowl [@Junkyard Dogs]
+
+### Saturday
+- 11am+: Check-In [@Site 500]
+- 11am: Brunch Me Softly - Farmers Breakfast [@Site 500]
+- 12.30-2pm: Pup Games [Start: @ThePlaySpace End: @The beach] (Bring beach gear with you)
+- 2.30pm: Puppy Swim [@The Beach]
+- 3pm: Pup Pack Photos [@The Beach]
+- 4:30pm-6:30pm: Impact Demo by Sir Chris [@ThePlaySpace] followed by Demos at sites [Follow the signup board]
+- 7.30pm-9pm: Taco 'Bout a Good Boy - Dinner Tacos [@Site 500]
+- 9pm+: Bad Dog Party [@The Party Site]
+- Afters: Drinks, Dogs and After Dark [@Junkyard Dogs]
+
+### Sunday
+- 10:30am: Brunch 'n' Beg - Burnt Ends [@The Host Hut]
+- 11:30am: Closing Remarks [@Site 500]
+- 12pm+: Beach Time & Bye Barks [@The Beach]
+- 3pm+: Cleanup/Packup
 
 ## Previous Years
 - [2025 Schedule](/2025/schedule)
