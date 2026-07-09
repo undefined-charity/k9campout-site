@@ -35,11 +35,13 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Existing Tent: Camping with The Pack | ****Sq2 | 77180820 | Site 2 | Coach | No |
 | Camping With The Pack | ****rgK | 77652641 | Site 2-2A | Wheels | No |
 | Camping With The Pack | ****LQ9 | 77657740 | Site 2-2B | XELA | Yes |
+| Existing Tent: Camping with The Pack | ****fk8 | 78978708 | Site 2-2B | Rook | Yes |
 | Camping With The Pack | ****Dhv | 75854941 | Site 2-2C | Pixel | Yes |
 | Camping With The Pack | ****asZ | 75671715 | Site 2-2D | Bunny | No |
 | Camping With The Pack | ****a7E | 77603156 | Site 2-2F | Flash | No |
 | Camping With The Pack | ****KdQ | 78495248 | Site 2-2G | Potty Mouth | No |
 | Camping With The Pack | ****syQ | 75672563 | Site 2-2H | Harar | No |
+| Existing Tent: Camping with The Pack | ****A7b | 78931449 | Site 2-2H | Anubis | No |
 | Camping With The Pack | ****y95 | 77179563 | Site 2-2I | Gideon | No |
 | Camping With The Pack | ****aJr | 76161633 | Site 2-2J | Blitzer | No |
 | Existing Tent: Camping with The Pack | ****kYq | 76161773 | Site 2-2J | Flux | No |
@@ -53,21 +55,21 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Camping With The Pack | ****ayq | 77338769 | Site 3-3D | Stormy | No |
 | Camping With The Pack | ****5rK | 77653658 | Site 4-4A | Rachen | No |
 | Camping With The Pack | ****tfW | 75662421 | Site 4-4B | Lupo | No |
-| Existing Tent: Camping with The Pack | ****dH3 | 75662421 | Site 4-4B | Lupo | No |
+| Existing Tent: Camping with The Pack | ****dH3 | 75662421 | Site 4-4B | KIBBS | No |
 | Camping With The Pack | ****bSp | 75663039 | Site 4-4C | Master Stich | No |
 | Camping With The Pack | ****fW4 | 75663039 | Site 4-4D | Pup Lego | No |
 | Existing Tent: Camping with The Pack | ****27X | 75873053 | Site 4-4D | Pup Bacon | No |
 | Existing Tent: Camping with The Pack | ****kqZ | 75873053 | Site 4-4D | Pup Hilt | No |
 | Camping With The Pack | ****67j | 77636615 | Site 4-4E | Fiasco | No |
 | Existing Tent: Camping with The Pack | ****ZuJ | 75874050 | Site 5-5A | Yuki | No |
-| Camping With The Pack | ****Yeg | 75868953 | Site 5-5A |  | Yes |
+| Camping With The Pack | ****Yeg | 75868953 | Site 5-5A | Lumen | Yes |
 | Camping With The Pack | ****zgs | 77651905 | Site 5-5B | AlphaKitty | No |
 | Camping With The Pack | ****yYN | 76883214 | Site 5-5C |  | No |
-| Camping With The Pack | ****uq4 | 76882550 | Site 5-5E |  | No |
+| Camping With The Pack | ****uq4 | 76882550 | Site 5-5E | Grüner | No |
 | Existing Tent: Camping with The Pack | ****Tty | 77363369 | Site 5-5E | Pup Kaleido | No |
 | Existing Tent: Camping with The Pack | ****t3g | 77651922 | Site 5-5F | Tank | No |
 | Camping With The Pack | ****Tgz | 77651922 | Site 5-5F | Meryx | No |
-| Camping With The Pack | ****P9W | 76201787 | Site 5-5G |  | No |
+| Camping With The Pack | ****P9W | 76201787 | Site 5-5G | Sapphire | No |
 | Existing Tent: Camping with The Pack | ****Z7h | 76202363 | Site 5-5G | Ajax | No |
 | Camping With The Pack | ****PNQ | 77652374 | Site 5-5H | Desmo | No |
 | Camping With The Pack | ****uce | 75678848 | Site 6-6A | Thystle | No |
@@ -75,20 +77,21 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Camping With The Pack | ****TKN | 75944980 | Site 6-6B | Noodle | No |
 | Camping With The Pack | ****J6x | 75673138 | Site 6-6C | Munchausen | No |
 | Existing Tent: Camping with The Pack | ****Usw | 78105422 | Site 6-6C | Drako | Yes |
+| Existing Tent: Camping with The Pack | ****uNA | 79295017 | Site 6-6C | Spectrum | Yes |
 | Camping With The Pack | ****xkN | 75674543 | Site 6-6D | George Wholesome | No |
 | Existing Tent: Camping with The Pack | ****qFB | 78187004 | Site 6-6D | Braxton | No |
 | Camping With The Pack | ****K3g | 75680367 | Site 6-6E | Pup Mojo | No |
 | Camping With The Pack | ****x99 | 75662771 | Site 7-7A | Keirish | No |
 | Camping With The Pack | ****YwT | 75970156 | Site 7-7B | Pup Tachi | No |
 | Camping With The Pack | ****RNx | 75674499 | Site 7-7C | Semeion | No |
-| Existing Tent: Camping with The Pack | ****q5N | 77699732 | Site 7-7C | FozZy | No |
+| Existing Tent: Camping with The Pack | ****q5N | 77699732 | Site 7-7C | Waggles (Wags) | No |
 | Existing Tent: Camping with The Pack | ****cCD | 77699732 | Site 7-7C | KeoPet | No |
 | Camping With The Pack | ****TYc | 75673299 | Site 7-7D | Sojo | No |
 | Camping With The Pack | ****kKg | 75854253 | Site 7-7E | Azzy Husky | No |
 | Existing Tent: Camping with The Pack | ****vdz | 77298308 | Site 7-7E | Nick | No |
 | Camping With The Pack | ****XAa | 76088488 | Site 7-7F | G3O | No |
 | Existing Tent: Camping with The Pack | ****YZF | 76391719 | Site 7-7G | Pup Crash | No |
-| Camping With The Pack | ****Tqq | 75663260 | Site 7-7G | Fax at 9600bps | No |
+| Camping With The Pack | ****Tqq | 75663260 | Site 7-7G | Pup Radar | No |
 | Camping With The Pack | ****rSc | 75673440 | Site 7-7H | Kali | No |
 | Existing Tent: Camping with The Pack | ****tAf | 77652016 | Site 8 | Zeek | No |
 | Camping With The Pack | ****dxu | 77652016 | Site 8-8A | Payne | No |
@@ -100,8 +103,8 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Existing Tent: Camping with The Pack | ****R9p | 76851724 | RV-01 | Pupifer | No |
 | Existing Tent: Camping with The Pack | ****6uU | 75666918 | RV-04 | Demon Fox | No |
 | Existing Tent: Camping with The Pack | ****nEQ | 78053692 | TBD | Aegin | No |
-| Existing Tent: Camping with The Pack | ****x4S | 77303017 | TBD | ECHO | Yes |
-| Existing Tent: Camping with The Pack | ****tgg | 76628600 | TBD | EAGLEBEAR | No |
+| Existing Tent: Camping with The Pack | ****x4S | 77303017 | RV | ECHO | Yes |
+| Existing Tent: Camping with The Pack | ****tgg | 76628600 | Boyztown | EAGLEBEAR | No |
 | Existing Tent: Camping with The Pack | ****ALT | 78761847 | TBD | Fin | No |
 | Existing Tent: Camping with The Pack | ****9hQ | 77339506 | TBD | Azo | No |
 | Event Only Ticket | ****EHr | BoyzTown | N/A | Cookie | No |
@@ -122,6 +125,22 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Event Only Ticket | ****cHa | 78408193 | N/A | Spunky | No |
 | Event Only Ticket | ****nPj | Bark Park | N/A | Pup Guzzler | No |
 | Event Only Ticket | ****cXG | Bark Park | N/A | Handler Blue | No |
+| Event Only Ticket | ****pnH | 78931409 | N/A | Zippy | Yes |
+| Event Only Ticket | ****BrT | 78931800 | N/A | Zippy | No |
+| Event Only Ticket | ****rNy | 78932635 | N/A | Miles | No |
+| Event Only Ticket | ****Suw | 78933065 | N/A | Pup Renni | No |
+| Event Only Ticket | ****KAf | 78961542 | N/A | Loko | No |
+| Event Only Ticket | ****g4Q | 78963220 | N/A | Sheppy | No |
+| Event Only Ticket | ****bWS | 78982230 | N/A | Pup Haring | No |
+| Event Only Ticket | ****Vg2 | 78988366 | N/A | SHEPPFOX | No |
+| Event Only Ticket | ****eLA | 79045156 | N/A | Zan | No |
+| Event Only Ticket | ****Qr7 | 79184170 | N/A | Diesel | No |
+| Event Only Ticket | ****qVR | 79184767 | N/A | Asher | No |
+| Event Only Ticket | ****6zU | 79234907 | N/A | Rusty | No |
+| Event Only Ticket | ****udD | 79241809 | N/A | Fudges | No |
+| Event Only Ticket | ****eKh | 79241809 | N/A | Frisky | No |
+| Event Only Ticket | ****N3A | 79306219 | N/A | Nudo | No |
+| Event Only Ticket | ****3kG | 79340556 | N/A | Baubie | No |
 
 ---
 

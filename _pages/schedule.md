@@ -31,7 +31,7 @@ Please be flexible with us, as weather and site conditions may also change the t
 - Afters: Drinks, Dogs and After Dark [@Junkyard Dogs]
 
 ### Sunday
-- 10:30am: Brunch 'n' Beg - Burnt Ends [@The Host Hut]
+- 10:30am: Brunch 'n' Beg - Burnt Ends [@Site 500]
 - 11:30am: Closing Remarks [@Site 500]
 - 12pm+: Beach Time & Bye Barks [@The Beach]
 - 3pm+: Cleanup/Packup
