@@ -71,6 +71,8 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Camping With The Pack | ****Tgz | 77651922 | Site 5-5F | Meryx | No |
 | Camping With The Pack | ****P9W | 76201787 | Site 5-5G | Sapphire | No |
 | Existing Tent: Camping with The Pack | ****Z7h | 76202363 | Site 5-5G | Ajax | No |
+| Existing Tent: Camping with The Pack | ****96Z | 79955986 | Site 5-5G | Connor | Yes |
+| Existing Tent: Camping with The Pack | ****P54 | 79471212 | Site 5-5G | Spunky | No |
 | Camping With The Pack | ****PNQ | 77652374 | Site 5-5H | Desmo | No |
 | Camping With The Pack | ****uce | 75678848 | Site 6-6A | Thystle | No |
 | Existing Tent: Camping with The Pack | ****GJx | 75962927 | Site 6-6A | Jasper | No |
@@ -142,6 +144,17 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Event Only Ticket | ****N3A | 79306219 | N/A | Nudo | No |
 | Event Only Ticket | ****3kG | 79340556 | N/A | Baubie | No |
 | Event Only Ticket | ****2z7 | 79354175 | N/A | Gore | No |
+| Event Only Ticket | ****6kG | 79359761 | N/A | Alchi | No |
+| Event Only Ticket | ****aAV | 79420671 | N/A | Pup Metro | No |
+| Event Only Ticket | ****BgJ | 79421796 | N/A | Filluup | No |
+| Event Only Ticket | ****NA2 | 79788651 | N/A | Jersh | No |
+| Event Only Ticket | ****Z85 | 79859666 | N/A | TWITCH | No |
+| Event Only Ticket | ****PnR | 79860035 | N/A | ZOOK | No |
+| Event Only Ticket | ****KZS | 79886104 | N/A | Mayhem | Yes |
+| Event Only Ticket | ****ZBh | 79946553 | N/A | Diesel | No |
+| Event Only Ticket | ****Q2P | 79953464 | N/A | Organic | No |
+| Event Only Ticket (inc. RoarSaidSo) | ****pUW | 80234505 | N/A | Pup Roar | No |
+| Event Only Ticket (inc. RoarSaidSo) | ****6YN | 80234505 | N/A | Boulder Pup | No |
 
 ---
 
