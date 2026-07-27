@@ -19,8 +19,8 @@ If you're planning to join us, **now is the time to lock in your booking.** ⏰
 
 We're about to **finish engraving tags** and **order all the food**, and we need final numbers to get it right. Every late booking makes it harder to make sure there's a tag with your name on it and enough grub to go around. So don't wait — get sorted today so we can feed you and tag you proper! 🏷🍔
 
-- Sold out on Camping with the Pack? **[Book directly with TRC](https://camptrc.org/){:target="_blank"}** — they'll never turn away a camper.
-- Just here for the fun? Grab an **[Event Only ticket](/tickets){:target="_blank"}**.
+- **[Book your camping with TRC](https://camptrc.org/){:target="_blank"}** to reserve your spot at camp.
+- **[Grab an Event Only ticket](/tickets){:target="_blank"}** from us for the weekend's activities.
 
 ## 🙌 We Need Your Help to Run This!
 
