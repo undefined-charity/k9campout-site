@@ -55,14 +55,14 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Camping With The Pack | ****ayq | 77338769 | Site 3-3D | Stormy | No |
 | Camping With The Pack | ****5rK | 77653658 | Site 4-4A | Rachen | No |
 | Camping With The Pack | ****tfW | 75662421 | Site 4-4B | Lupo | No |
-| Existing Tent: Camping with The Pack | ****dH3 | 75662421 | Site 4-4B | KIBBS | No |
+| Existing Tent: Camping with The Pack | ****dH3 | 75662421 | Site 4-4B | Kibbs | No |
 | Camping With The Pack | ****bSp | 75663039 | Site 4-4C | Master Stich | No |
 | Camping With The Pack | ****fW4 | 75663039 | Site 4-4D | Pup Lego | No |
-| Existing Tent: Camping with The Pack | ****27X | 75873053 | Site 4-4D | Pup Bacon | No |
+| Existing Tent: Camping with The Pack | ****27X | 75873053 | Site 4-4D | foxbites | No |
 | Existing Tent: Camping with The Pack | ****kqZ | 75873053 | Site 4-4D | Pup Hilt | No |
 | Camping With The Pack | ****67j | 77636615 | Site 4-4E | Fiasco | No |
 | Existing Tent: Camping with The Pack | ****ZuJ | 75874050 | Site 5-5A | Yuki | No |
-| Camping With The Pack | ****Yeg | 75868953 | Site 5-5A | Lumen | Yes |
+| Camping With The Pack | ****Yeg | 75868953 | Site 5-5A | Lumen | No |
 | Camping With The Pack | ****zgs | 77651905 | Site 5-5B | AlphaKitty | No |
 | Camping With The Pack | ****yYN | 76883214 | Site 5-5C | Colin | No |
 | Camping With The Pack | ****uq4 | 76882550 | Site 5-5E | Grüner | No |
@@ -127,6 +127,7 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Event Only Ticket | ****cHa | 78408193 | N/A | Spunky | No |
 | Event Only Ticket | ****nPj | Bark Park | N/A | Pup Guzzler | No |
 | Event Only Ticket | ****cXG | Bark Park | N/A | Handler Blue | No |
+| Event Only Ticket | ****TYc | 78931173 | N/A | Fritzy | No |
 | Event Only Ticket | ****pnH | 78931409 | N/A | Zippy | Yes |
 | Event Only Ticket | ****BrT | 78931800 | N/A | Zippy | No |
 | Event Only Ticket | ****rNy | 78932635 | N/A | Miles | No |
@@ -153,8 +154,8 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Event Only Ticket | ****KZS | 79886104 | N/A | Mayhem | Yes |
 | Event Only Ticket | ****ZBh | 79946553 | N/A | Diesel | No |
 | Event Only Ticket | ****Q2P | 79953464 | N/A | Organic | No |
-| Event Only Ticket (inc. RoarSaidSo) | ****pUW | 80234505 | N/A | Pup Roar | No |
-| Event Only Ticket (inc. RoarSaidSo) | ****6YN | 80234505 | N/A | Boulder Pup | No |
+| Event Only Ticket | ****pUW | 80234505 | N/A | Pup Roar | No |
+| Event Only Ticket | ****6YN | 80234505 | N/A | Boulder Pup | No |
 
 ---
 
