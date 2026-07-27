@@ -156,6 +156,7 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Event Only Ticket | ****Q2P | 79953464 | N/A | Organic | No |
 | Event Only Ticket | ****pUW | 80234505 | N/A | Pup Roar | No |
 | Event Only Ticket | ****6YN | 80234505 | N/A | Boulder Pup | No |
+| Event Only Ticket | ****uNG | 80237702 | N/A | Ollie | No |
 
 ---
 
