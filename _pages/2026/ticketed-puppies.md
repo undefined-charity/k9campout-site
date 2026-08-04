@@ -22,6 +22,7 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Camping With The Pack | ****pEp | 75664912 | Site 1-1A | Bailey | No |
 | Camping With The Pack | ****NaF | 75664912 | Site 1-1B | Eric | No |
 | Camping With The Pack | ****bCt | 77576544 | Site 1-1C | Tac | No |
+| Existing Tent: Camping with The Pack | ****UBY | 80527776 | Site 1-1C | Bolt | No |
 | Camping With The Pack (inc. K9 DJ 2026) | ****nX7 | 75667455 | Site 1-1D | Recca | No |
 | Camping With The Pack | ****bDy | 75666720 | Site 1-1E | Pup Kronos | No |
 | Camping With The Pack | ****qJd | 75663079 | Site 1-1F | MichaelDragonson | No |
@@ -37,7 +38,10 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Camping With The Pack | ****LQ9 | 77657740 | Site 2-2B | XELA | Yes |
 | Existing Tent: Camping with The Pack | ****fk8 | 78978708 | Site 2-2B | Rook | Yes |
 | Camping With The Pack | ****Dhv | 75854941 | Site 2-2C | Pixel | Yes |
+| Existing Tent: Camping with The Pack | ****Duq | 80246887 | Site 2-2C | Bycat | No |
+| Existing Tent: Camping with The Pack | ****34y | 80246887 | Site 2-2C | Atlas | No |
 | Camping With The Pack | ****asZ | 75671715 | Site 2-2D | Bunny | No |
+| Existing Tent: Camping with The Pack | ****nJz | 80363912 | Site 2-2D | Nico | No |
 | Camping With The Pack | ****a7E | 77603156 | Site 2-2F | Flash | No |
 | Camping With The Pack | ****KdQ | 78495248 | Site 2-2G | Potty Mouth | No |
 | Camping With The Pack | ****syQ | 75672563 | Site 2-2H | Harar | No |
@@ -157,6 +161,24 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Event Only Ticket | ****pUW | 80234505 | N/A | Pup Roar | No |
 | Event Only Ticket | ****6YN | 80234505 | N/A | Boulder Pup | No |
 | Event Only Ticket | ****uNG | 80237702 | N/A | Ollie | No |
+| Event Only Ticket | ****Hx4 | 80254626 | N/A | PUP OENO | No |
+| Event Only Ticket | ****UCn | 80254795 | N/A | Air | No |
+| Event Only Ticket | ****FFe | 80279616 | N/A | Asterian | No |
+| Event Only Ticket | ****tvu | 80279616 | N/A | Bruiser | No |
+| Event Only Ticket | ****dYu | 80348256 | N/A | Pup Leo | No |
+| Event Only Ticket | ****pDC | 80364604 | N/A | Lil Burr | No |
+| Event Only Ticket | ****VQy | 80364604 | N/A | Nathentiger | No |
+| Event Only Ticket | ****fe9 | 80465178 | N/A | Thrave | No |
+| Event Only Ticket | ****qN4 | 80480988 | N/A | Just Boogs | Yes |
+| Event Only Ticket | ****AtR | 80481183 | N/A | Connal | No |
+| Event Only Ticket | ****yaY | 80481266 | N/A | Bowser | No |
+| Event Only Ticket | ****nFa | 80502380 | N/A | Shadow | No |
+| Event Only Ticket | ****PqR | 80566813 | N/A | S3AMUS | No |
+| Event Only Ticket | ****kDH | 80568744 | N/A | Rook | No |
+| Event Only Ticket | ****Qcp | 80571566 | N/A | Sketch | No |
+| Event Only Ticket | ****kwb | 80662888 | N/A | Jaxxxy | No |
+| Event Only Ticket | ****UkK | 80666402 | N/A | Yeen | No |
+| Event Only Ticket | ****fcN | 80667781 | N/A | Cormac | No |
 
 ---
 
