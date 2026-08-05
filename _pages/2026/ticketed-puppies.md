@@ -25,6 +25,7 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Existing Tent: Camping with The Pack | ****UBY | 80527776 | Site 1-1C | Bolt | No |
 | Camping With The Pack (inc. K9 DJ 2026) | ****nX7 | 75667455 | Site 1-1D | Recca | No |
 | Camping With The Pack | ****bDy | 75666720 | Site 1-1E | Pup Kronos | No |
+| Existing Tent: Camping with The Pack | ****ALT | 78761847 | Site 1-1E | Tylikum | No |
 | Camping With The Pack | ****qJd | 75663079 | Site 1-1F | MichaelDragonson | No |
 | Existing Tent: Camping with The Pack | ****rWG | 75667005 | Site 1-1G | Kale Grace | No |
 | Camping With The Pack | ****CvJ | 75666600 | Site 1-1G | Zara | No |
@@ -110,7 +111,6 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Existing Tent: Camping with The Pack | ****6uU | 75666918 | RV-04 | Demon Fox | No |
 | Existing Tent: Camping with The Pack | ****x4S | 77303017 | RV | ECHO | Yes |
 | Existing Tent: Camping with The Pack | ****tgg | 76628600 | Boyztown | EAGLEBEAR | No |
-| Existing Tent: Camping with The Pack | ****ALT | 78761847 | TBD | Fin | No |
 | Existing Tent: Camping with The Pack | ****9hQ | 77339506 | TBD | Azo | No |
 | Event Only Ticket | ****EHr | BoyzTown | N/A | Cookie | No |
 | Event Only Ticket | ****ULb | 78053847 | N/A | Booster | Yes |
