@@ -116,6 +116,7 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Existing Tent: Camping with The Pack | ****tgg | 76628600 | Boyztown | EAGLEBEAR | No |
 | Existing Tent: Camping with The Pack | ****9hQ | 77339506 | TBD | Azo | No |
 | Existing Tent: Camping with The Pack | ****CCu | 80678243 | TBD | Kain | No |
+| TBD | TBD | TBD | TBD | Voxel | TBD |
 | Event Only Ticket | ****EHr | BoyzTown | N/A | Cookie | No |
 | Event Only Ticket | ****ULb | 78053847 | N/A | Booster | Yes |
 | Event Only Ticket | ****ASE | 78155791 | N/A | Twidler | No |
@@ -160,7 +161,7 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Event Only Ticket | ****ZBh | 79946553 | N/A | Diesel | No |
 | Event Only Ticket | ****Q2P | 79953464 | N/A | Organic | No |
 | Event Only Ticket | ****pUW | 80234505 | N/A | Pup Roar | No |
-| Event Only Ticket | ****6YN | 80234505 | N/A | Boulder Pup | No |
+| Event Only Ticket | ****6YN | 80234505 | N/A | Boulder | No |
 | Event Only Ticket | ****uNG | 80237702 | N/A | Ollie | No |
 | Event Only Ticket | ****Hx4 | 80254626 | N/A | PUP OENO | No |
 | Event Only Ticket | ****UCn | 80254795 | N/A | Air | No |
