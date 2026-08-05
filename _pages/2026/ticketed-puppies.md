@@ -178,6 +178,8 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Event Only Ticket | ****kwb | 80662888 | N/A | Jaxxxy | No |
 | Event Only Ticket | ****UkK | 80666402 | N/A | Yeen | No |
 | Event Only Ticket | ****fcN | 80667781 | N/A | Cormac | No |
+| Event Only Ticket | ****5xp | 80673909 | N/A | Ian | Yes |
+| Event Only Ticket | ****a9b | 80674107 | N/A | KRASH | Yes |
 
 ---
 
