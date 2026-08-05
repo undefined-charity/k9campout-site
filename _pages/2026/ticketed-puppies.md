@@ -118,7 +118,6 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Event Only Ticket | ****Nkr | 78103580 | N/A | Karu | No |
 | Event Only Ticket | ****GUV | Heavy Petting Zoo | N/A | Sir Chris | No |
 | Event Only Ticket | ****Sgt | 78312055 | N/A | Alpha Ashtarian | No |
-| Event Only Ticket | ****a3X | 78185657 | N/A | Erik | Yes |
 | Event Only Ticket | ****gZA | 78053353 | N/A | Tanalis | No |
 | Event Only Ticket | ****dLP | 78312055 | N/A | WuxelPup | No |
 | Event Only Ticket | ****WEe | 78052306 | N/A | Cannon | No |
