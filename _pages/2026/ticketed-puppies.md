@@ -44,7 +44,6 @@ Below is the complete list of all registered attendees for K9 Campout 2026 (so f
 | Existing Tent: Camping with The Pack | ****ECT | 80674696 | Site 2-2C | Midori | No |
 | Camping With The Pack | ****asZ | 75671715 | Site 2-2D | Bunny | No |
 | Existing Tent: Camping with The Pack | ****nJz | 80363912 | Site 2-2D | Nico | No |
-| Camping With The Pack | ****a7E | 77603156 | Site 2-2F | Flash | No |
 | Camping With The Pack | ****KdQ | 78495248 | Site 2-2G | Potty Mouth | No |
 | Camping With The Pack | ****syQ | 75672563 | Site 2-2H | Harar | No |
 | Existing Tent: Camping with The Pack | ****A7b | 78931449 | Site 2-2H | Anubis | No |
