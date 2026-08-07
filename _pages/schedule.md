@@ -28,10 +28,11 @@ Please be flexible with us, as weather and site conditions may also change the t
 - 4:30pm-6:30pm: Impact Demo by Sir Chris [@ThePlaySpace] followed by Demos at sites [Follow the signup board]
 - 7.30pm-9pm: Taco 'Bout a Good Boy - Dinner Tacos [@Site 500]
 - 9pm+: Bad Dog Party [@The Party Site]
-- Afters: Drinks, Dogs and After Dark [@Junkyard Dogs]
+- Midnight: Mac 'n' Cheese [@Southern-X-posure]
+- 12.30am: Drinks, Dogs and After Dark [@Junkyard Dogs]
 
 ### Sunday
-- 10:30am: Brunch 'n' Beg - Burnt Ends [@Site 500]
+- 11:00am: Brunch 'n' Beg - Burnt Ends [@Site 500]
 - 11:30am: Closing Remarks [@Site 500]
 - 12pm+: Beach Time & Bye Barks [@The Beach]
 - 3pm+: Cleanup/Packup
