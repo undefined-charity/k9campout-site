@@ -1,0 +1,128 @@
+name: Backup
+
+# Weekly production backup to the `backups` branch:
+#   - d1/<date>.sql.gz + d1/latest.sql.gz — full SQL dump of the D1 database
+#     (all content, pages, posts, media records, users, settings)
+#   - media/<storage-key> — mirror of the R2 media bucket (gallery photos and
+#     admin uploads). Objects already in the branch are skipped (storage keys
+#     are immutable); objects deleted from the media library are pruned from
+#     the mirror so the tree matches production (git history retains them).
+#
+# Uses the same CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID secrets as the
+# deploy job. This workflow fails harmlessly until the first production
+# deploy has provisioned the D1 database and R2 bucket.
+#
+# Restore: `npx wrangler d1 execute k9campout-emdash-db --remote --file <dump.sql>`
+# and `npx wrangler r2 object put k9campout-media/<key> --file media/<key>`.
+
+on:
+  schedule:
+    - cron: "17 3 * * 0" # Sundays 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check secrets
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          missing=0
+          [ -z "$CF_TOKEN" ] && { echo "::error::CLOUDFLARE_API_TOKEN secret is not set"; missing=1; }
+          [ -z "$CF_ACCOUNT" ] && { echo "::error::CLOUDFLARE_ACCOUNT_ID secret is not set"; missing=1; }
+          exit $missing
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Export D1 database
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx wrangler d1 export k9campout-emdash-db --remote --output /tmp/d1-backup.sql
+          gzip -9 /tmp/d1-backup.sql
+
+      - name: List media storage keys
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx wrangler d1 execute k9campout-emdash-db --remote --json \
+            --command "SELECT storage_key FROM media WHERE storage_key IS NOT NULL" \
+            | node -e "
+              let s = '';
+              process.stdin.on('data', (c) => (s += c));
+              process.stdin.on('end', () => {
+                const rows = JSON.parse(s.slice(s.indexOf('[')))[0].results;
+                console.log(rows.map((r) => r.storage_key).join('\n'));
+              });" > /tmp/media-keys.txt
+          wc -l /tmp/media-keys.txt
+
+      - name: Switch to backups branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch origin backups 2>/dev/null; then
+            git checkout backups
+          else
+            git checkout --orphan backups
+            git rm -rfq .
+            echo "# Production backups" > README.md
+            echo "Weekly D1 dumps (d1/) and R2 media mirror (media/). See .github/workflows/backup.yml on main." >> README.md
+          fi
+
+      - name: Stage D1 dump
+        run: |
+          mkdir -p d1
+          cp /tmp/d1-backup.sql.gz "d1/$(date -u +%F).sql.gz"
+          cp /tmp/d1-backup.sql.gz d1/latest.sql.gz
+
+      - name: Mirror R2 media
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          mkdir -p media
+          fetched=0
+          while IFS= read -r key; do
+            [ -z "$key" ] && continue
+            if [ ! -f "media/$key" ]; then
+              npx wrangler r2 object get "k9campout-media/$key" --file "media/$key" --remote
+              fetched=$((fetched+1))
+            fi
+          done < /tmp/media-keys.txt
+          echo "fetched $fetched new media objects"
+          # Prune objects no longer in the media library (kept in git history)
+          for f in media/*; do
+            [ -f "$f" ] || continue
+            grep -qxF "$(basename "$f")" /tmp/media-keys.txt || git rm -q --ignore-unmatch "$f"
+          done
+
+      - name: Commit and push
+        run: |
+          git add -A d1 media README.md
+          if git diff --cached --quiet; then
+            echo "No changes since last backup"
+          else
+            git commit -m "Backup $(date -u +%F)"
+            git push origin backups
+          fi

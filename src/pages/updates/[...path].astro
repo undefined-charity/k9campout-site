@@ -2,7 +2,6 @@
 import { getEmDashCollection, getEmDashEntry, getEntryTerms } from "emdash";
 import PT from "../../components/PT.astro";
 import SiteLayout from "../../layouts/SiteLayout.astro";
-import AuthorProfile from "../../components/AuthorProfile.astro";
 import ArchiveItem from "../../components/ArchiveItem.astro";
 import { readTime, longDate, postUrl } from "../../utils/posts";
 
@@ -43,8 +42,6 @@ const date = post.data.date ? new Date(post.data.date) : null;
 	content={{ collection: "posts", id: post.data.id, slug: post.id }}
 >
 	<div id="main" role="main">
-		<AuthorProfile />
-
 		<article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
 			<meta itemprop="headline" content={post.data.title} />
 			{post.data.excerpt && <meta itemprop="description" content={post.data.excerpt} />}
