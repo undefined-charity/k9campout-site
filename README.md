@@ -58,7 +58,9 @@ node scripts/import-gallery-media.mjs --url https://k9campout.com
 ```
 
 The script is idempotent (dedupes by file, rebuilds the gallery blocks).
-Photos added later through the admin UI don't need it — it's only for
-bootstrapping the historical archive.
+Photos are downscaled to 2048px (longest edge) before upload — full-res
+originals stay in `source-assets/gallery/`; the media library only holds
+display-size copies. Photos added later through the admin UI don't need
+the script — it's only for bootstrapping the historical archive.
 
 See `AGENTS.md` for schema and content-model details.

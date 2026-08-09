@@ -1,0 +1,121 @@
+---
+// Gallery Portable Text block, replacing EmDash's built-in renderer.
+//
+// Each photo links to its full-resolution original in the media library
+// (matching the old Minimal Mistakes gallery behaviour), while the <img>
+// itself goes through Astro's configured image service — on production
+// that's Cloudflare zone transformations, so visitors download resized
+// variants instead of multi-MB originals.
+import { getImage } from "astro:assets";
+
+interface GalleryImage {
+	_key?: string;
+	asset?: { _ref?: string; url?: string };
+	alt?: string;
+	width?: number;
+	height?: number;
+}
+
+interface Props {
+	node: {
+		_type: "gallery";
+		images?: GalleryImage[];
+		columns?: number;
+	};
+}
+
+const { node } = Astro.props;
+const images = node?.images ?? [];
+const columns = node?.columns ?? 2;
+
+const resolved = await Promise.all(
+	images.map(async (img) => {
+		const fileUrl = img.asset?.url ?? "";
+		const absolute = fileUrl.startsWith("http")
+			? fileUrl
+			: new URL(fileUrl, Astro.url.origin).href;
+
+		let src = fileUrl;
+		let srcset: string | undefined;
+		let sizes: string | undefined;
+
+		if (fileUrl && img.width && img.height) {
+			try {
+				const widths = [480, 640, 960, 1280, 1920].filter((w) => w < img.width!);
+				const opt = await getImage({
+					src: absolute,
+					width: img.width,
+					height: img.height,
+					widths: widths.length ? widths : undefined,
+					sizes: "(min-width: 64em) 40vw, 90vw",
+					format: "webp",
+				});
+				// Only adopt the optimized URLs if the image service actually
+				// rewrote them (unauthorized hosts pass through unchanged).
+				if (opt.src !== absolute) {
+					src = opt.src;
+					srcset = opt.srcSet?.attribute || undefined;
+					sizes = (opt.attributes?.sizes as string | undefined) ?? undefined;
+				}
+			} catch {
+				// Fall back to the plain file URL
+			}
+		}
+
+		return {
+			href: fileUrl,
+			src,
+			srcset,
+			sizes,
+			alt: img.alt ?? "",
+			width: img.width,
+			height: img.height,
+		};
+	}),
+);
+
+if (!resolved.length) return null;
+---
+
+<div class="gallery-grid" style={`--columns: ${columns}`}>
+	{resolved.map((img) => (
+		<figure class="gallery-grid-item">
+			<a href={img.href} title={img.alt}>
+				<img
+					src={img.src}
+					srcset={img.srcset}
+					sizes={img.sizes}
+					alt={img.alt}
+					width={img.width}
+					height={img.height}
+					loading="lazy"
+					decoding="async"
+				/>
+			</a>
+		</figure>
+	))}
+</div>
+
+<style>
+	/* Two-column grid matching the old Minimal Mistakes figure.half look */
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(var(--columns, 2), 1fr);
+		gap: 0.4em;
+		margin: 1em 0;
+	}
+	.gallery-grid-item {
+		margin: 0;
+	}
+	.gallery-grid-item img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 4px;
+	}
+	@media (max-width: 640px) {
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

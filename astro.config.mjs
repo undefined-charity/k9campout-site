@@ -13,7 +13,12 @@ const isCloudflare = process.env.EMDASH_TARGET === "cloudflare";
 
 export default defineConfig({
 	output: "server",
-	adapter: isCloudflare ? cloudflare() : node({ mode: "standalone" }),
+	// imageService "cloudflare" = zone transformations (/cdn-cgi/image), enabled
+	// on the k9campout.com zone — resizes any media at delivery time. The
+	// default binding service 500s on this account; zone transforms are free.
+	adapter: isCloudflare
+		? cloudflare({ imageService: "cloudflare" })
+		: node({ mode: "standalone" }),
 	image: {
 		layout: "constrained",
 		responsiveStyles: true,

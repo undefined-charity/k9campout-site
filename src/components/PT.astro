@@ -2,12 +2,13 @@
 // PortableText with this site's custom block types registered.
 import { PortableText } from "emdash/ui";
 import RawHtml from "./blocks/RawHtml.astro";
+import Gallery from "./blocks/Gallery.astro";
 
 interface Props {
 	value: unknown;
 }
 const { value } = Astro.props;
-const components = { type: { raw_html: RawHtml } };
+const components = { type: { raw_html: RawHtml, gallery: Gallery } };
 ---
 
 <PortableText value={value} components={components} />

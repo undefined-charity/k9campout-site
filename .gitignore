@@ -24,3 +24,4 @@ uploads
 
 # Wrangler build artifacts
 .wrangler
+source-assets/.resized-cache
