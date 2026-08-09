@@ -12,9 +12,14 @@ Astro.cache.set(cacheHint);
 
 const canonicalPath = `/${slug.toLowerCase()}`;
 
-// Jekyll-style meta-refresh redirect pages (e.g. /tickets).
+// CMS-managed redirect pages: a zero-second delay becomes a real HTTP
+// redirect (e.g. /semiperm26 → external form); a positive delay renders
+// the page with a meta refresh (e.g. /tickets counts down 5s).
 const redirectUrl = page.data.redirect_url as string | null | undefined;
 const redirectDelay = (page.data.redirect_delay as number | null | undefined) ?? 0;
+if (redirectUrl && redirectDelay === 0) {
+	return Astro.redirect(redirectUrl, 302);
+}
 ---
 
 <SiteLayout

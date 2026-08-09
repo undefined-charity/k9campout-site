@@ -34083,6 +34083,100 @@
 					"gallery_caption": "The 2022 Gallery",
 					"gallery_layout": "half"
 				}
+			},
+			{
+				"id": "pages:semiperm26",
+				"slug": "semiperm26",
+				"status": "published",
+				"data": {
+					"title": "Semi-Permanent Sites 2026 Form",
+					"description": "Redirect to the 2026 semi-permanent sites form",
+					"redirect_url": "https://forms.microsoft.com/r/M9mPGx0HkT",
+					"redirect_delay": 0,
+					"content": [
+						{
+							"_type": "block",
+							"_key": "semiperm26-p",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "semiperm26-l",
+									"href": "https://forms.microsoft.com/r/M9mPGx0HkT"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "semiperm26-s1",
+									"text": "Redirecting to the semi-permanent sites form… ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "semiperm26-s2",
+									"text": "Click here if you are not redirected automatically",
+									"marks": [
+										"semiperm26-l"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "semiperm26-s3",
+									"text": ".",
+									"marks": []
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"id": "pages:k9campout26-update",
+				"slug": "k9campout26-update",
+				"status": "published",
+				"data": {
+					"title": "K9 Campout 2026 Update Form",
+					"description": "Redirect to the K9 Campout 2026 details update form",
+					"redirect_url": "https://forms.microsoft.com/r/7E4AKCQa7V",
+					"redirect_delay": 0,
+					"content": [
+						{
+							"_type": "block",
+							"_key": "k9campout26-update-p",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "k9campout26-update-l",
+									"href": "https://forms.microsoft.com/r/7E4AKCQa7V"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "k9campout26-update-s1",
+									"text": "Redirecting to the K9 Campout 2026 update form… ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "k9campout26-update-s2",
+									"text": "Click here if you are not redirected automatically",
+									"marks": [
+										"k9campout26-update-l"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "k9campout26-update-s3",
+									"text": ".",
+									"marks": []
+								}
+							]
+						}
+					]
+				}
 			}
 		],
 		"posts": [
