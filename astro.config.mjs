@@ -12,6 +12,7 @@ import postal from "emdash-postal";
 const isCloudflare = process.env.EMDASH_TARGET === "cloudflare";
 
 export default defineConfig({
+	site: "https://k9campout.com",
 	output: "server",
 	// imageService "cloudflare" = zone transformations (/cdn-cgi/image), enabled
 	// on the k9campout.com zone — resizes any media at delivery time. The
@@ -38,6 +39,9 @@ export default defineConfig({
 			// Postal email transport (invites, magic links) — configure the
 			// server URL/credential in the admin UI under Settings → Postal.
 			plugins: [postal()],
+			// Public origin for auth-email links (magic links, invites), OG
+			// tags, etc. Production only — dev keeps localhost.
+			...(isCloudflare ? { siteUrl: "https://k9campout.com" } : {}),
 			...(isCloudflare
 				? {
 						database: d1({ binding: "DB", session: "auto" }),
