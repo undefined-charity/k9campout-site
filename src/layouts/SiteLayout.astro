@@ -114,12 +114,24 @@ const pageCtx = createPublicPageContext({
 			}
 		</style>
 		<style is:global>
-			/* Harmonize EmDash PT block components with the Minimal Mistakes look */
+			/* Harmonize EmDash PT block components with the Minimal Mistakes look.
+			   Tables: MM-size type, compact single-line rows; wide tables scroll
+			   inside the wrapper instead of squashing into tall wrapped cells. */
 			.emdash-table p {
 				margin: 0;
 			}
 			.emdash-table-wrapper {
 				margin: 1em 0;
+			}
+			.page__content .emdash-table {
+				font-size: 0.75em !important;
+				width: auto !important;
+				min-width: 100%;
+			}
+			.page__content .emdash-table th,
+			.page__content .emdash-table td {
+				white-space: nowrap !important;
+				padding: 0.5em 0.75em !important;
 			}
 		</style>
 		<EmDashHead page={pageCtx} />
