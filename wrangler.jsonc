@@ -4,6 +4,13 @@
 	"main": "./src/worker.ts",
 	"compatibility_date": "2026-02-24",
 	"compatibility_flags": ["nodejs_compat"],
+	// Custom domain cutover: uncomment once k9campout.com's DNS is on this
+	// Cloudflare account (zone added + nameservers moved). Until then the site
+	// is reachable at k9campout.<account>.workers.dev for testing.
+	// "routes": [
+	// 	{ "pattern": "k9campout.com", "custom_domain": true },
+	// 	{ "pattern": "www.k9campout.com", "custom_domain": true },
+	// ],
 	"d1_databases": [
 		{
 			"binding": "DB",
