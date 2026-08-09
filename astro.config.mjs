@@ -5,6 +5,7 @@ import { defineConfig } from "astro/config";
 import emdash, { local } from "emdash/astro";
 import { sqlite } from "emdash/db";
 import { d1, r2 } from "@emdash-cms/cloudflare";
+import postal from "emdash-postal";
 
 // EMDASH_TARGET=cloudflare → Workers build (D1 + R2, deployed via wrangler).
 // Default → Node build (SQLite + local uploads) for `npm run dev` and Docker.
@@ -19,8 +20,11 @@ export default defineConfig({
 	},
 	integrations: [
 		react(),
-		emdash(
-			isCloudflare
+		emdash({
+			// Postal email transport (invites, magic links) — configure the
+			// server URL/credential in the admin UI under Settings → Postal.
+			plugins: [postal()],
+			...(isCloudflare
 				? {
 						database: d1({ binding: "DB", session: "auto" }),
 						storage: r2({ binding: "MEDIA" }),
@@ -31,8 +35,8 @@ export default defineConfig({
 							directory: process.env.UPLOADS_DIR ?? "./uploads",
 							baseUrl: "/_emdash/api/media/file",
 						}),
-					},
-		),
+					}),
+		}),
 	],
 	devToolbar: { enabled: false },
 });

@@ -233,6 +233,32 @@
 					"url": "/about"
 				}
 			]
+		},
+		{
+			"name": "footer",
+			"label": "Footer Links",
+			"items": [
+				{
+					"type": "custom",
+					"label": "Undefined",
+					"url": "http://undefined.charity"
+				},
+				{
+					"type": "custom",
+					"label": "Terms & Conditions",
+					"url": "https://undefined.charity/terms"
+				},
+				{
+					"type": "custom",
+					"label": "Contact Undefined",
+					"url": "https://undefined.charity/contact"
+				},
+				{
+					"type": "custom",
+					"label": "Official Documents",
+					"url": "https://undefined.charity/documents"
+				}
+			]
 		}
 	],
 	"widgetAreas": [],

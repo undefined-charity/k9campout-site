@@ -29,6 +29,16 @@ const {
 const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle;
 
 const primaryMenu = await getMenu("primary");
+const footerMenu = await getMenu("footer");
+
+// Menu items carry no icon field; map known labels to their Font Awesome
+// icons (new footer links added in the admin get the generic link icon).
+const footerIcons: Record<string, string> = {
+	"Undefined": "fas fa-fw fa-heart",
+	"Terms & Conditions": "fas fa-fw fa-file-contract",
+	"Contact Undefined": "fas fa-fw fa-envelope",
+	"Official Documents": "fas fa-fw fa-file-alt",
+};
 
 const pageCtx = createPublicPageContext({
 	Astro,
@@ -169,26 +179,14 @@ const pageCtx = createPublicPageContext({
 			<footer>
 				<div class="page__footer-follow">
 					<ul class="social-icons">
-						<li>
-							<a href="http://undefined.charity" rel="nofollow noopener noreferrer"
-								><i class="fas fa-fw fa-heart" aria-hidden="true"></i> Undefined</a
-							>
-						</li>
-						<li>
-							<a href="https://undefined.charity/terms" rel="nofollow noopener noreferrer"
-								><i class="fas fa-fw fa-file-contract" aria-hidden="true"></i> Terms &amp; Conditions</a
-							>
-						</li>
-						<li>
-							<a href="https://undefined.charity/contact" rel="nofollow noopener noreferrer"
-								><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Contact Undefined</a
-							>
-						</li>
-						<li>
-							<a href="https://undefined.charity/documents" rel="nofollow noopener noreferrer"
-								><i class="fas fa-fw fa-file-alt" aria-hidden="true"></i> Official Documents</a
-							>
-						</li>
+						{footerMenu?.items.map((link) => (
+							<li>
+								<a href={link.url} target={link.target} rel="nofollow noopener noreferrer">
+									<i class={footerIcons[link.label] ?? "fas fa-fw fa-link"} aria-hidden="true"></i>
+									{" "}{link.label}
+								</a>
+							</li>
+						))}
 						<li>
 							<a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a>
 						</li>
