@@ -1,0 +1,118 @@
+---
+import { getEmDashCollection, getEmDashEntry, getEntryTerms } from "emdash";
+import PT from "../../components/PT.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import AuthorProfile from "../../components/AuthorProfile.astro";
+import ArchiveItem from "../../components/ArchiveItem.astro";
+import { readTime, longDate, postUrl } from "../../utils/posts";
+
+const { path } = Astro.params;
+if (!path) return Astro.rewrite("/404");
+
+// Jekyll permalink /:categories/:title/ — the slug is the last segment
+// (posts in both "updates" and "events" live at /updates/events/<title>/).
+const segments = path.replace(/\/+$/, "").split("/");
+const slug = segments[segments.length - 1].toLowerCase();
+
+const { entry: post, cacheHint } = await getEmDashEntry("posts", slug);
+if (!post) return Astro.rewrite("/404");
+Astro.cache.set(cacheHint);
+
+const canonicalPath = postUrl(post);
+
+const [tags, categories] = await Promise.all([
+	getEntryTerms("posts", post.data.id, "tag"),
+	getEntryTerms("posts", post.data.id, "category"),
+]);
+
+const { entries: recent, cacheHint: recentHint } = await getEmDashCollection("posts", {
+	orderBy: { date: "desc" },
+	limit: 5,
+});
+Astro.cache.set(recentHint);
+const related = recent.filter((p) => p.id !== post.id).slice(0, 4);
+
+const date = post.data.date ? new Date(post.data.date) : null;
+---
+
+<SiteLayout
+	title={post.data.title}
+	description={post.data.excerpt ?? undefined}
+	bodyClass="layout--single"
+	canonical={`https://k9campout.com${canonicalPath}`}
+	content={{ collection: "posts", id: post.data.id, slug: post.id }}
+>
+	<div id="main" role="main">
+		<AuthorProfile />
+
+		<article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+			<meta itemprop="headline" content={post.data.title} />
+			{post.data.excerpt && <meta itemprop="description" content={post.data.excerpt} />}
+			{date && <meta itemprop="datePublished" content={date.toISOString()} />}
+
+			<div class="page__inner-wrap">
+				<header>
+					<h1 id="page-title" class="page__title p-name" itemprop="headline" {...post.edit.title}>
+						<a href={`https://k9campout.com${canonicalPath}`} itemprop="url">{post.data.title}</a>
+					</h1>
+					<p class="page__meta">
+						<span class="page__meta-readtime">
+							<i class="far fa-clock" aria-hidden="true"></i>
+							{readTime(post.data.content)}
+						</span>
+					</p>
+				</header>
+
+				<section class="page__content e-content" itemprop="text" {...post.edit.content}>
+					<PT value={post.data.content} />
+				</section>
+
+				<footer class="page__meta">
+					{tags.length > 0 && (
+						<p class="page__taxonomy">
+							<strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+							<span itemprop="keywords">
+								{tags.map((t, i) => (
+									<>
+										<a href={`/tags/#${t.slug}`} class="page__taxonomy-item p-category" rel="tag">{t.label}</a>
+										{i < tags.length - 1 && <span class="sep">, </span>}
+									</>
+								))}
+							</span>
+						</p>
+					)}
+					{categories.length > 0 && (
+						<p class="page__taxonomy">
+							<strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+							<span itemprop="keywords">
+								{categories.map((c, i) => (
+									<>
+										<a href={`/categories/#${c.slug}`} class="page__taxonomy-item p-category" rel="tag">{c.label}</a>
+										{i < categories.length - 1 && <span class="sep">, </span>}
+									</>
+								))}
+							</span>
+						</p>
+					)}
+					{date && (
+						<p class="page__date">
+							<strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong>
+							<time class="dt-published" datetime={date.toISOString()}>{longDate(date)}</time>
+						</p>
+					)}
+				</footer>
+			</div>
+		</article>
+
+		{related.length > 0 && (
+			<div class="page__related">
+				<h2 class="page__related-title">You May Also Enjoy</h2>
+				<div class="grid__wrapper">
+					{related.map((p) => (
+						<ArchiveItem post={p} type="grid" />
+					))}
+				</div>
+			</div>
+		)}
+	</div>
+</SiteLayout>

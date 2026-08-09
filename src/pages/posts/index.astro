@@ -1,0 +1,58 @@
+---
+import { getEmDashCollection } from "emdash";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import ArchiveItem from "../../components/ArchiveItem.astro";
+
+const { entries: posts, cacheHint } = await getEmDashCollection("posts", {
+	orderBy: { date: "desc" },
+	limit: 500,
+});
+Astro.cache.set(cacheHint);
+
+// Group by year (site timezone), newest year first.
+const byYear = new Map<string, typeof posts>();
+for (const post of posts) {
+	const year = post.data.date
+		? new Date(post.data.date).toLocaleDateString("en-US", { year: "numeric", timeZone: "America/Los_Angeles" })
+		: "Unknown";
+	if (!byYear.has(year)) byYear.set(year, []);
+	byYear.get(year)!.push(post);
+}
+const years = [...byYear.entries()];
+---
+
+<SiteLayout title="Posts by Year" bodyClass="layout--posts" canonical="https://k9campout.com/posts/">
+	<div id="main" role="main">
+		<article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+			<div class="page__inner-wrap">
+				<header>
+					<h1 id="page-title" class="page__title" itemprop="headline">Posts by Year</h1>
+				</header>
+
+				<section class="page__content" itemprop="text">
+					<ul class="taxonomy__index">
+						{years.map(([year, list]) => (
+							<li>
+								<a href={`#${year}`}>
+									<strong>{year}</strong> <span class="taxonomy__count">{list.length}</span>
+								</a>
+							</li>
+						))}
+					</ul>
+
+					{years.map(([year, list]) => (
+						<section id={year} class="taxonomy__section">
+							<h2 class="archive__subtitle">{year}</h2>
+							<div class="entries-list">
+								{list.map((post) => (
+									<ArchiveItem post={post} />
+								))}
+							</div>
+							<a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
+						</section>
+					))}
+				</section>
+			</div>
+		</article>
+	</div>
+</SiteLayout>

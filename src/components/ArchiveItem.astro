@@ -1,0 +1,36 @@
+---
+import { readTime, truncate, postUrl } from "../utils/posts";
+
+interface Props {
+	post: {
+		id: string;
+		data: {
+			title: string;
+			excerpt?: string | null;
+			content?: unknown;
+			permalink?: string | null;
+		};
+	};
+	/** "list" wraps in .list__item, "grid" in .grid__item (related posts). */
+	type?: "list" | "grid";
+}
+
+const { post, type = "list" } = Astro.props;
+const wrapperClass = type === "grid" ? "grid__item" : "list__item";
+const excerpt = post.data.excerpt ? truncate(post.data.excerpt) : "";
+---
+
+<div class={wrapperClass}>
+	<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+		<h2 class="archive__item-title no_toc p-name" itemprop="headline">
+			<a class="u-url" href={postUrl(post)} rel="permalink">{post.data.title}</a>
+		</h2>
+		<p class="page__meta">
+			<span class="page__meta-readtime">
+				<i class="far fa-clock" aria-hidden="true"></i>
+				{readTime(post.data.content)}
+			</span>
+		</p>
+		{excerpt && <p class="archive__item-excerpt p-summary" itemprop="description">{excerpt}</p>}
+	</article>
+</div>

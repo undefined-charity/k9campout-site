@@ -1,0 +1,201 @@
+---
+import { getMenu, getSiteSettings } from "emdash";
+import { EmDashHead, EmDashBodyStart, EmDashBodyEnd } from "emdash/ui";
+import { createPublicPageContext } from "emdash/page";
+
+interface Props {
+	title?: string;
+	description?: string;
+	bodyClass?: string;
+	canonical?: string;
+	ogImage?: string;
+	content?: { collection: string; id: string; slug?: string | null };
+}
+
+const settings = await getSiteSettings();
+const siteTitle = settings.title ?? "K9 Campout";
+const siteTagline = settings.tagline ?? "Aug 14-16 2026 @ Camp TRC";
+const siteUrl = "https://k9campout.com";
+
+const {
+	title,
+	description = "K9 Campout - A community camping event for pups and handlers, operated by Undefined",
+	bodyClass = "layout--single",
+	canonical = `${siteUrl}${Astro.url.pathname}`,
+	ogImage,
+	content,
+} = Astro.props;
+
+const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle;
+
+const primaryMenu = await getMenu("primary");
+
+const pageCtx = createPublicPageContext({
+	Astro,
+	kind: content ? "content" : "custom",
+	pageType: "website",
+	title: pageTitle,
+	pageTitle,
+	description,
+	content,
+});
+---
+
+<!doctype html>
+<html lang="en-US" class="no-js" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<title>{pageTitle}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content="undefined.charity" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content={siteTitle} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:description" content={description} />
+		{ogImage && <meta property="og:image" content={`${siteUrl}${ogImage}`} />}
+		<link rel="canonical" href={canonical} />
+		<link href="/feed.xml" type="application/atom+xml" rel="alternate" title={`${siteTitle} Feed`} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script is:inline>
+			document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
+		</script>
+		<!-- For all browsers -->
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link
+			rel="preload"
+			href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		<noscript>
+			<link
+				rel="stylesheet"
+				href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"
+			/>
+		</noscript>
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=2" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=2" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=2" />
+		<link rel="manifest" href="/assets/images/site.webmanifest?v=2" />
+		<link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg?v=2" color="#5bbad5" />
+		<link rel="shortcut icon" href="/assets/images/favicon.ico?v=2" />
+		<meta name="apple-mobile-web-app-title" content={siteTitle} />
+		<meta name="application-name" content={siteTitle} />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="msapplication-config" content="/assets/images/browserconfig.xml?v=2" />
+		<meta name="theme-color" content="#ffffff" />
+		<style is:inline>
+			@font-face {
+				font-family: "Logo";
+				src: url("/assets/fonts/PhosphatePro-Inline.woff") format("woff"),
+					url("/assets/fonts/PhosphatePro-Inline.otf") format("opentype");
+			}
+			.site-title {
+				font-family: "Logo", Arial, sans-serif;
+				font-weight: normal;
+				font-style: normal;
+			}
+			div.logofont {
+				font-family: "Logo", Arial, sans-serif;
+				font-weight: normal;
+				font-style: normal;
+			}
+		</style>
+		<style is:global>
+			/* Harmonize EmDash PT block components with the Minimal Mistakes look */
+			.emdash-table p {
+				margin: 0;
+			}
+			.emdash-table-wrapper {
+				margin: 1em 0;
+			}
+		</style>
+		<EmDashHead page={pageCtx} />
+		<slot name="head" />
+	</head>
+
+	<body class={bodyClass}>
+		<EmDashBodyStart page={pageCtx} />
+		<nav class="skip-links" aria-label="Skip links">
+			<ul>
+				<li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+				<li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+				<li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+			</ul>
+		</nav>
+
+		<div class="masthead">
+			<div class="masthead__inner-wrap">
+				<div class="masthead__menu">
+					<nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+						<a class="site-logo" href="/"><img src="/assets/images/k9campout.png" alt={siteTitle} /></a>
+						<a class="site-title" href="/">
+							{siteTitle}
+							<span class="site-subtitle">{siteTagline}</span>
+						</a>
+						<ul class="visible-links">
+							{primaryMenu?.items.map((link) => (
+								<li class="masthead__menu-item">
+									<a href={link.url} target={link.target}>{link.label}</a>
+								</li>
+							))}
+						</ul>
+						<button class="greedy-nav__toggle hidden" type="button">
+							<span class="visually-hidden">Toggle menu</span>
+							<div class="navicon"></div>
+						</button>
+						<ul class="hidden-links hidden"></ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div class="initial-content">
+			<slot />
+		</div>
+
+		<div id="footer" class="page__footer">
+			<footer>
+				<div class="page__footer-follow">
+					<ul class="social-icons">
+						<li>
+							<a href="http://undefined.charity" rel="nofollow noopener noreferrer"
+								><i class="fas fa-fw fa-heart" aria-hidden="true"></i> Undefined</a
+							>
+						</li>
+						<li>
+							<a href="https://undefined.charity/terms" rel="nofollow noopener noreferrer"
+								><i class="fas fa-fw fa-file-contract" aria-hidden="true"></i> Terms &amp; Conditions</a
+							>
+						</li>
+						<li>
+							<a href="https://undefined.charity/contact" rel="nofollow noopener noreferrer"
+								><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Contact Undefined</a
+							>
+						</li>
+						<li>
+							<a href="https://undefined.charity/documents" rel="nofollow noopener noreferrer"
+								><i class="fas fa-fw fa-file-alt" aria-hidden="true"></i> Official Documents</a
+							>
+						</li>
+						<li>
+							<a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="page__footer-copyright">
+					&copy; {new Date().getFullYear()}
+					<a href="https://k9campout.com">K9 Campout</a>. Powered by
+					<a href="https://emdashcms.com" rel="nofollow">EmDash</a> &amp;
+					<a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.
+				</div>
+			</footer>
+		</div>
+
+		<script is:inline src="/assets/js/main.min.js"></script>
+		<EmDashBodyEnd page={pageCtx} />
+	</body>
+</html>

@@ -1,0 +1,25 @@
+---
+import { getEmDashEntry } from "emdash";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import PageSingle from "../../components/PageSingle.astro";
+
+const { year, slug } = Astro.params;
+if (!year || !slug || !/^20\d{2}$/.test(year)) return Astro.rewrite("/404");
+
+// Year pages are stored with slugs like "2025-schedule".
+const { entry: page, cacheHint } = await getEmDashEntry("pages", `${year}-${slug.toLowerCase()}`);
+if (!page) return Astro.rewrite("/404");
+Astro.cache.set(cacheHint);
+
+const canonicalPath = `/${year}/${slug.toLowerCase()}`;
+---
+
+<SiteLayout
+	title={page.data.title}
+	description={page.data.description ?? undefined}
+	bodyClass="layout--single"
+	canonical={`https://k9campout.com${canonicalPath}`}
+	content={{ collection: "pages", id: page.data.id, slug: page.id }}
+>
+	<PageSingle page={page} canonicalPath={canonicalPath} />
+</SiteLayout>

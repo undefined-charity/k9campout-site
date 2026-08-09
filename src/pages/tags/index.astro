@@ -1,0 +1,57 @@
+---
+import { getEmDashCollection, getTaxonomyTerms } from "emdash";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import ArchiveItem from "../../components/ArchiveItem.astro";
+
+const terms = await getTaxonomyTerms("tag");
+
+const groups = (
+	await Promise.all(
+		terms.map(async (term) => {
+			const { entries, cacheHint } = await getEmDashCollection("posts", {
+				where: { tag: term.slug },
+				orderBy: { date: "desc" },
+				limit: 500,
+			});
+			Astro.cache.set(cacheHint);
+			return { term, entries };
+		}),
+	)
+).filter((g) => g.entries.length > 0);
+---
+
+<SiteLayout title="Posts by Tag" bodyClass="layout--tags" canonical="https://k9campout.com/tags/">
+	<div id="main" role="main">
+		<article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+			<div class="page__inner-wrap">
+				<header>
+					<h1 id="page-title" class="page__title" itemprop="headline">Posts by Tag</h1>
+				</header>
+
+				<section class="page__content" itemprop="text">
+					<ul class="taxonomy__index">
+						{groups.map(({ term, entries }) => (
+							<li>
+								<a href={`#${term.slug}`}>
+									<strong>{term.label}</strong> <span class="taxonomy__count">{entries.length}</span>
+								</a>
+							</li>
+						))}
+					</ul>
+
+					{groups.map(({ term, entries }) => (
+						<section id={term.slug} class="taxonomy__section">
+							<h2 class="archive__subtitle">{term.label}</h2>
+							<div class="entries-list">
+								{entries.map((post) => (
+									<ArchiveItem post={post} />
+								))}
+							</div>
+							<a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
+						</section>
+					))}
+				</section>
+			</div>
+		</article>
+	</div>
+</SiteLayout>

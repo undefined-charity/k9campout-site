@@ -1,0 +1,13 @@
+---
+// Renders `raw_html` Portable Text blocks verbatim (script embeds / iframes
+// migrated from Jekyll that the sanitized `htmlBlock` type would strip).
+interface Props {
+	node: {
+		_type: "raw_html";
+		html?: string;
+	};
+}
+const { node } = Astro.props;
+---
+
+<Fragment set:html={node?.html ?? ""} />

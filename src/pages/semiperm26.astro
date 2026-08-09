@@ -1,0 +1,21 @@
+---
+// Instant redirect to the semi-permanent sites form (was a layout:null Jekyll page).
+const url = "https://forms.microsoft.com/r/M9mPGx0HkT";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Redirecting…</title>
+		<link rel="canonical" href={url} />
+		<meta name="robots" content="noindex" />
+		<meta http-equiv="refresh" content={`0; url=${url}`} />
+		<script is:inline define:vars={{ url }}>
+			window.location.replace(url);
+		</script>
+	</head>
+	<body>
+		<p>Redirecting to <a href={url}>{url}</a>…</p>
+	</body>
+</html>

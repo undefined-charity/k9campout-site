@@ -1,9 +1,23 @@
+# Jekyll (legacy)
 _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
 .gemfile.lock
-.DS_Store
 Gemfile.lock
 vendor
 listmonk_import.csv
+
+# Node / Astro / EmDash
+node_modules
+dist
+.astro
+.emdash
+data.db
+data.db-journal
+data.db-shm
+data.db-wal
+uploads
+.env
+
+.DS_Store

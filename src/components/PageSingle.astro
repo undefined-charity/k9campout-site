@@ -1,0 +1,57 @@
+---
+// Renders a CMS page entry with the Minimal Mistakes "single" layout
+// (no author sidebar — matches the Jekyll pages on this site).
+import PT from "./PT.astro";
+import GalleryFigure from "./GalleryFigure.astro";
+
+interface Props {
+	page: {
+		id: string;
+		data: {
+			title: string;
+			content?: unknown;
+			gallery?: unknown;
+			gallery_caption?: string | null;
+			gallery_layout?: string | null;
+			content_after?: unknown;
+		};
+		edit: Record<string, Record<string, string>>;
+	};
+	canonicalPath: string;
+}
+
+const { page, canonicalPath } = Astro.props;
+const gallery = Array.isArray(page.data.gallery) ? page.data.gallery : null;
+---
+
+<div id="main" role="main">
+	<article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+		<meta itemprop="headline" content={page.data.title} />
+
+		<div class="page__inner-wrap">
+			<header>
+				<h1 id="page-title" class="page__title p-name" itemprop="headline" {...page.edit.title}>
+					<a href={`https://k9campout.com${canonicalPath}`} itemprop="url">{page.data.title}</a>
+				</h1>
+			</header>
+
+			<section class="page__content e-content" itemprop="text">
+				<div {...page.edit.content}>
+					<PT value={page.data.content} />
+				</div>
+				{gallery && gallery.length > 0 && (
+					<GalleryFigure
+						images={gallery}
+						caption={page.data.gallery_caption}
+						layout={page.data.gallery_layout}
+					/>
+				)}
+				{page.data.content_after && (
+					<div {...page.edit.content_after}>
+						<PT value={page.data.content_after} />
+					</div>
+				)}
+			</section>
+		</div>
+	</article>
+</div>

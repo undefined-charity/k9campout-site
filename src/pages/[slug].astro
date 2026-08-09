@@ -1,0 +1,31 @@
+---
+import { getEmDashEntry } from "emdash";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import PageSingle from "../components/PageSingle.astro";
+
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect("/404");
+
+const { entry: page, cacheHint } = await getEmDashEntry("pages", slug.toLowerCase());
+if (!page) return Astro.rewrite("/404");
+Astro.cache.set(cacheHint);
+
+const canonicalPath = `/${slug.toLowerCase()}`;
+
+// Jekyll-style meta-refresh redirect pages (e.g. /tickets).
+const redirectUrl = page.data.redirect_url as string | null | undefined;
+const redirectDelay = (page.data.redirect_delay as number | null | undefined) ?? 0;
+---
+
+<SiteLayout
+	title={page.data.title}
+	description={page.data.description ?? undefined}
+	bodyClass="layout--single"
+	canonical={`https://k9campout.com${canonicalPath}`}
+	content={{ collection: "pages", id: page.data.id, slug: page.id }}
+>
+	{redirectUrl && (
+		<meta slot="head" http-equiv="refresh" content={`${redirectDelay};url=${redirectUrl}`} />
+	)}
+	<PageSingle page={page} canonicalPath={canonicalPath} />
+</SiteLayout>

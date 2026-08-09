@@ -1,0 +1,13 @@
+---
+// PortableText with this site's custom block types registered.
+import { PortableText } from "emdash/ui";
+import RawHtml from "./blocks/RawHtml.astro";
+
+interface Props {
+	value: unknown;
+}
+const { value } = Astro.props;
+const components = { type: { raw_html: RawHtml } };
+---
+
+<PortableText value={value} components={components} />

@@ -1,0 +1,43 @@
+---
+import { getEmDashCollection, getEmDashEntry } from "emdash";
+import PT from "../components/PT.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import ArchiveItem from "../components/ArchiveItem.astro";
+
+const { entry: home, cacheHint } = await getEmDashEntry("pages", "home");
+Astro.cache.set(cacheHint);
+
+const { entries: posts, cacheHint: postsHint } = await getEmDashCollection("posts", {
+	orderBy: { date: "desc" },
+	limit: 3,
+});
+Astro.cache.set(postsHint);
+---
+
+<SiteLayout
+	description={home?.data.description ?? undefined}
+	bodyClass="layout--splash"
+	canonical="https://k9campout.com/"
+	ogImage="/assets/images/k9campout_banner.jpg"
+	content={home ? { collection: "pages", id: home.data.id, slug: home.id } : undefined}
+>
+	<div class="page__hero" style=" background-image: url('');">
+		<img src="/assets/images/k9campout_banner.jpg" alt="" class="page__hero-image" />
+	</div>
+
+	<div id="main" role="main">
+		<article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
+			<section class="page__content" itemprop="text">
+				{home && <PT value={home.data.content} />}
+
+				<h3 class="archive__subtitle">Recent Posts</h3>
+
+				<div class="entries-list">
+					{posts.map((post) => (
+						<ArchiveItem post={post} />
+					))}
+				</div>
+			</section>
+		</article>
+	</div>
+</SiteLayout>
