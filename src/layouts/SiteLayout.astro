@@ -133,16 +133,18 @@ const pageCtx = createPublicPageContext({
 				white-space: nowrap !important;
 				padding: 0.5em 0.75em !important;
 			}
-			/* On desktop the MM layout reserves a 200-300px right rail this site
-			   never uses; let wide tables spill into it instead of scrolling. */
+			/* Use the full content width on desktop: the MM layout reserves a
+			   200-300px right rail (for a TOC sidebar this site never uses) and,
+			   on sidebar-less pages, a left author column too. Reclaim both —
+			   posts keep their author profile on the left. */
 			@media (min-width: 64em) {
-				.page__content .emdash-table-wrapper {
-					margin-inline-end: -200px;
+				.page,
+				.page__related {
+					padding-inline-end: 0 !important;
 				}
-			}
-			@media (min-width: 80em) {
-				.page__content .emdash-table-wrapper {
-					margin-inline-end: -300px;
+				#main:not(:has(.sidebar)) .page,
+				#main:not(:has(.sidebar)) .page__related {
+					width: 100% !important;
 				}
 			}
 		</style>
