@@ -133,6 +133,18 @@ const pageCtx = createPublicPageContext({
 				white-space: nowrap !important;
 				padding: 0.5em 0.75em !important;
 			}
+			/* On desktop the MM layout reserves a 200-300px right rail this site
+			   never uses; let wide tables spill into it instead of scrolling. */
+			@media (min-width: 64em) {
+				.page__content .emdash-table-wrapper {
+					margin-inline-end: -200px;
+				}
+			}
+			@media (min-width: 80em) {
+				.page__content .emdash-table-wrapper {
+					margin-inline-end: -300px;
+				}
+			}
 		</style>
 		<EmDashHead page={pageCtx} />
 		<slot name="head" />
