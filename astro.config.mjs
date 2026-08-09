@@ -17,6 +17,15 @@ export default defineConfig({
 	image: {
 		layout: "constrained",
 		responsiveStyles: true,
+		// Astro's image service only optimizes absolute URLs from authorized
+		// hosts. Without these, gallery images serve as full-size originals
+		// (identity srcset) instead of resized variants.
+		domains: [
+			"k9campout.undefined-charity.workers.dev",
+			"k9campout.com",
+			"www.k9campout.com",
+			"localhost",
+		],
 	},
 	integrations: [
 		react(),
