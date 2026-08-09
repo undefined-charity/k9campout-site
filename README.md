@@ -44,4 +44,21 @@ Manual deploy from a machine with `wrangler login`: `npm run deploy`.
 Local/self-hosted alternative: `docker compose up` or `npm run build && npm
 start` (SQLite + local uploads volume).
 
+### Gallery media
+
+Gallery photos are served from the EmDash **media library** (local `uploads/`
+in dev, R2 in production) so admins can upload and genuinely delete photos
+from the admin UI. Originals live in `source-assets/gallery/` (kept in git,
+never deployed). After seeding a fresh database — locally or on a new
+production deployment — populate the media library once:
+
+```bash
+node scripts/import-gallery-media.mjs                        # local dev
+node scripts/import-gallery-media.mjs --url https://k9campout.com
+```
+
+The script is idempotent (dedupes by file, rebuilds the gallery blocks).
+Photos added later through the admin UI don't need it — it's only for
+bootstrapping the historical archive.
+
 See `AGENTS.md` for schema and content-model details.

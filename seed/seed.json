@@ -41,26 +41,6 @@
 					"searchable": true
 				},
 				{
-					"slug": "gallery",
-					"label": "Gallery images (list of {url, image_path, alt, title})",
-					"type": "json"
-				},
-				{
-					"slug": "gallery_caption",
-					"label": "Gallery caption",
-					"type": "string"
-				},
-				{
-					"slug": "gallery_layout",
-					"label": "Gallery layout (half/third)",
-					"type": "string"
-				},
-				{
-					"slug": "content_after",
-					"label": "Content (after gallery)",
-					"type": "portableText"
-				},
-				{
 					"slug": "redirect_url",
 					"label": "Meta-refresh redirect URL",
 					"type": "string"
@@ -1939,19 +1919,27 @@
 									"marks": []
 								}
 							]
-						}
-					],
-					"gallery": [
+						},
 						{
-							"url": "/assets/images/2026/k9campout_poster_2026.png",
-							"image_path": "/assets/images/2026/k9campout_poster_2026.png",
-							"alt": "K9 Campout 2026 Poster",
-							"title": "K9 Campout 2026"
-						}
-					],
-					"gallery_caption": "K9 2026 Bark Gallery",
-					"gallery_layout": "half",
-					"content_after": [
+							"_type": "gallery",
+							"_key": "gallery-gallery-0",
+							"columns": 2,
+							"images": [
+								{
+									"_type": "image",
+									"_key": "img-1",
+									"asset": {
+										"_ref": "01KZKX0YYCSBC3C8VT690KZDAX",
+										"url": "/_emdash/api/media/file/01KZKX0YRETR9CMQNV8ZSYH7CB.png"
+									},
+									"alt": "K9 Campout 2026 Poster",
+									"width": 1650,
+									"height": 2550,
+									"blurhash": "L^LXY:ofkCs:~qj[ofj[xuayayj[",
+									"dominantColor": "rgb(156,160,163)"
+								}
+							]
+						},
 						{
 							"_type": "block",
 							"_key": "k8",
@@ -30888,217 +30876,388 @@
 									"marks": []
 								}
 							]
-						}
-					],
-					"gallery": [
-						{
-							"url": "/assets/images/2025/IMG_1664.jpg",
-							"image_path": "/assets/images/2025/IMG_1664.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
 						},
 						{
-							"url": "/assets/images/2025/IMG_1670.jpg",
-							"image_path": "/assets/images/2025/IMG_1670.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
+							"_type": "gallery",
+							"_key": "gallery-2025-gallery-2",
+							"columns": 2,
+							"images": [
+								{
+									"_type": "image",
+									"_key": "img-3",
+									"asset": {
+										"_ref": "01KZKX0ZCGKBWR99JXEQ9GP0AA",
+										"url": "/_emdash/api/media/file/01KZKX0ZBXJZHSMGG6W9BCW1F2.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-4",
+									"asset": {
+										"_ref": "01KZKX0ZS3859J7CQFE1JF7APF",
+										"url": "/_emdash/api/media/file/01KZKX0ZRH8R2GJEHA4WPVJ6EA.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-5",
+									"asset": {
+										"_ref": "01KZKX105AKCF63B8MC4GE76DJ",
+										"url": "/_emdash/api/media/file/01KZKX104WB7HE9G9Z9QZXVFF6.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-6",
+									"asset": {
+										"_ref": "01KZKX10JBT7Y5CJ2F1WSVBDKQ",
+										"url": "/_emdash/api/media/file/01KZKX10HRTME6D9J0FN01ZMC2.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-7",
+									"asset": {
+										"_ref": "01KZKX10Z6GJ1G0XVM6C40KQ10",
+										"url": "/_emdash/api/media/file/01KZKX10YFPHCX1BNFB9BHRP4D.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-8",
+									"asset": {
+										"_ref": "01KZKX11CK9FD31R8WX1MN1YFV",
+										"url": "/_emdash/api/media/file/01KZKX11C1KRWC3E7RG8NN7TNN.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-9",
+									"asset": {
+										"_ref": "01KZKX11SBPR2EV5TB49ENFWZ0",
+										"url": "/_emdash/api/media/file/01KZKX11RX31HBHSX03EVBJGF0.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-a",
+									"asset": {
+										"_ref": "01KZKX126F0HBEEYRQBKEY4NJ7",
+										"url": "/_emdash/api/media/file/01KZKX1264NYVT8W9CWR7AV569.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-b",
+									"asset": {
+										"_ref": "01KZKX12JZG550K7PVNGKVZTRG",
+										"url": "/_emdash/api/media/file/01KZKX12JFK4BC6348V56J8Z42.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-c",
+									"asset": {
+										"_ref": "01KZKX1305V8TBC3Q5W44T7KG8",
+										"url": "/_emdash/api/media/file/01KZKX12ZBKXA7WS66QN7P6GCJ.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-d",
+									"asset": {
+										"_ref": "01KZKX13CMS13YFN5ZG1N8AGDG",
+										"url": "/_emdash/api/media/file/01KZKX13C75DYYDV32KBYB61C0.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-e",
+									"asset": {
+										"_ref": "01KZKX13RFVWSG7DZXBR5358WC",
+										"url": "/_emdash/api/media/file/01KZKX13R38N5PNCZK86BWT6JR.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-f",
+									"asset": {
+										"_ref": "01KZKX144XYCVYHY8H5HNKA1CX",
+										"url": "/_emdash/api/media/file/01KZKX144EKGGACSFA0546QW92.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-g",
+									"asset": {
+										"_ref": "01KZKX14H7YVJS80CX0GXEHDV6",
+										"url": "/_emdash/api/media/file/01KZKX14GRHWY6G59VNY18XQ50.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-h",
+									"asset": {
+										"_ref": "01KZKX14XW13SEMYEPFSHCYWMR",
+										"url": "/_emdash/api/media/file/01KZKX14XCMGTV3ZYHHN6N8X35.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-i",
+									"asset": {
+										"_ref": "01KZKX15AD6THYX96BS1AQ2061",
+										"url": "/_emdash/api/media/file/01KZKX159VFMDESA2S68XWZ2CE.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-j",
+									"asset": {
+										"_ref": "01KZKX15PK15CSGA6Q185XC8Y5",
+										"url": "/_emdash/api/media/file/01KZKX15P6AKEN5HT0694G5X4K.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-k",
+									"asset": {
+										"_ref": "01KZKX162PBAWHZSW8ECJHKDFQ",
+										"url": "/_emdash/api/media/file/01KZKX162B0S2TA4E6DYJVNNDV.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-l",
+									"asset": {
+										"_ref": "01KZKX16EW7J0KCBNJR3MHJRFH",
+										"url": "/_emdash/api/media/file/01KZKX16EK74WS1J7GYEXN9PBD.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-m",
+									"asset": {
+										"_ref": "01KZKX16W2KJTV6BVXZWVHKAZ4",
+										"url": "/_emdash/api/media/file/01KZKX16VP3EQPA7WQ9XRN4EWA.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-n",
+									"asset": {
+										"_ref": "01KZKX179D749H6MBNBXYRF88A",
+										"url": "/_emdash/api/media/file/01KZKX178SZBAQE5JVYYQ82BG1.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-o",
+									"asset": {
+										"_ref": "01KZKX17P994ATN9M953J7A25Y",
+										"url": "/_emdash/api/media/file/01KZKX17NXESTE3BCFGZNBWR36.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-p",
+									"asset": {
+										"_ref": "01KZKX183GVCBN3M30NDKNA686",
+										"url": "/_emdash/api/media/file/01KZKX183514PB6G9H9RV5PTE8.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-q",
+									"asset": {
+										"_ref": "01KZKX18HF62K3CHG5ADRXTGFW",
+										"url": "/_emdash/api/media/file/01KZKX18GTGBF2AQDR67SAJZSC.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-r",
+									"asset": {
+										"_ref": "01KZKX18XYXR6FAHBQQNDYDH6G",
+										"url": "/_emdash/api/media/file/01KZKX18XQMT6KCY1EHENVC6MK.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-s",
+									"asset": {
+										"_ref": "01KZKX19AARG9NFRF93X7Y9DS4",
+										"url": "/_emdash/api/media/file/01KZKX19A5X6AZH5EKY72VVV1B.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-t",
+									"asset": {
+										"_ref": "01KZKX19PV8VJJWNH1X80ZDGDT",
+										"url": "/_emdash/api/media/file/01KZKX19PFAVSCZ0TT4QF2VWJ6.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-u",
+									"asset": {
+										"_ref": "01KZKX1A43GATBE7ZKMXQBQ40E",
+										"url": "/_emdash/api/media/file/01KZKX1A3RE34S4G1AFB8Y4DSX.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-v",
+									"asset": {
+										"_ref": "01KZKX1AGZJXDYWDYGY9Q7HDSA",
+										"url": "/_emdash/api/media/file/01KZKX1AGM02P5G0VFQEE3Z7T8.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-w",
+									"asset": {
+										"_ref": "01KZKX1AXRQE3AAW0QANYM6B9G",
+										"url": "/_emdash/api/media/file/01KZKX1AXD4NFYV987FVJKVE3S.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-x",
+									"asset": {
+										"_ref": "01KZKX1BAGCY0J47M5GEY4ZJF3",
+										"url": "/_emdash/api/media/file/01KZKX1BA4DRN7BKXVQD9P36YF.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-y",
+									"asset": {
+										"_ref": "01KZKX1BPS0JE48JGGA448ZAH9",
+										"url": "/_emdash/api/media/file/01KZKX1BPDEY3NEDQN95ERMY25.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								},
+								{
+									"_type": "image",
+									"_key": "img-z",
+									"asset": {
+										"_ref": "01KZKX1C2XT2PE3QCAQSXGDETF",
+										"url": "/_emdash/api/media/file/01KZKX1C2SWMC7PX5XW18TEFA4.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 6014,
+									"height": 4003
+								},
+								{
+									"_type": "image",
+									"_key": "img-10",
+									"asset": {
+										"_ref": "01KZKX1CFFCZVCNDE08GC30BW1",
+										"url": "/_emdash/api/media/file/01KZKX1CF1QCQZEXNCQVGNXBJD.jpg"
+									},
+									"alt": "K9 2025 Bark Gallery",
+									"width": 4003,
+									"height": 6014
+								}
+							]
 						},
-						{
-							"url": "/assets/images/2025/IMG_1672.jpg",
-							"image_path": "/assets/images/2025/IMG_1672.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1679.jpg",
-							"image_path": "/assets/images/2025/IMG_1679.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1683.jpg",
-							"image_path": "/assets/images/2025/IMG_1683.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1708.jpg",
-							"image_path": "/assets/images/2025/IMG_1708.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1711.jpg",
-							"image_path": "/assets/images/2025/IMG_1711.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1726.jpg",
-							"image_path": "/assets/images/2025/IMG_1726.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1757.jpg",
-							"image_path": "/assets/images/2025/IMG_1757.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1773.jpg",
-							"image_path": "/assets/images/2025/IMG_1773.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1778.jpg",
-							"image_path": "/assets/images/2025/IMG_1778.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1793.jpg",
-							"image_path": "/assets/images/2025/IMG_1793.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1803.jpg",
-							"image_path": "/assets/images/2025/IMG_1803.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1839.jpg",
-							"image_path": "/assets/images/2025/IMG_1839.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1846.jpg",
-							"image_path": "/assets/images/2025/IMG_1846.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1854.jpg",
-							"image_path": "/assets/images/2025/IMG_1854.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1858.jpg",
-							"image_path": "/assets/images/2025/IMG_1858.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1863.jpg",
-							"image_path": "/assets/images/2025/IMG_1863.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1867.jpg",
-							"image_path": "/assets/images/2025/IMG_1867.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1889.jpg",
-							"image_path": "/assets/images/2025/IMG_1889.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1903.jpg",
-							"image_path": "/assets/images/2025/IMG_1903.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1905.jpg",
-							"image_path": "/assets/images/2025/IMG_1905.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1933.jpg",
-							"image_path": "/assets/images/2025/IMG_1933.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_1973.jpg",
-							"image_path": "/assets/images/2025/IMG_1973.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_2041.jpg",
-							"image_path": "/assets/images/2025/IMG_2041.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_2051.jpg",
-							"image_path": "/assets/images/2025/IMG_2051.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_2064.jpg",
-							"image_path": "/assets/images/2025/IMG_2064.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_2069_01.jpg",
-							"image_path": "/assets/images/2025/IMG_2069_01.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_2075.jpg",
-							"image_path": "/assets/images/2025/IMG_2075.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_2080.jpg",
-							"image_path": "/assets/images/2025/IMG_2080.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_2082.jpg",
-							"image_path": "/assets/images/2025/IMG_2082.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_2086.jpg",
-							"image_path": "/assets/images/2025/IMG_2086.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_2089.jpg",
-							"image_path": "/assets/images/2025/IMG_2089.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2025/IMG_2093.jpg",
-							"image_path": "/assets/images/2025/IMG_2093.jpg",
-							"alt": "K9 2025 Bark Gallery",
-							"title": "K9 2025 Bark Gallery"
-						}
-					],
-					"gallery_caption": "K9 2025 Bark Gallery",
-					"gallery_layout": "half",
-					"content_after": [
 						{
 							"_type": "block",
 							"_key": "k8",
@@ -31626,246 +31785,521 @@
 									"marks": []
 								}
 							]
-						}
-					],
-					"gallery": [
-						{
-							"url": "/assets/images/2024/IMG_0990.jpeg",
-							"image_path": "/assets/images/2024/IMG_0990.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
 						},
 						{
-							"url": "/assets/images/2024/IMG_0991.jpeg",
-							"image_path": "/assets/images/2024/IMG_0991.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": " K9 2024 Bark Gallery"
+							"_type": "gallery",
+							"_key": "gallery-2024-gallery-11",
+							"columns": 2,
+							"images": [
+								{
+									"_type": "image",
+									"_key": "img-12",
+									"asset": {
+										"_ref": "01KZKX1CXP5Q5CH53FFCQA6X61",
+										"url": "/_emdash/api/media/file/01KZKX1CVG4AJFY60WJ035678J.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 914,
+									"height": 1280,
+									"blurhash": "L-J8hYfkWVt7~qoft7j[-;ofogWB",
+									"dominantColor": "rgb(128,138,144)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-13",
+									"asset": {
+										"_ref": "01KZKX1DAWZZ36NHD1FNW1GE24",
+										"url": "/_emdash/api/media/file/01KZKX1D9BBYHV04NRW8NBNJQZ.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 914,
+									"height": 1280,
+									"blurhash": "LjEW5lt7ayof~qofofj[_3j[ofof",
+									"dominantColor": "rgb(88,102,111)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-14",
+									"asset": {
+										"_ref": "01KZKX1DR6KMQTCGZQZCBGTBF8",
+										"url": "/_emdash/api/media/file/01KZKX1DPMNTYMFY5D3KC8421H.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1080,
+									"height": 960,
+									"blurhash": "LIHeRaHq-ox10J.SNFMy_KVyIUou",
+									"dominantColor": "rgb(137,126,116)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-15",
+									"asset": {
+										"_ref": "01KZKX1E6JM4XWK4GV0RTZ7VRZ",
+										"url": "/_emdash/api/media/file/01KZKX1E55YCVJNZF7E2FSPRW9.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1084,
+									"height": 960,
+									"blurhash": "LSF$LcsAx[%M.ibto{t6XdSeRjad",
+									"dominantColor": "rgb(121,111,97)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-16",
+									"asset": {
+										"_ref": "01KZKX1EKMD88D0PHM6XAW3BSR",
+										"url": "/_emdash/api/media/file/01KZKX1EJFSPX6GCTWBT3FQ7WC.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 772,
+									"height": 824,
+									"blurhash": "L2E0aND^0v^U3M=f17Xb0c2Rs0$y",
+									"dominantColor": "rgb(111,35,81)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-17",
+									"asset": {
+										"_ref": "01KZKX1F0MHZ7R8JWXNSB193A5",
+										"url": "/_emdash/api/media/file/01KZKX1EZPWDWVWPEM77TXSH0X.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1009,
+									"height": 858,
+									"blurhash": "L3FLxO2r[M,O1oJ%70-2v]s8x9NZ",
+									"dominantColor": "rgb(123,32,101)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-18",
+									"asset": {
+										"_ref": "01KZKX1FE6WP73WRNB4AJT7QR8",
+										"url": "/_emdash/api/media/file/01KZKX1FCX7YQ1MB26DF02QCV3.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 667,
+									"height": 874,
+									"blurhash": "LTH21RxYROWr~AWBtQWCw?V@R.xa",
+									"dominantColor": "rgb(129,122,111)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-19",
+									"asset": {
+										"_ref": "01KZKX1FTXRRY5BZ5B7BRG0MW9",
+										"url": "/_emdash/api/media/file/01KZKX1FT9QTKC47FRVJ4WMHWG.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 549,
+									"height": 821,
+									"blurhash": "L6Fq|1G^Iv[A00OS0$={00DO}@Iq",
+									"dominantColor": "rgb(108,85,82)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1a",
+									"asset": {
+										"_ref": "01KZKX1G77F38A12C4MZWE62M5",
+										"url": "/_emdash/api/media/file/01KZKX1G6NBQAYMQD4P7KJ9RYV.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 463,
+									"height": 872,
+									"blurhash": "LRE{U:aitP%K~SR:x^xu.5ohRit7",
+									"dominantColor": "rgb(102,98,110)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1b",
+									"asset": {
+										"_ref": "01KZKX1GMCCWER68FRPK8QRJET",
+										"url": "/_emdash/api/media/file/01KZKX1GJMCVVR3RFC7F603YAX.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 960,
+									"height": 1280,
+									"blurhash": "LN2kB%ivZ$W.a:jef.jWU{XRkooQ",
+									"dominantColor": "rgb(10,35,177)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1c",
+									"asset": {
+										"_ref": "01KZKX1H129HT4Z5BVY4CJGYF7",
+										"url": "/_emdash/api/media/file/01KZKX1H06J34BCHYNBG9BH60E.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 654,
+									"height": 1158,
+									"blurhash": "L7El%#=W1W1Y1uF2]ps5FCxc}IoE",
+									"dominantColor": "rgb(109,33,80)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1d",
+									"asset": {
+										"_ref": "01KZKX1HEQSAWZGBM5DAJVDQ2P",
+										"url": "/_emdash/api/media/file/01KZKX1HD9ZMXYMFK68Q3CFPQE.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1056,
+									"height": 960,
+									"blurhash": "Lr6%^dX6W]s;R]ocoeR.srWAW8so",
+									"dominantColor": "rgb(38,23,130)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1e",
+									"asset": {
+										"_ref": "01KZKX1HVVDPRSEEMTHCHMTXX6",
+										"url": "/_emdash/api/media/file/01KZKX1HTXQ94TXRT2039PRKVJ.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1036,
+									"height": 912,
+									"blurhash": "LW9i]6JFRjs:swfXT1ngo*R;V?s=",
+									"dominantColor": "rgb(68,45,128)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1f",
+									"asset": {
+										"_ref": "01KZKX1JA4AYCEMZQ27HF6DH4X",
+										"url": "/_emdash/api/media/file/01KZKX1J8H0HECSR7T5QFBCSSE.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1246,
+									"height": 814,
+									"blurhash": "LKEofCE1EMxb?^I9smtRtRITobWU",
+									"dominantColor": "rgb(102,94,92)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1g",
+									"asset": {
+										"_ref": "01KZKX1JQ4DQE28636PMT4C50Y",
+										"url": "/_emdash/api/media/file/01KZKX1JPC84ANXTZ2YV8DQH3K.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1113,
+									"height": 861,
+									"blurhash": "L37J^X6RI[}^0{S1-BN?0J#7V=9s",
+									"dominantColor": "rgb(37,26,28)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1h",
+									"asset": {
+										"_ref": "01KZKX1K51HSP6QKWRG73VD98M",
+										"url": "/_emdash/api/media/file/01KZKX1K352EBYERQGVT479PRW.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 960,
+									"height": 1280,
+									"blurhash": "LNF65+%MNHxu_NaxfRR*?cV@WBRj",
+									"dominantColor": "rgb(111,108,101)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1i",
+									"asset": {
+										"_ref": "01KZKX1KHBHYX3PE8KFW97CQES",
+										"url": "/_emdash/api/media/file/01KZKX1KGJ8YBFMTHPCZ3FX9QY.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 696,
+									"height": 910,
+									"blurhash": "LNE33kD%ISV@_NsEV?IUNXxvWCM{",
+									"dominantColor": "rgb(97,93,95)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1j",
+									"asset": {
+										"_ref": "01KZKX1KYM78SCXG0B6ERTFAVP",
+										"url": "/_emdash/api/media/file/01KZKX1KXBR2X8A4G043R051Q0.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 898,
+									"height": 1112,
+									"blurhash": "L5B-A}Af0]EeKm}0v^=E9=$J=V}F",
+									"dominantColor": "rgb(81,22,93)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1k",
+									"asset": {
+										"_ref": "01KZKX1MBQ5NYA4NY9H8E9AC2V",
+										"url": "/_emdash/api/media/file/01KZKX1MAQQ8D8P9CS603QP2KE.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1280,
+									"height": 960,
+									"blurhash": "LTJxf%2OFA]IAlA.sZsRJWn{a}o4",
+									"dominantColor": "rgb(143,4,108)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1l",
+									"asset": {
+										"_ref": "01KZKX1MRY1382WAG3Y32T3154",
+										"url": "/_emdash/api/media/file/01KZKX1MQGWV8QYGWD8F4HW9HJ.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1280,
+									"height": 960,
+									"blurhash": "LFE{kFXL%DSc.RxZozaJ~po}DiRj",
+									"dominantColor": "rgb(108,106,97)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1m",
+									"asset": {
+										"_ref": "01KZKX1N6DANYK4KXMRNCB9FZ2",
+										"url": "/_emdash/api/media/file/01KZKX1N4QY835X5XQM9BTDGS4.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1173,
+									"height": 946,
+									"blurhash": "LIF68}RjEK?a_MbbD~NFy6jDVrog",
+									"dominantColor": "rgb(110,109,111)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1n",
+									"asset": {
+										"_ref": "01KZKX1NMTXQG1EAMC8A4N7ECH",
+										"url": "/_emdash/api/media/file/01KZKX1NKAQGFQ10FK66S78K0Y.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1280,
+									"height": 960,
+									"blurhash": "LDFr*8Bxrq4m_LEIsA%N~qtQWEs9",
+									"dominantColor": "rgb(114,113,98)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1o",
+									"asset": {
+										"_ref": "01KZKX1P2P9599JZ8BTE1SEK6B",
+										"url": "/_emdash/api/media/file/01KZKX1P12NV9CNH6QQ369CNVG.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1280,
+									"height": 812,
+									"blurhash": "LDE2^G4.E3-q_NI9aexux]9E%0S0",
+									"dominantColor": "rgb(100,92,90)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1p",
+									"asset": {
+										"_ref": "01KZKX1PFVEVD43SAFYDD1HNCR",
+										"url": "/_emdash/api/media/file/01KZKX1PEZV9W55FPF2P1K8GDX.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 939,
+									"height": 790,
+									"blurhash": "LJF:250{KJ;B}v9~xTNJ-BV]xUnT",
+									"dominantColor": "rgb(118,46,120)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1q",
+									"asset": {
+										"_ref": "01KZKX1PXCZT85ANVG1BXM6XP5",
+										"url": "/_emdash/api/media/file/01KZKX1PWDWNG209X0NPGDT268.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 787,
+									"height": 1280,
+									"blurhash": "LDB_;^}?559t0#9]%0xY9rWA$+-B",
+									"dominantColor": "rgb(71,45,58)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1r",
+									"asset": {
+										"_ref": "01KZKX1QB7XCYN8JXQZ7KA1YDP",
+										"url": "/_emdash/api/media/file/01KZKX1QA0SST6PMMT53YRSB16.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 618,
+									"height": 1153,
+									"blurhash": "L59jT8?G009a019Y~T-p00xW~Wt8",
+									"dominantColor": "rgb(56,50,54)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1s",
+									"asset": {
+										"_ref": "01KZKX1QS4SH4BRKXP5FW82BVS",
+										"url": "/_emdash/api/media/file/01KZKX1QRARH7XG926M3DQQV4W.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 920,
+									"height": 906,
+									"blurhash": "LFD@euTO,kaL-sXN;Aj0KPW,R6Vv",
+									"dominantColor": "rgb(109,50,140)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1t",
+									"asset": {
+										"_ref": "01KZKX1R6X3PGER3T94PP1HAGW",
+										"url": "/_emdash/api/media/file/01KZKX1R5HM899T9VMYR30PNJQ.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1161,
+									"height": 809,
+									"blurhash": "L5EA5+1CVB2j1on=$W[:1Vv}F[=R",
+									"dominantColor": "rgb(107,44,139)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1u",
+									"asset": {
+										"_ref": "01KZKX1RM6BBP81JBCYY6S815V",
+										"url": "/_emdash/api/media/file/01KZKX1RKB9CHM04H846ZHH2B3.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 732,
+									"height": 1280,
+									"blurhash": "LFDIGi8wGwIx*IDQ%BoHBraUv=xs",
+									"dominantColor": "rgb(91,49,195)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1v",
+									"asset": {
+										"_ref": "01KZKX1S28TNFMZE5MC93PG813",
+										"url": "/_emdash/api/media/file/01KZKX1S0PHWE6Z2NN00A3PFQ5.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1280,
+									"height": 960,
+									"blurhash": "LOAK0#%Di-toyG%NtQSHOcO*TIRR",
+									"dominantColor": "rgb(59,47,218)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1w",
+									"asset": {
+										"_ref": "01KZKX1SF6DMK6X9T9CAKXERQJ",
+										"url": "/_emdash/api/media/file/01KZKX1SE3CV3VM5NH428NJP4Q.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1133,
+									"height": 960,
+									"blurhash": "LW7w#KIxnVt9nXWbkXn-Oxs6V=a_",
+									"dominantColor": "rgb(40,33,185)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1x",
+									"asset": {
+										"_ref": "01KZKX1SW299YDQH4XNKWAR1Y5",
+										"url": "/_emdash/api/media/file/01KZKX1STWY9EX0RF6CFR9A8DZ.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 787,
+									"height": 959,
+									"blurhash": "L79Ym$XZwFF7%8xgNZNEF+n:W4v|",
+									"dominantColor": "rgb(66,23,146)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1y",
+									"asset": {
+										"_ref": "01KZKX1T9B9J6BR62EFYG805AE",
+										"url": "/_emdash/api/media/file/01KZKX1T7T8Z08BBKGNTDXZBYC.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 960,
+									"height": 1280,
+									"blurhash": "L3Ab4,,z]~=W}[sfWQ-a1VEZ1H-W",
+									"dominantColor": "rgb(79,23,162)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-1z",
+									"asset": {
+										"_ref": "01KZKX1TR4G8Y3A9F2SC1W4N54",
+										"url": "/_emdash/api/media/file/01KZKX1TNARXVG5V86N8VRAVH8.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 2360,
+									"height": 752,
+									"blurhash": "LCHB_G01I8%KRko}tRD%uiS$w{IV",
+									"dominantColor": "rgb(131,129,134)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-20",
+									"asset": {
+										"_ref": "01KZKX1V5K3R9DY86RNGRMW1HH",
+										"url": "/_emdash/api/media/file/01KZKX1V4FH0S0KACBNEESMGT4.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 739,
+									"height": 1249,
+									"blurhash": "L4EveI2R0]Q:6r9@=##m0cIW}xJh",
+									"dominantColor": "rgb(104,35,110)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-21",
+									"asset": {
+										"_ref": "01KZKX1VJNZBZZZD9Q9C4WDWD2",
+										"url": "/_emdash/api/media/file/01KZKX1VHA8SDVAY2QFR2TZP19.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 598,
+									"height": 1280,
+									"blurhash": "LIGI+WoJNGRjALNGjYjEPEofi^ax",
+									"dominantColor": "rgb(128,134,134)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-22",
+									"asset": {
+										"_ref": "01KZKX1VZC5VPTJZ9MBABP9CY1",
+										"url": "/_emdash/api/media/file/01KZKX1VYG4RNS3HNNFA3ZC58M.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 567,
+									"height": 815,
+									"blurhash": "L7BfR}?w000L1cXV}c%M00RQ_M%g",
+									"dominantColor": "rgb(63,55,66)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-23",
+									"asset": {
+										"_ref": "01KZKX1WCGZ8H0G1Q88AJTX6BC",
+										"url": "/_emdash/api/media/file/01KZKX1WBHB6524NAYTXEXRWVB.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 738,
+									"height": 1124,
+									"blurhash": "LDHnmI-i.7-:^PXT%gxH24$y-:Ny",
+									"dominantColor": "rgb(133,118,107)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-24",
+									"asset": {
+										"_ref": "01KZKX1WSH9547VZF3YSX6H0S0",
+										"url": "/_emdash/api/media/file/01KZKX1WR0MG614XDEK143X0NS.jpeg"
+									},
+									"alt": "K9 2024 Bark Gallery",
+									"width": 1285,
+									"height": 1496,
+									"blurhash": "LCA9XcMn0]-;^GRXI{%K5fTH+.$L",
+									"dominantColor": "rgb(63,27,92)"
+								}
+							]
 						},
-						{
-							"url": "/assets/images/2024/IMG_0116.jpeg",
-							"image_path": "/assets/images/2024/IMG_0116.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0115.jpeg",
-							"image_path": "/assets/images/2024/IMG_0115.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0114.jpeg",
-							"image_path": "/assets/images/2024/IMG_0114.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0113.jpeg",
-							"image_path": "/assets/images/2024/IMG_0113.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0109.jpeg",
-							"image_path": "/assets/images/2024/IMG_0109.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0112.jpeg",
-							"image_path": "/assets/images/2024/IMG_0112.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0111.jpeg",
-							"image_path": "/assets/images/2024/IMG_0111.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0085.jpeg",
-							"image_path": "/assets/images/2024/IMG_0085.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0083.jpeg",
-							"image_path": "/assets/images/2024/IMG_0083.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0082.jpeg",
-							"image_path": "/assets/images/2024/IMG_0082.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0081.jpeg",
-							"image_path": "/assets/images/2024/IMG_0081.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0119.jpeg",
-							"image_path": "/assets/images/2024/IMG_0119.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0107.jpeg",
-							"image_path": "/assets/images/2024/IMG_0107.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0106.jpeg",
-							"image_path": "/assets/images/2024/IMG_0106.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0105.jpeg",
-							"image_path": "/assets/images/2024/IMG_0105.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0104.jpeg",
-							"image_path": "/assets/images/2024/IMG_0104.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0103.jpeg",
-							"image_path": "/assets/images/2024/IMG_0103.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0099.jpeg",
-							"image_path": "/assets/images/2024/IMG_0099.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0101.jpeg",
-							"image_path": "/assets/images/2024/IMG_0101.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0100.jpeg",
-							"image_path": "/assets/images/2024/IMG_0100.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0098.jpeg",
-							"image_path": "/assets/images/2024/IMG_0098.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0097.jpeg",
-							"image_path": "/assets/images/2024/IMG_0097.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0095.jpeg",
-							"image_path": "/assets/images/2024/IMG_0095.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0094.jpeg",
-							"image_path": "/assets/images/2024/IMG_0094.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0093.jpeg",
-							"image_path": "/assets/images/2024/IMG_0093.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0092.jpeg",
-							"image_path": "/assets/images/2024/IMG_0092.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0091.jpeg",
-							"image_path": "/assets/images/2024/IMG_0091.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0090.jpeg",
-							"image_path": "/assets/images/2024/IMG_0090.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0122.jpeg",
-							"image_path": "/assets/images/2024/IMG_0122.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0121.jpeg",
-							"image_path": "/assets/images/2024/IMG_0121.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0120.jpeg",
-							"image_path": "/assets/images/2024/IMG_0120.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_1111.jpeg",
-							"image_path": "/assets/images/2024/IMG_1111.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0137.jpeg",
-							"image_path": "/assets/images/2024/IMG_0137.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"title": "K9 2024 Bark Gallery",
-							"image_path": "/assets/images/2024/IMG_0147.jpeg",
-							"alt": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0149.jpeg",
-							"image_path": "/assets/images/2024/IMG_0149.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0150.jpeg",
-							"image_path": "/assets/images/2024/IMG_0150.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						},
-						{
-							"url": "/assets/images/2024/IMG_0152.jpeg",
-							"image_path": "/assets/images/2024/IMG_0152.jpeg",
-							"alt": "K9 2024 Bark Gallery",
-							"title": "K9 2024 Bark Gallery"
-						}
-					],
-					"gallery_caption": "K9 2024 Bark Gallery",
-					"gallery_layout": "half",
-					"content_after": [
 						{
 							"_type": "block",
 							"_key": "k8",
@@ -33370,145 +33804,300 @@
 									"marks": []
 								}
 							]
-						}
-					],
-					"gallery": [
-						{
-							"url": "/assets/images/2023/k9_campout_schedule.png",
-							"image_path": "/assets/images/2023/k9_campout_schedule.png",
-							"alt": "2023 K9 Campout Schedule",
-							"title": "2023 K9 Campout Schedule"
 						},
 						{
-							"url": "/assets/images/2023/k9_campout_map.png",
-							"image_path": "/assets/images/2023/k9_campout_map.png",
-							"alt": "2023 K9 Campout Map",
-							"title": "2023 K9 Campout Map"
+							"_type": "gallery",
+							"_key": "gallery-2023-gallery-25",
+							"columns": 2,
+							"images": [
+								{
+									"_type": "image",
+									"_key": "img-26",
+									"asset": {
+										"_ref": "01KZKX1X85FZP1PAF4019C497S",
+										"url": "/_emdash/api/media/file/01KZKX1X56XKFX03GFSGGQDQYW.png"
+									},
+									"alt": "2023 K9 Campout Schedule",
+									"width": 1500,
+									"height": 2100,
+									"blurhash": "LJH,9i#,qbw{}Cn%ofsn[pw^K4jG",
+									"dominantColor": "rgb(134,63,44)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-27",
+									"asset": {
+										"_ref": "01KZKX1XV7VYNYJ42DJPDB6F1W",
+										"url": "/_emdash/api/media/file/01KZKX1XM2VK0HM5674XHC8WQM.png"
+									},
+									"alt": "2023 K9 Campout Map",
+									"width": 1500,
+									"height": 2100,
+									"blurhash": "L5Cssy.700?c00WEoz_3_4%2adM|",
+									"dominantColor": "rgb(84,91,77)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-28",
+									"asset": {
+										"_ref": "01KZKX1Y8NDB7XRBS1VP1BGARK",
+										"url": "/_emdash/api/media/file/01KZKX1Y7121PNJWMXM6YHGGX8.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 709,
+									"height": 1280,
+									"blurhash": "L4F~Q{00|m-P85Di0|J-^^gi4V=s",
+									"dominantColor": "rgb(125,122,117)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-29",
+									"asset": {
+										"_ref": "01KZKX1YPHXJSF0EMEWY8TGTTT",
+										"url": "/_emdash/api/media/file/01KZKX1YMKN5T1G9BGG01M0FFS.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 1280,
+									"height": 960,
+									"blurhash": "L7Hx4@1r~C^Q0cVs5lo=0cvyQ:pK",
+									"dominantColor": "rgb(137,121,116)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2a",
+									"asset": {
+										"_ref": "01KZKX1Z49JVMHK4NHDFEY9VZX",
+										"url": "/_emdash/api/media/file/01KZKX1Z27WY03HAS2MG1R580T.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 960,
+									"height": 1280,
+									"blurhash": "LFFrR}nO.l%K~pRP.7E1O=Nxm-R6",
+									"dominantColor": "rgb(113,100,101)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2b",
+									"asset": {
+										"_ref": "01KZKX1ZGN8M4470ECJD4G068Y",
+										"url": "/_emdash/api/media/file/01KZKX1ZFSZWFFVG6G4JA2EQ4G.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 665,
+									"height": 965,
+									"blurhash": "L9ECOn~AVns@1VpLIbx700aI?IRk",
+									"dominantColor": "rgb(104,99,111)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2c",
+									"asset": {
+										"_ref": "01KZKX1ZY3YY1DWMZT87RV16PX",
+										"url": "/_emdash/api/media/file/01KZKX1ZWBQ90PA61SCJ0TP2HC.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 1277,
+									"height": 840,
+									"blurhash": "L7F5,D^I.8%hpa9[NExs~7XmELIn",
+									"dominantColor": "rgb(113,106,104)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2d",
+									"asset": {
+										"_ref": "01KZKX20AS5285D5M46R4HJ6WS",
+										"url": "/_emdash/api/media/file/01KZKX209Q6TJHQD160HHZJY3Q.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 802,
+									"height": 1055,
+									"blurhash": "L8Eo=1.60c~W_H_Nx^9F%$9F8_-;",
+									"dominantColor": "rgb(108,106,95)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2e",
+									"asset": {
+										"_ref": "01KZKX20RBZZ3MRBBS8YFAYQR3",
+										"url": "/_emdash/api/media/file/01KZKX20PZYFGWEX0TF7ZQ3EZ3.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 960,
+									"height": 1130,
+									"blurhash": "LHHK|ZXntjobCQ~Ws+NaJ5M|RQWB",
+									"dominantColor": "rgb(133,118,114)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2f",
+									"asset": {
+										"_ref": "01KZKX215V92DXVSXZ1Q0R74TT",
+										"url": "/_emdash/api/media/file/01KZKX2147GPY2VF2ATA0Q1RMA.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 1280,
+									"height": 714,
+									"blurhash": "LMGITBM{D$%MEmRiIAxv.TRjITxv",
+									"dominantColor": "rgb(122,116,111)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2g",
+									"asset": {
+										"_ref": "01KZKX21KYK75RRST7C8CVX5YS",
+										"url": "/_emdash/api/media/file/01KZKX21J2GJDJ6HM9SPZJKJ57.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 1280,
+									"height": 959,
+									"blurhash": "LKGIN0-A_0x[%iNa57I:_4RP%NjJ",
+									"dominantColor": "rgb(123,116,118)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2h",
+									"asset": {
+										"_ref": "01KZKX2227ACHRJ5Q12WEB437V",
+										"url": "/_emdash/api/media/file/01KZKX2202ZKNYKY3R6T9SV8GS.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 1280,
+									"height": 960,
+									"blurhash": "LNI=AINlpB%2-=X9WGxsItxmjGRm",
+									"dominantColor": "rgb(151,152,146)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2i",
+									"asset": {
+										"_ref": "01KZKX22F9256SMER64BBBBTM9",
+										"url": "/_emdash/api/media/file/01KZKX22E2M6YMEFZ9069RTPGV.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 861,
+									"height": 1091,
+									"blurhash": "LGE.-5Io?YIT?w01xtIT?ba0%Ns:",
+									"dominantColor": "rgb(111,105,100)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2j",
+									"asset": {
+										"_ref": "01KZKX22WSRNPAYBJXH5GJY5RJ",
+										"url": "/_emdash/api/media/file/01KZKX22V92NX0E8F152BTANWK.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 954,
+									"height": 909,
+									"blurhash": "LLF=]qtjROVs53S]n%M_~BkCo#o}",
+									"dominantColor": "rgb(121,124,118)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2k",
+									"asset": {
+										"_ref": "01KZKX23A0N1QMRZ48QAMWK6P7",
+										"url": "/_emdash/api/media/file/01KZKX23950D41X180K1R7Q4GV.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 1112,
+									"height": 658,
+									"blurhash": "LEG8+b?I_L~DGkS}k6Ipx=%MsqNG",
+									"dominantColor": "rgb(125,118,116)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2l",
+									"asset": {
+										"_ref": "01KZKX23QT7KD6F7GD2E0P8FMK",
+										"url": "/_emdash/api/media/file/01KZKX23PB7MQSS6CVNSBVFB4B.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 960,
+									"height": 1103,
+									"blurhash": "L5HBb.~U60.90yX-~q-VcV?8t6I]",
+									"dominantColor": "rgb(130,117,113)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2m",
+									"asset": {
+										"_ref": "01KZKX244VKXH19C3NPZEXJWME",
+										"url": "/_emdash/api/media/file/01KZKX243R7YBDVXBMZXZPT9CE.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 890,
+									"height": 989,
+									"blurhash": "LXEfH9jE%gNZ~pM{xuWBXSIoV[so",
+									"dominantColor": "rgb(101,95,97)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2n",
+									"asset": {
+										"_ref": "01KZKX24JHDVF6CSZZ00DAX1B0",
+										"url": "/_emdash/api/media/file/01KZKX24GV3BW6CA6PN4WP5TFH.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 727,
+									"height": 1280,
+									"blurhash": "L5F=p-$;.8EL00Z$%KI]00$,?a-W",
+									"dominantColor": "rgb(125,120,109)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2o",
+									"asset": {
+										"_ref": "01KZKX24ZDQ8DZRAN2D0K9ZBGS",
+										"url": "/_emdash/api/media/file/01KZKX24YCK8DR3M5P7856X9FZ.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 623,
+									"height": 1280,
+									"blurhash": "L5FrV3?d0g%g1y^*9Z9t00M{}[M}",
+									"dominantColor": "rgb(123,112,102)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2p",
+									"asset": {
+										"_ref": "01KZKX25D9Q77VXQSP5M38FCVE",
+										"url": "/_emdash/api/media/file/01KZKX25BGG178WHXH034FT80P.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 1280,
+									"height": 743,
+									"blurhash": "LLEfjMN0xVJC~2TLWBrp?7R*kXxt",
+									"dominantColor": "rgb(108,116,136)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2q",
+									"asset": {
+										"_ref": "01KZKX25TZVFX6WWRARAZZTKW1",
+										"url": "/_emdash/api/media/file/01KZKX25SHSSWAJ51VTEE9S2WT.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 960,
+									"height": 1280,
+									"blurhash": "L9B,D.wj1.jZ1.a#|*WZ1.O7;noM",
+									"dominantColor": "rgb(70,4,88)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2r",
+									"asset": {
+										"_ref": "01KZKX267VNTQGBTMT78112JD9",
+										"url": "/_emdash/api/media/file/01KZKX266X6HKNWP4CE3422EX5.jpeg"
+									},
+									"alt": "K9 Campout 2023 Gallery",
+									"width": 838,
+									"height": 846,
+									"blurhash": "LNE{OYNHW=R%_K?GE1oft*o|sVRk",
+									"dominantColor": "rgb(110,104,91)"
+								}
+							]
 						},
-						{
-							"url": "/assets/images/2023/IMG_0035.jpeg",
-							"image_path": "/assets/images/2023/IMG_0035.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0033.jpeg",
-							"image_path": "/assets/images/2023/IMG_0033.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0030.jpeg",
-							"image_path": "/assets/images/2023/IMG_0030.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0028.jpeg",
-							"image_path": "/assets/images/2023/IMG_0028.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0027.jpeg",
-							"image_path": "/assets/images/2023/IMG_0027.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0026.jpeg",
-							"image_path": "/assets/images/2023/IMG_0026.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0025.jpeg",
-							"image_path": "/assets/images/2023/IMG_0025.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0024.jpeg",
-							"image_path": "/assets/images/2023/IMG_0024.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0023.jpeg",
-							"image_path": "/assets/images/2023/IMG_0023.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0022.jpeg",
-							"image_path": "/assets/images/2023/IMG_0022.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0020.jpeg",
-							"image_path": "/assets/images/2023/IMG_0020.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0018.jpeg",
-							"image_path": "/assets/images/2023/IMG_0018.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0017.jpeg",
-							"image_path": "/assets/images/2023/IMG_0017.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0016.jpeg",
-							"image_path": "/assets/images/2023/IMG_0016.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0012.jpeg",
-							"image_path": "/assets/images/2023/IMG_0012.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0011.jpeg",
-							"image_path": "/assets/images/2023/IMG_0011.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0010.jpeg",
-							"image_path": "/assets/images/2023/IMG_0010.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0008.jpeg",
-							"image_path": "/assets/images/2023/IMG_0008.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0975.jpeg",
-							"image_path": "/assets/images/2023/IMG_0975.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						},
-						{
-							"url": "/assets/images/2023/IMG_0034.jpeg",
-							"image_path": "/assets/images/2023/IMG_0034.jpeg",
-							"alt": "K9 Campout 2023 Gallery",
-							"title": "K9 Campout 2023 Gallery"
-						}
-					],
-					"gallery_caption": "The 2023 Gallery",
-					"gallery_layout": "half",
-					"content_after": [
 						{
 							"_type": "block",
 							"_key": "k8",
@@ -33946,6 +34535,196 @@
 							]
 						},
 						{
+							"_type": "gallery",
+							"_key": "gallery-2022-gallery-2s",
+							"columns": 2,
+							"images": [
+								{
+									"_type": "image",
+									"_key": "img-2t",
+									"asset": {
+										"_ref": "01KZKX26PNQ9WZP78ANBM0MZ24",
+										"url": "/_emdash/api/media/file/01KZKX26KFFWW4ZW369JWDC992.png"
+									},
+									"alt": "2022 K9 Campout Schedule",
+									"width": 1500,
+									"height": 2100,
+									"blurhash": "LHHl;*#mzV$%{znixtxZ|[$NE#n%",
+									"dominantColor": "rgb(134,63,44)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2u",
+									"asset": {
+										"_ref": "01KZKX272K23VK5XCRVVMVTW5C",
+										"url": "/_emdash/api/media/file/01KZKX2724KXG9GQTGTVQJSNS5.png"
+									},
+									"alt": "2022 K9 Campout Map",
+									"width": 432,
+									"height": 605,
+									"blurhash": "L4Bpzpx;00_400IVD*_2%hayjYM|",
+									"dominantColor": "rgb(83,90,76)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2v",
+									"asset": {
+										"_ref": "01KZKX27MH3DWG9AEDZBWBXKS1",
+										"url": "/_emdash/api/media/file/01KZKX27EFFDVA3HK2Q5P8HZ12.jpg"
+									},
+									"alt": "2022 K9 Campout Flyer",
+									"width": 1500,
+									"height": 2100,
+									"blurhash": "LDFFW^8_Na~qD~%MIUE0.9bbVssW",
+									"dominantColor": "rgb(101,96,89)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2w",
+									"asset": {
+										"_ref": "01KZKX2837K2JSF6XJ3ARGT9G3",
+										"url": "/_emdash/api/media/file/01KZKX280PBRMJR30KY65XW3J2.jpg"
+									},
+									"alt": "@ropes.sweat.and.tears & @tied_boi",
+									"width": 1080,
+									"height": 1080,
+									"blurhash": "LFE:6m;KKhbnYv9dXMxrAPj|=vT0",
+									"dominantColor": "rgb(101,109,85)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2x",
+									"asset": {
+										"_ref": "01KZKX28H5600TENJMNMCZBA8T",
+										"url": "/_emdash/api/media/file/01KZKX28EZ66ED3R13Z9JQGFFX.jpg"
+									},
+									"alt": "@ropes.sweat.and.tears & @tied_boi",
+									"width": 1124,
+									"height": 1280,
+									"blurhash": "LJFFWyEKJ,t8.jX2NGoMkiE1sl%0",
+									"dominantColor": "rgb(109,105,80)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-2y",
+									"asset": {
+										"_ref": "01KZKX28WVMZCQSD8GXRBDYF9Y",
+										"url": "/_emdash/api/media/file/01KZKX28WV5306W3T86N7EY78M.jpg"
+									},
+									"alt": "@bolderpup's and @puproar's tiny home",
+									"width": 4000,
+									"height": 2252
+								},
+								{
+									"_type": "image",
+									"_key": "img-2z",
+									"asset": {
+										"_ref": "01KZKX298S9J4ZHTTV5X094XNV",
+										"url": "/_emdash/api/media/file/01KZKX298QBTJH9F8Y9PR65KHP.jpg"
+									},
+									"alt": "Pupswim",
+									"width": 4000,
+									"height": 2252
+								},
+								{
+									"_type": "image",
+									"_key": "img-30",
+									"asset": {
+										"_ref": "01KZKX29MAVTEJZ568TDF85YXC",
+										"url": "/_emdash/api/media/file/01KZKX29M9M0BVTG1GVYJAD488.jpg"
+									},
+									"width": 3648,
+									"height": 2736
+								},
+								{
+									"_type": "image",
+									"_key": "img-31",
+									"asset": {
+										"_ref": "01KZKX2A0M8H5HV1TTG80RTMDC",
+										"url": "/_emdash/api/media/file/01KZKX2A0KEDDV9VAVSTYK0E8M.jpg"
+									},
+									"width": 4000,
+									"height": 2252
+								},
+								{
+									"_type": "image",
+									"_key": "img-32",
+									"asset": {
+										"_ref": "01KZKX2AD2VD8E43V2JMVGWVZ4",
+										"url": "/_emdash/api/media/file/01KZKX2AD0PKAFXB3ZTZ5GAS04.jpg"
+									},
+									"width": 4000,
+									"height": 2252
+								},
+								{
+									"_type": "image",
+									"_key": "img-33",
+									"asset": {
+										"_ref": "01KZKX2ARYC9FCQVY9AMW48Z4A",
+										"url": "/_emdash/api/media/file/01KZKX2ARXTZ7387PVP2KKS2XZ.jpg"
+									},
+									"width": 4000,
+									"height": 2252
+								},
+								{
+									"_type": "image",
+									"_key": "img-34",
+									"asset": {
+										"_ref": "01KZKX2BBGRJ9JAPDRZQFSK1GT",
+										"url": "/_emdash/api/media/file/01KZKX2B4YNQGW7RS9RM7RB9XQ.jpg"
+									},
+									"width": 2208,
+									"height": 2944,
+									"blurhash": "LXHUzr?FRiax~pt6Ris.IUNHWBWB",
+									"dominantColor": "rgb(127,119,110)"
+								},
+								{
+									"_type": "image",
+									"_key": "img-35",
+									"asset": {
+										"_ref": "01KZKX2BQD7TH039W44K5PKTZZ",
+										"url": "/_emdash/api/media/file/01KZKX2BQC6XZC8ZGX461QHVJ7.jpg"
+									},
+									"width": 3648,
+									"height": 2736
+								},
+								{
+									"_type": "image",
+									"_key": "img-36",
+									"asset": {
+										"_ref": "01KZKX2C3GC0H50QT0SSSN9E4H",
+										"url": "/_emdash/api/media/file/01KZKX2C3EX66R8RY0YK8NERTQ.jpg"
+									},
+									"width": 3648,
+									"height": 2736
+								},
+								{
+									"_type": "image",
+									"_key": "img-37",
+									"asset": {
+										"_ref": "01KZKX2CFMJCCPRTJZ89TEBJCP",
+										"url": "/_emdash/api/media/file/01KZKX2CFKVTJFM1DCZVZW9DQS.jpg"
+									},
+									"alt": "Mosh",
+									"width": 4000,
+									"height": 2252
+								},
+								{
+									"_type": "image",
+									"_key": "img-38",
+									"asset": {
+										"_ref": "01KZKX2CY4PFC712Z1WVV2T4GT",
+										"url": "/_emdash/api/media/file/01KZKX2CVEEA87Q3QFVVK42C2K.jpg"
+									},
+									"alt": "Shadow is sleepy",
+									"width": 960,
+									"height": 1280,
+									"blurhash": "LR7MzSt6O_TMkskWk9abT2bJo2kY",
+									"dominantColor": "rgb(47,111,164)"
+								}
+							]
+						},
+						{
 							"_type": "block",
 							"_key": "k9",
 							"style": "normal",
@@ -33981,107 +34760,7 @@
 								}
 							]
 						}
-					],
-					"gallery": [
-						{
-							"url": "/assets/images/2022/camp_k9_schedule.png",
-							"image_path": "/assets/images/2022/camp_k9_schedule.png",
-							"alt": "2022 K9 Campout Schedule",
-							"title": "2022 K9 Campout Schedule"
-						},
-						{
-							"url": "/assets/images/2022/k9_campout_map_final_web.png",
-							"image_path": "/assets/images/2022/k9_campout_map_final_web.png",
-							"alt": "2022 K9 Campout Map",
-							"title": "2022 K9 Campout Map"
-						},
-						{
-							"url": "/assets/images/2022/k9campout3.jpg",
-							"image_path": "/assets/images/2022/k9campout3.jpg",
-							"alt": "2022 K9 Campout Flyer",
-							"title": "2022 K9 Campout Flyer"
-						},
-						{
-							"url": "/assets/images/2022/tied_boi_1.jpg",
-							"image_path": "/assets/images/2022/tied_boi_1.jpg",
-							"alt": "@ropes.sweat.and.tears & @tied_boi",
-							"title": "@ropes.sweat.and.tears & @tied_boi"
-						},
-						{
-							"url": "/assets/images/2022/tied_boi_2.jpg",
-							"image_path": "/assets/images/2022/tied_boi_2.jpg",
-							"alt": "@ropes.sweat.and.tears & @tied_boi",
-							"title": "@ropes.sweat.and.tears & @tied_boi"
-						},
-						{
-							"url": "/assets/images/2022/20220826_013409.jpg",
-							"image_path": "/assets/images/2022/20220826_013409.jpg",
-							"alt": "@bolderpup's and @puproar's tiny home",
-							"title": "@bolderpup's and @puproar's tiny home"
-						},
-						{
-							"url": "/assets/images/2022/20220827_134928.jpg",
-							"image_path": "/assets/images/2022/20220827_134928.jpg",
-							"alt": "Pupswim",
-							"title": "The very cold pup swim"
-						},
-						{
-							"url": "/assets/images/2022/20220827_140354.jpg",
-							"image_path": "/assets/images/2022/20220827_140354.jpg",
-							"alt": null,
-							"title": null
-						},
-						{
-							"url": "/assets/images/2022/20220827_214629.jpg",
-							"image_path": "/assets/images/2022/20220827_214629.jpg",
-							"alt": null,
-							"title": null
-						},
-						{
-							"url": "/assets/images/2022/20220827_215020.jpg",
-							"image_path": "/assets/images/2022/20220827_215020.jpg",
-							"alt": null,
-							"title": null
-						},
-						{
-							"url": "/assets/images/2022/20220827_215028.jpg",
-							"image_path": "/assets/images/2022/20220827_215028.jpg",
-							"alt": null,
-							"title": null
-						},
-						{
-							"url": "/assets/images/2022/20220828_114914.jpg",
-							"image_path": "/assets/images/2022/20220828_114914.jpg",
-							"alt": null,
-							"title": null
-						},
-						{
-							"url": "/assets/images/2022/20220828_123152.jpg",
-							"image_path": "/assets/images/2022/20220828_123152.jpg",
-							"alt": null,
-							"title": null
-						},
-						{
-							"url": "/assets/images/2022/20220828_123230.jpg",
-							"image_path": "/assets/images/2022/20220828_123230.jpg",
-							"alt": null,
-							"title": null
-						},
-						{
-							"url": "/assets/images/2022/20220827_183712.jpg",
-							"image_path": "/assets/images/2022/20220827_183712.jpg",
-							"alt": "Mosh",
-							"title": "2022 Mosh"
-						},
-						{
-							"url": "/assets/images/2022/photo_2023-01-10_16-18-17.jpg",
-							"image_path": "/assets/images/2022/photo_2023-01-10_16-18-17.jpg",
-							"alt": "Shadow is sleepy",
-							"title": "Shadow is sleepy"
-						}
-					],
-					"gallery_caption": "The 2022 Gallery",
-					"gallery_layout": "half"
+					]
 				}
 			},
 			{

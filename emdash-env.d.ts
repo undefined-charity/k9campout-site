@@ -12,10 +12,6 @@ export interface Page {
   title: string;
   description?: string;
   content?: PortableTextBlock[];
-  gallery?: unknown;
-  gallery_caption?: string;
-  gallery_layout?: string;
-  content_after?: PortableTextBlock[];
   redirect_url?: string;
   redirect_delay?: number;
   createdAt: Date;

@@ -2,7 +2,6 @@
 // Renders a CMS page entry with the Minimal Mistakes "single" layout
 // (no author sidebar — matches the Jekyll pages on this site).
 import PT from "./PT.astro";
-import GalleryFigure from "./GalleryFigure.astro";
 
 interface Props {
 	page: {
@@ -10,10 +9,6 @@ interface Props {
 		data: {
 			title: string;
 			content?: unknown;
-			gallery?: unknown;
-			gallery_caption?: string | null;
-			gallery_layout?: string | null;
-			content_after?: unknown;
 		};
 		edit: Record<string, Record<string, string>>;
 	};
@@ -21,7 +16,6 @@ interface Props {
 }
 
 const { page, canonicalPath } = Astro.props;
-const gallery = Array.isArray(page.data.gallery) ? page.data.gallery : null;
 ---
 
 <div id="main" role="main">
@@ -39,18 +33,6 @@ const gallery = Array.isArray(page.data.gallery) ? page.data.gallery : null;
 				<div {...page.edit.content}>
 					<PT value={page.data.content} />
 				</div>
-				{gallery && gallery.length > 0 && (
-					<GalleryFigure
-						images={gallery}
-						caption={page.data.gallery_caption}
-						layout={page.data.gallery_layout}
-					/>
-				)}
-				{page.data.content_after && (
-					<div {...page.edit.content_after}>
-						<PT value={page.data.content_after} />
-					</div>
-				)}
 			</section>
 		</div>
 	</article>

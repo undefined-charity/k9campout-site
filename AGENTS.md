@@ -31,10 +31,9 @@ The admin UI is at `http://localhost:4321/_emdash/admin`.
   (plain text for archive listings), `content` (Portable Text), `permalink`
   (original Jekyll URL path, e.g. `/updates/1-Week-ToGo/` -- preserves old URLs
   including their letter case).
-- `pages` collection: `title`, `description`, `content`, plus optional
-  `gallery` (json list of `{url, image_path, alt, title}`), `gallery_caption`,
-  `gallery_layout`, `content_after` (PT rendered after the gallery), and
-  `redirect_url`/`redirect_delay` (emits a meta-refresh, used by /tickets).
+- `pages` collection: `title`, `description`, `content`, plus
+  `redirect_url`/`redirect_delay` (0s delay → HTTP 302, used by /semiperm26;
+  positive delay → rendered meta-refresh page, used by /tickets).
 - Year-scoped pages use slugs like `2025-schedule`, routed via
   `src/pages/[year]/[slug].astro` to `/2025/schedule`.
 - Taxonomies: `category` (updates, events), `tag`. Post URLs follow the old
@@ -43,6 +42,11 @@ The admin UI is at `http://localhost:4321/_emdash/admin`.
 ## Portable Text notes
 
 - Tables use EmDash's native `table` block (editable in admin).
+- Galleries are native `gallery` blocks whose images reference the media
+  library. Originals: `source-assets/gallery/`; bootstrap a fresh media store
+  with `node scripts/import-gallery-media.mjs [--url <instance>]`. Deleting a
+  photo = remove it from the gallery block (page) and/or delete the media item
+  (Media section) — the file is gone from the site either way.
 - `---` rules became native `break` blocks.
 - Script/iframe embeds (Telegram post widgets) use the custom `raw_html` block,
   rendered unsanitized by `src/components/blocks/RawHtml.astro` via
