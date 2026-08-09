@@ -21,3 +21,6 @@ uploads
 .env
 
 .DS_Store
+
+# Wrangler build artifacts
+.wrangler
