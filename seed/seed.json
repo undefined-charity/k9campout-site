@@ -93,6 +93,59 @@
 					"type": "string"
 				}
 			]
+		},
+		{
+			"slug": "attendees",
+			"label": "Attendees",
+			"labelSingular": "Attendee",
+			"supports": [
+				"drafts",
+				"revisions"
+			],
+			"fields": [
+				{
+					"slug": "year",
+					"label": "Event Year",
+					"type": "string",
+					"required": true
+				},
+				{
+					"slug": "ticket_type",
+					"label": "Ticket Type",
+					"type": "string",
+					"required": true
+				},
+				{
+					"slug": "ticket_code",
+					"label": "Ticket Code (masked, e.g. ****pEp)",
+					"type": "string"
+				},
+				{
+					"slug": "order_id",
+					"label": "Order ID",
+					"type": "string"
+				},
+				{
+					"slug": "site",
+					"label": "Site Assignment",
+					"type": "string"
+				},
+				{
+					"slug": "tag_name",
+					"label": "Tag Name",
+					"type": "string"
+				},
+				{
+					"slug": "bus",
+					"label": "Bus Interest",
+					"type": "string"
+				},
+				{
+					"slug": "sort",
+					"label": "Sort Order",
+					"type": "integer"
+				}
+			]
 		}
 	],
 	"defaultLocale": "en",
