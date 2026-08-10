@@ -53,12 +53,31 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Whole-database export fails on EmDash databases ("cannot export databases
+      # with Virtual Tables (fts5)" — the search indexes), so export table-by-table
+      # and skip the FTS virtual/shadow tables (_emdash_fts_*). Search indexes are
+      # rebuilt by EmDash automatically; they carry no source data.
       - name: Export D1 database
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          npx wrangler d1 export k9campout-emdash-db --remote --output /tmp/d1-backup.sql
+          npx wrangler d1 execute k9campout-emdash-db --remote --json \
+            --command "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT LIKE '\_emdash\_fts\_%' ESCAPE '\' AND name NOT LIKE '\_cf\_%' ESCAPE '\' ORDER BY name" \
+            | node -e "
+              let s = '';
+              process.stdin.on('data', (c) => (s += c));
+              process.stdin.on('end', () => {
+                const rows = JSON.parse(s.slice(s.indexOf('[')))[0].results;
+                console.log(rows.map((r) => r.name).join('\n'));
+              });" > /tmp/tables.txt
+          echo "Exporting $(wc -l < /tmp/tables.txt) tables"
+          : > /tmp/d1-backup.sql
+          while IFS= read -r t; do
+            [ -z "$t" ] && continue
+            npx wrangler d1 export k9campout-emdash-db --remote --table "$t" --output /tmp/part.sql
+            cat /tmp/part.sql >> /tmp/d1-backup.sql
+          done < /tmp/tables.txt
           gzip -9 /tmp/d1-backup.sql
 
       - name: List media storage keys
