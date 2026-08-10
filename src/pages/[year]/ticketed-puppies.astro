@@ -2,6 +2,7 @@
 import { getEmDashCollection, getEmDashEntry } from "emdash";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import PT from "../../components/PT.astro";
+import { longDate } from "../../utils/posts";
 
 const { year } = Astro.params;
 if (!year || !/^20\d{2}$/.test(year)) return Astro.rewrite("/404");
@@ -20,6 +21,27 @@ const { entries: attendees, cacheHint: attendeesHint } = await getEmDashCollecti
 	limit: 1000,
 });
 Astro.cache.set(attendeesHint);
+
+// Insert the generated table right under the "Complete Attendee List" heading
+// (falling back to the end of the content when no such heading exists).
+type PTBlock = { _type: string; style?: string; children?: { text?: string }[] };
+const content = (page.data.content ?? []) as PTBlock[];
+const blockText = (b: PTBlock) => (b.children ?? []).map((c) => c.text ?? "").join("");
+const headingIdx = content.findIndex(
+	(b) => b._type === "block" && /^h[1-6]$/.test(b.style ?? "") && /attendee list/i.test(blockText(b)),
+);
+const splitAt = headingIdx === -1 ? content.length : headingIdx + 1;
+const contentBefore = content.slice(0, splitAt);
+const contentAfter = content.slice(splitAt);
+
+// "Last updated" reflects the newest change to the page or any attendee row.
+const timestamps = [
+	page.data.updatedAt,
+	...attendees.map((a) => a.data.updatedAt),
+].filter(Boolean) as Date[];
+const lastUpdated = timestamps.length
+	? new Date(Math.max(...timestamps.map((t) => +new Date(t))))
+	: null;
 
 const canonicalPath = `/${year}/ticketed-puppies`;
 ---
@@ -44,7 +66,7 @@ const canonicalPath = `/${year}/ticketed-puppies`;
 
 				<section class="page__content e-content" itemprop="text">
 					<div {...page.edit.content}>
-						<PT value={page.data.content} />
+						<PT value={contentBefore} />
 					</div>
 
 					{attendees.length > 0 && (
@@ -74,6 +96,14 @@ const canonicalPath = `/${year}/ticketed-puppies`;
 								</tbody>
 							</table>
 						</div>
+					)}
+
+					{contentAfter.length > 0 && <PT value={contentAfter} />}
+
+					{attendees.length > 0 && lastUpdated && (
+						<p class="page__meta">
+							<em>Last updated: {longDate(lastUpdated)}</em>
+						</p>
 					)}
 				</section>
 			</div>
