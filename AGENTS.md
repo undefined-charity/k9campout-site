@@ -43,7 +43,11 @@ The admin UI is at `http://localhost:4321/_emdash/admin`.
   are added/edited individually via admin UI, MCP, or CLI — never as one giant
   embedded table. Pages display them with the `collection_table` Portable Text
   block (see plugins/collection-table): insert via "/" → Collection Table in
-  the editor, configured with collection/filter/order/columns. The 2025
+  the editor, configured with collection/filter/order/columns. Column syntax
+  `field:Label:last3` masks all but the trailing chars (****abc); fields not
+  listed (telegram, email, full codes) are never rendered — the content API
+  is auth-gated and attendee fields are excluded from public search, so the
+  collection safely holds the full operational roster. The 2025
   archive page keeps its old embedded table.
 
 ## Portable Text notes

@@ -18,16 +18,30 @@ interface Props {
 const { node } = Astro.props;
 const collection = node?.collection?.trim();
 
-// "field:Label, field2:Label2" → [{field, label}]; bare "field" uses the
-// field name as its label.
+// "field:Label, field2:Label2:last3" → [{field, label, transform}].
+// Bare "field" uses the field name as its label. The third segment is an
+// optional display transform — fields NOT listed here are never rendered,
+// so sensitive columns (emails, handles, full codes) stay private simply
+// by omission or masking:
+//   last3 / last4 — mask all but the trailing N characters (****abc)
 const columns = (node?.columns ?? "")
 	.split(",")
 	.map((c) => c.trim())
 	.filter(Boolean)
 	.map((c) => {
-		const [field, ...rest] = c.split(":");
-		return { field: field.trim(), label: rest.join(":").trim() || field.trim() };
+		const [field, label, transform] = c.split(":").map((p) => p.trim());
+		return { field, label: label || field, transform: transform || null };
 	});
+
+function display(value: unknown, transform: string | null): string {
+	const text = String(value ?? "");
+	const lastN = transform?.match(/^last(\d)$/);
+	if (lastN) {
+		const n = Number(lastN[1]);
+		return text.length > n ? "****" + text.slice(-n) : text;
+	}
+	return text;
+}
 
 let entries: Array<{ data: Record<string, unknown> }> = [];
 let error: string | null = null;
@@ -55,9 +69,10 @@ if (!collection) {
 
 const lastUpdated = node?.show_last_updated
 	? entries
-			.map((e) => e.data.updatedAt)
+			.flatMap((e) => [e.data.updatedAt, e.data.publishedAt, e.data.createdAt])
 			.filter(Boolean)
 			.map((t) => +new Date(t as string | Date))
+			.filter((n) => Number.isFinite(n))
 			.reduce((a, b) => Math.max(a, b), 0)
 	: 0;
 
@@ -88,7 +103,7 @@ const lastUpdatedLabel = lastUpdated
 					{entries.map((entry) => (
 						<tr>
 							{columns.map((col) => (
-								<td>{String(entry.data[col.field] ?? "")}</td>
+								<td>{display(entry.data[col.field], col.transform)}</td>
 							))}
 						</tr>
 					))}

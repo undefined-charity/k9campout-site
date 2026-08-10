@@ -144,6 +144,16 @@
 					"slug": "sort",
 					"label": "Sort Order",
 					"type": "integer"
+				},
+				{
+					"slug": "telegram",
+					"label": "Telegram Handle",
+					"type": "string"
+				},
+				{
+					"slug": "email",
+					"label": "Email",
+					"type": "string"
 				}
 			]
 		}
