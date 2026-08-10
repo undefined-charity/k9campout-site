@@ -1,0 +1,14 @@
+{
+  "name": "emdash-collection-table",
+  "version": "0.1.0",
+  "private": true,
+  "description": "EmDash Portable Text block that renders a table from any collection — insert via /Collection Table in the editor",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./astro": "./src/astro/index.ts"
+  },
+  "peerDependencies": {
+    "emdash": ">=0.32.0"
+  }
+}

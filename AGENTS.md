@@ -39,11 +39,12 @@ The admin UI is at `http://localhost:4321/_emdash/admin`.
 - Taxonomies: `category` (updates, events), `tag`. Post URLs follow the old
   Jekyll permalink `/:categories/:title/` via `src/pages/updates/[...path].astro`.
 - `attendees` collection: one entry per ticket (`year`, `ticket_type`,
-  `ticket_code` masked, `order_id`, `site`, `tag_name`, `bus`, `sort`).
-  `/[year]/ticketed-puppies` generates its table from these entries (ordered by
-  `sort`), so rows are added/edited individually via admin UI, MCP, or CLI —
-  never as one giant embedded table. Years with no entries (2025 archive) fall
-  back to the table embedded in the page content.
+  `ticket_code` masked, `order_id`, `site`, `tag_name`, `bus`, `sort`). Rows
+  are added/edited individually via admin UI, MCP, or CLI — never as one giant
+  embedded table. Pages display them with the `collection_table` Portable Text
+  block (see plugins/collection-table): insert via "/" → Collection Table in
+  the editor, configured with collection/filter/order/columns. The 2025
+  archive page keeps its old embedded table.
 
 ## Portable Text notes
 

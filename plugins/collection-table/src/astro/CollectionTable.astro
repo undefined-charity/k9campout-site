@@ -1,0 +1,110 @@
+---
+// Site-side renderer for the `collection_table` Portable Text block.
+// Queries the configured collection at request time and renders a table.
+import { getEmDashCollection } from "emdash";
+
+interface Props {
+	node: {
+		_type: "collection_table";
+		collection?: string;
+		filter_field?: string;
+		filter_value?: string;
+		order_by?: string;
+		columns?: string;
+		show_last_updated?: boolean;
+	};
+}
+
+const { node } = Astro.props;
+const collection = node?.collection?.trim();
+
+// "field:Label, field2:Label2" → [{field, label}]; bare "field" uses the
+// field name as its label.
+const columns = (node?.columns ?? "")
+	.split(",")
+	.map((c) => c.trim())
+	.filter(Boolean)
+	.map((c) => {
+		const [field, ...rest] = c.split(":");
+		return { field: field.trim(), label: rest.join(":").trim() || field.trim() };
+	});
+
+let entries: Array<{ data: Record<string, unknown> }> = [];
+let error: string | null = null;
+
+if (!collection) {
+	error = "collection_table block: no collection configured";
+} else if (columns.length === 0) {
+	error = "collection_table block: no columns configured";
+} else {
+	try {
+		const query: Record<string, unknown> = { limit: 1000 };
+		if (node.filter_field && node.filter_value) {
+			query.where = { [node.filter_field]: node.filter_value };
+		}
+		if (node.order_by) {
+			query.orderBy = { [node.order_by]: "asc" };
+		}
+		const result = await getEmDashCollection(collection, query);
+		entries = result.entries ?? [];
+		if (result.cacheHint) Astro.cache.set(result.cacheHint);
+	} catch (e) {
+		error = `collection_table block: query failed (${e instanceof Error ? e.message : e})`;
+	}
+}
+
+const lastUpdated = node?.show_last_updated
+	? entries
+			.map((e) => e.data.updatedAt)
+			.filter(Boolean)
+			.map((t) => +new Date(t as string | Date))
+			.reduce((a, b) => Math.max(a, b), 0)
+	: 0;
+
+const lastUpdatedLabel = lastUpdated
+	? new Date(lastUpdated).toLocaleDateString("en-US", {
+			year: "numeric",
+			month: "long",
+			day: "numeric",
+			timeZone: "America/Los_Angeles",
+		})
+	: null;
+---
+
+{error ? (
+	<p class="collection-table-error"><em>{error}</em></p>
+) : (
+	<>
+		<div class="emdash-table-wrapper">
+			<table class="emdash-table">
+				<thead>
+					<tr>
+						{columns.map((col) => (
+							<th>{col.label}</th>
+						))}
+					</tr>
+				</thead>
+				<tbody>
+					{entries.map((entry) => (
+						<tr>
+							{columns.map((col) => (
+								<td>{String(entry.data[col.field] ?? "")}</td>
+							))}
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+		{lastUpdatedLabel && (
+			<p class="page__meta">
+				<em>Last updated: {lastUpdatedLabel}</em>
+			</p>
+		)}
+	</>
+)}
+
+<style>
+	.collection-table-error {
+		color: #a33;
+	}
+</style>

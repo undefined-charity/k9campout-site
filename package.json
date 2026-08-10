@@ -24,6 +24,7 @@
     "astro": "^7.0.0",
     "better-sqlite3": "^12.8.0",
     "emdash": "^0.32.0",
+    "emdash-collection-table": "file:plugins/collection-table",
     "emdash-postal": "github:undefined-charity/emdash-postal",
     "react": "19.2.4",
     "react-dom": "19.2.4"

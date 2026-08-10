@@ -6,6 +6,7 @@ import emdash, { local } from "emdash/astro";
 import { sqlite } from "emdash/db";
 import { d1, r2 } from "@emdash-cms/cloudflare";
 import postal from "emdash-postal";
+import { collectionTablePlugin } from "emdash-collection-table";
 
 // EMDASH_TARGET=cloudflare → Workers build (D1 + R2, deployed via wrangler).
 // Default → Node build (SQLite + local uploads) for `npm run dev` and Docker.
@@ -38,7 +39,7 @@ export default defineConfig({
 		emdash({
 			// Postal email transport (invites, magic links) — configure the
 			// server URL/credential in the admin UI under Settings → Postal.
-			plugins: [postal()],
+			plugins: [postal(), collectionTablePlugin()],
 			// Public origin for auth-email links (magic links, invites), OG
 			// tags, etc. Production only — dev keeps localhost.
 			...(isCloudflare ? { siteUrl: "https://k9campout.com" } : {}),
