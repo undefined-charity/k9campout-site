@@ -154,6 +154,11 @@
 					"slug": "email",
 					"label": "Email",
 					"type": "string"
+				},
+				{
+					"slug": "tag_printed",
+					"label": "Tag Printed",
+					"type": "string"
 				}
 			]
 		}
