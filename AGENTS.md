@@ -50,6 +50,15 @@ The admin UI is at `http://localhost:4321/_emdash/admin`.
   collection safely holds the full operational roster. The 2025
   archive page keeps its old embedded table.
 
+- Ticket Tailor bookings flow in automatically: `plugins/tickettailor` exposes
+  a public webhook (`/_emdash/api/plugins/tickettailor/webhook?key=<secret>`,
+  key configured in admin Settings → Ticket Tailor) that turns each
+  ISSUED_TICKET.CREATED delivery into a **draft** attendee with normalization
+  applied (type prefix/suffix stripped, site N/A or TBD, tag/telegram/bus from
+  custom questions, tag_printed No). Publishing the draft puts the pup on the
+  public list. Voided tickets are only logged (Settings → Ticket Tailor shows
+  recent deliveries) — the collection is curated, nothing is auto-deleted.
+
 ## Portable Text notes
 
 - Tables use EmDash's native `table` block (editable in admin).

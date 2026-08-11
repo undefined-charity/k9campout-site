@@ -1,0 +1,14 @@
+{
+  "name": "emdash-tickettailor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ticket Tailor webhook receiver — creates draft attendee entries on new ticket bookings",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./sandbox": "./src/sandbox-entry.ts"
+  },
+  "peerDependencies": {
+    "emdash": ">=0.32.0"
+  }
+}

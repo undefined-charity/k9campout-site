@@ -26,6 +26,7 @@
     "emdash": "^0.32.0",
     "emdash-collection-table": "file:plugins/collection-table",
     "emdash-postal": "github:undefined-charity/emdash-postal",
+    "emdash-tickettailor": "file:plugins/tickettailor",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
