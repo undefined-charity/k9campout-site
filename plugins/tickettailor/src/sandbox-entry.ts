@@ -8,8 +8,7 @@ import type { PluginContext, SandboxedPlugin } from "emdash/plugin";
  * request body — which EmDash plugin routes never see — and forwards
  * `{ raw, signature }` to the public `webhook-signed` route here, where the
  * HMAC signature is verified against the Ticket Tailor signing secret
- * (Settings → Ticket Tailor). A legacy `webhook` route authenticated by a
- * `?key=` URL secret is kept as a fallback/testing entry point.
+ * (Settings → Ticket Tailor).
  *
  * Each ISSUED_TICKET.CREATED becomes an attendee entry with the site's
  * normalization rules applied, is AUTO-PUBLISHED (live on the public
@@ -26,7 +25,6 @@ import type { PluginContext, SandboxedPlugin } from "emdash/plugin";
  *
  * KV settings: `settings:ttSecret`  — Ticket Tailor webhook signing secret
  *              `settings:apiToken`  — EmDash API token (content scopes)
- *              `settings:key`       — legacy URL-key for the fallback route
  *              `settings:year`, `settings:eventFilter`
  * Storage: `events` — webhook delivery log
  *          `queue`  — review flags, id = attendee entry id
@@ -73,23 +71,20 @@ interface QueueEntry {
 interface Settings {
 	ttSecret: string | null;
 	apiToken: string | null;
-	key: string | null;
 	year: string;
 	eventFilter: string | null;
 }
 
 async function getSettings(ctx: PluginContext): Promise<Settings> {
-	const [ttSecret, apiToken, key, year, eventFilter] = await Promise.all([
+	const [ttSecret, apiToken, year, eventFilter] = await Promise.all([
 		ctx.kv.get<string>("settings:ttSecret"),
 		ctx.kv.get<string>("settings:apiToken"),
-		ctx.kv.get<string>("settings:key"),
 		ctx.kv.get<string>("settings:year"),
 		ctx.kv.get<string>("settings:eventFilter"),
 	]);
 	return {
 		ttSecret: ttSecret ?? null,
 		apiToken: apiToken ?? null,
-		key: key ?? null,
 		year: year?.trim() || "2026",
 		eventFilter: eventFilter?.trim() || null,
 	};
@@ -311,9 +306,18 @@ async function processWebhook(
 	}
 
 	// --- event filtering ----------------------------------------------------
+	// Tolerant matching: "ev_8201998", "es_8201998" and bare "8201998" all
+	// refer to the same event; compare with prefixes stripped, against both
+	// the event id and the event-series id. Payloads carrying neither id
+	// pass through (fail-open — the log surfaces them for review).
 	if (settings.eventFilter) {
-		const eventId = asString(payload.event_id) || asString(payload.event_series_id);
-		if (eventId && eventId !== settings.eventFilter) {
+		const stripPrefix = (v: string) => v.replace(/^e[vs]_/i, "");
+		const wanted = stripPrefix(settings.eventFilter);
+		const carried = [asString(payload.event_id), asString(payload.event_series_id)]
+			.filter(Boolean)
+			.map(stripPrefix);
+		const eventId = carried[0] ?? "";
+		if (carried.length > 0 && !carried.includes(wanted)) {
 			await ctx.kv.set(seenKey, now);
 			await logEvent(ctx, webhookId, {
 				createdAt: now,
@@ -584,13 +588,6 @@ async function buildSettingsPage(ctx: PluginContext) {
 						has_value: !!settings.apiToken,
 					},
 					{
-						type: "secret_input",
-						action_id: "key",
-						label: "Fallback URL key (legacy /webhook?key=… route)",
-						placeholder: "Any long random string; leave unchanged if already set",
-						has_value: !!settings.key,
-					},
-					{
 						type: "text_input",
 						action_id: "year",
 						label: "Event year",
@@ -638,7 +635,7 @@ type FormValues = Record<string, unknown>;
 
 async function saveSettings(ctx: PluginContext, values: FormValues) {
 	// Secret inputs echo a mask when unchanged — only store real values.
-	for (const field of ["ttSecret", "apiToken", "key"] as const) {
+	for (const field of ["ttSecret", "apiToken"] as const) {
 		const value = asString(values[field]);
 		if (value && value !== "********") {
 			await ctx.kv.set(`settings:${field}`, value);
@@ -751,32 +748,6 @@ export default {
 					throw new Error("Webhook body is not valid JSON");
 				}
 				return processWebhook(envelope, ctx, new URL(routeCtx.request.url).origin);
-			},
-		},
-
-		/** Legacy/fallback target authenticated by a `?key=` URL secret. */
-		webhook: {
-			public: true,
-			handler: async (routeCtx, ctx) => {
-				const settings = await getSettings(ctx);
-				if (!settings.key) {
-					throw new Error("Ticket Tailor plugin has no webhook key configured");
-				}
-				let providedKey = "";
-				try {
-					providedKey = new URL(routeCtx.request.url).searchParams.get("key") ?? "";
-				} catch {
-					providedKey = "";
-				}
-				if (!timingSafeEqual(providedKey, settings.key)) {
-					ctx.log.warn("Ticket Tailor webhook rejected: bad key");
-					throw new Error("Unauthorized");
-				}
-				return processWebhook(
-					routeCtx.input as WebhookEnvelope,
-					ctx,
-					new URL(routeCtx.request.url).origin,
-				);
 			},
 		},
 

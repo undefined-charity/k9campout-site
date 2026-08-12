@@ -64,7 +64,7 @@ The admin UI is at `http://localhost:4321/_emdash/admin`.
   review queue — the Settings → Ticket Tailor page lists pending entries
   with "Mark reviewed" / "Remove entry" actions and a delivery log. Voided
   tickets are flagged there too; nothing is ever auto-deleted (curated
-  collection). A legacy `webhook?key=` route remains as fallback.
+  collection).
 
 ## Portable Text notes
 
