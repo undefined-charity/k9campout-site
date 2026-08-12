@@ -488,26 +488,41 @@ const OUTCOME_LABELS: Record<string, string> = {
 	error: "Error",
 };
 
-function describeQueueEntry(entry: QueueEntry, entryStatus: string | null): string {
+/**
+ * Blocks for one review-queue card. Block Kit sections are plain text (no
+ * markdown), so structure comes from real blocks: a `fields` label/value
+ * grid for the booking details and a `context` line for status.
+ */
+function queueEntryBlocks(entry: QueueEntry, entryStatus: string | null): unknown[] {
 	if (entry.state === "voided") {
-		return `🚫 ${entry.note ?? `Ticket ${entry.code} was voided — remove its entry if it exists.`}`;
+		return [
+			{
+				type: "section",
+				text: `🚫 ${entry.note ?? `Ticket ${entry.code} was voided — remove its entry if it exists.`}`,
+			},
+		];
 	}
-	const bits = [
-		`**${entry.tag}** — ${entry.type}`,
-		`ticket ${entry.code}`,
-		`site ${entry.site}`,
+	const fields: Array<{ label: string; value: string }> = [
+		{ label: "Tag name", value: entry.tag },
+		{ label: "Ticket", value: `${entry.type} · ${entry.code}` },
+		{ label: "Site", value: entry.site },
 	];
-	if (entry.telegram) bits.push(`telegram ${entry.telegram}`);
-	if (entry.bus) bits.push(`bus ${entry.bus}`);
-	if (entry.email) bits.push(entry.email);
-	if (entry.holder) bits.push(`buyer ${entry.holder}`);
+	if (entry.bus) fields.push({ label: "Bus", value: entry.bus });
+	if (entry.telegram) fields.push({ label: "Telegram", value: entry.telegram });
+	if (entry.email) fields.push({ label: "Email", value: entry.email });
+	if (entry.holder) fields.push({ label: "Ticket holder", value: entry.holder });
+
 	const status =
 		entryStatus === "published"
-			? "live on the public list"
+			? "✅ Live on the public list"
 			: entryStatus === null
-				? "⚠️ entry no longer exists — dismiss this flag"
+				? "⚠️ Entry no longer exists — dismiss this flag"
 				: `⚠️ ${entryStatus.toUpperCase()} — not on the public list (publish it in Content → Attendees)`;
-	return `${bits.join(" · ")}\n_${status}_`;
+
+	return [
+		{ type: "fields", fields },
+		{ type: "context", text: status },
+	];
 }
 
 async function buildSettingsPage(ctx: PluginContext) {
@@ -535,12 +550,12 @@ async function buildSettingsPage(ctx: PluginContext) {
 		queue.length === 0
 			? [
 					{
-						type: "section" as const,
-						text: "_Nothing awaiting review — new bookings will appear here automatically._",
+						type: "context" as const,
+						text: "Nothing awaiting review — new bookings will appear here automatically.",
 					},
 				]
 			: queue.flatMap((item) => [
-					{ type: "section" as const, text: describeQueueEntry(item.data, statuses.get(item.id) ?? null) },
+					...queueEntryBlocks(item.data, statuses.get(item.id) ?? null),
 					{
 						type: "actions" as const,
 						elements: [
@@ -583,8 +598,12 @@ async function buildSettingsPage(ctx: PluginContext) {
 			...reviewBlocks,
 			{ type: "header", text: "Settings" },
 			{
-				type: "section",
-				text: `**Webhook URL** for Ticket Tailor (Settings → API & webhooks → Add webhook):\n\`${signedUrl}\`\nDeliveries are verified with your Ticket Tailor **webhook signing secret** below — no secret in the URL needed.`,
+				type: "fields",
+				fields: [{ label: "Webhook URL for Ticket Tailor", value: signedUrl }],
+			},
+			{
+				type: "context",
+				text: "Add it under Ticket Tailor → Settings → API & webhooks → Add webhook. Deliveries are verified with the webhook signing secret below — no secret in the URL needed.",
 			},
 			{
 				type: "form",
