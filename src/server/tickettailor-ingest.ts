@@ -23,6 +23,16 @@ import type { APIRoute } from "astro";
 
 export const prerender = false;
 
+/** Browsing here in a browser is a GET — answer helpfully instead of 404ing. */
+export const GET: APIRoute = async () =>
+	new Response(
+		JSON.stringify({
+			ok: true,
+			info: "Ticket Tailor webhook endpoint. Deliveries arrive as signed POSTs; there is nothing to see via GET.",
+		}),
+		{ status: 200, headers: { "Content-Type": "application/json" } },
+	);
+
 export const POST: APIRoute = async ({ request, locals }) => {
 	const emdash = locals.emdash;
 	if (!emdash?.handlePublicPluginApiRoute) {

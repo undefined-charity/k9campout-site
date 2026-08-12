@@ -108,6 +108,28 @@ function normalizeTicketType(raw: string): string {
 		.trim();
 }
 
+/**
+ * Ticket Tailor API ids carry type prefixes ("or_81028610") but the curated
+ * roster stores bare numbers ("81028610") — strip the prefix on ingest.
+ */
+function normalizeOrderId(raw: string): string {
+	return raw.replace(/^or_/i, "");
+}
+
+/**
+ * Telegram answers arrive as free text; the roster stores bare handles
+ * (no @, no t.me/ URL). Placeholder answers ("N/A", "none", "-") become
+ * empty rather than polluting the private column.
+ */
+function normalizeTelegram(raw: string): string {
+	const cleaned = raw
+		.replace(/^https?:\/\/(www\.)?t(elegram)?\.me\//i, "")
+		.replace(/^@+/, "")
+		.trim();
+	if (/^(n\/?a|none|nil|no|nope|-+|\.+)$/i.test(cleaned)) return "";
+	return cleaned;
+}
+
 /** Yes/No normalization for the bus question. */
 function normalizeYesNo(raw: string): string {
 	if (!raw) return "";
@@ -345,7 +367,7 @@ async function processWebhook(input: WebhookEnvelope, ctx: PluginContext): Promi
 		const ticketType = normalizeTicketType(rawType) || "TBD";
 		const site = /event\s*only/i.test(ticketType) ? "N/A" : "TBD";
 		const answers = extractCustomAnswers(payload);
-		const orderId = asString(payload.order_id);
+		const orderId = normalizeOrderId(asString(payload.order_id));
 		const email = asString(payload.email);
 
 		const scan = await scanAttendees(ctx, settings.year, ticketCode);
@@ -369,7 +391,7 @@ async function processWebhook(input: WebhookEnvelope, ctx: PluginContext): Promi
 			site,
 			tag_name: answers.tagName || "TBD",
 			bus: normalizeYesNo(answers.bus),
-			telegram: answers.telegram,
+			telegram: normalizeTelegram(answers.telegram),
 			email,
 			tag_printed: "No",
 			sort: scan.maxSort + 10,
@@ -384,7 +406,7 @@ async function processWebhook(input: WebhookEnvelope, ctx: PluginContext): Promi
 			code: ticketCode,
 			type: ticketType,
 			site,
-			telegram: answers.telegram,
+			telegram: normalizeTelegram(answers.telegram),
 			bus: normalizeYesNo(answers.bus),
 			email,
 			holder,
