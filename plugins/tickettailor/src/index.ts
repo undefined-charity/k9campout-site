@@ -19,9 +19,13 @@ export function tickettailorPlugin(options = {}): PluginDescriptor {
 		format: "standard",
 		entrypoint: "emdash-tickettailor/sandbox",
 		options,
-		capabilities: ["content:read", "content:write"],
+		// network:request powers the self-call to the site's own publish API
+		// (plugins cannot change content status directly).
+		capabilities: ["content:read", "content:write", "network:request"],
+		allowedHosts: ["k9campout.com", "www.k9campout.com", "localhost", "127.0.0.1"],
 		storage: {
 			events: { indexes: ["createdAt", "outcome"] },
+			queue: { indexes: ["createdAt", "state"] },
 		},
 		adminPages: [{ path: "/settings", label: "Ticket Tailor", icon: "link" }],
 	};

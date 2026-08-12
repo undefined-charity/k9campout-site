@@ -50,14 +50,21 @@ The admin UI is at `http://localhost:4321/_emdash/admin`.
   collection safely holds the full operational roster. The 2025
   archive page keeps its old embedded table.
 
-- Ticket Tailor bookings flow in automatically: `plugins/tickettailor` exposes
-  a public webhook (`/_emdash/api/plugins/tickettailor/webhook?key=<secret>`,
-  key configured in admin Settings → Ticket Tailor) that turns each
-  ISSUED_TICKET.CREATED delivery into a **draft** attendee with normalization
-  applied (type prefix/suffix stripped, site N/A or TBD, tag/telegram/bus from
-  custom questions, tag_printed No). Publishing the draft puts the pup on the
-  public list. Voided tickets are only logged (Settings → Ticket Tailor shows
-  recent deliveries) — the collection is curated, nothing is auto-deleted.
+- Ticket Tailor bookings flow in automatically via `plugins/tickettailor`:
+  Ticket Tailor's webhook points at `/api/tickettailor-webhook` (a site-level
+  front door in `src/pages/api/` that captures the raw body — plugin routes
+  never see raw bytes — and forwards it to the plugin's `webhook-signed`
+  route, which verifies Ticket Tailor's HMAC signature with the signing
+  secret from Settings → Ticket Tailor). Each ISSUED_TICKET.CREATED becomes
+  an attendee with normalization applied (type prefix/suffix stripped, site
+  N/A or TBD, tag/telegram/bus from custom questions, tag_printed No) and is
+  **auto-published** through the site's own REST publish API using an API
+  token from settings (plugins can't change content status directly; without
+  a token entries stay draft). Every new entry is flagged in the plugin's
+  review queue — the Settings → Ticket Tailor page lists pending entries
+  with "Mark reviewed" / "Remove entry" actions and a delivery log. Voided
+  tickets are flagged there too; nothing is ever auto-deleted (curated
+  collection). A legacy `webhook?key=` route remains as fallback.
 
 ## Portable Text notes
 

@@ -3,23 +3,33 @@ import type { PluginContext, SandboxedPlugin } from "emdash/plugin";
 /**
  * Runtime entry for the Ticket Tailor webhook plugin.
  *
- * Ticket Tailor POSTs a webhook per issued ticket (ISSUED_TICKET.CREATED).
- * This plugin receives it at
- *   /_emdash/api/plugins/tickettailor/webhook?key=<secret>
- * and creates a DRAFT entry in the `attendees` collection with the site's
- * normalization rules applied (ticket type stripped of "[Site N] " prefixes
- * and "(inc. ...)" suffixes; site N/A for event-only tickets, otherwise TBD
- * until an admin assigns one). Publishing the draft — after reviewing the
- * tag name — is what puts the pup on the public ticketed-puppies list.
+ * Flow: Ticket Tailor POSTs a webhook per issued ticket. The site-level
+ * front door (src/pages/api/tickettailor-webhook.ts) captures the RAW
+ * request body — which EmDash plugin routes never see — and forwards
+ * `{ raw, signature }` to the public `webhook-signed` route here, where the
+ * HMAC signature is verified against the Ticket Tailor signing secret
+ * (Settings → Ticket Tailor). A legacy `webhook` route authenticated by a
+ * `?key=` URL secret is kept as a fallback/testing entry point.
  *
- * Auth: Ticket Tailor signs webhooks (HMAC over the raw body), but plugin
- * routes only receive parsed JSON, so the raw bytes needed to verify that
- * signature never reach us. Instead the webhook URL carries a `key` query
- * parameter matched against the secret configured in Settings → Ticket
- * Tailor. Treat the full URL as a secret.
+ * Each ISSUED_TICKET.CREATED becomes an attendee entry with the site's
+ * normalization rules applied, is AUTO-PUBLISHED (live on the public
+ * ticketed-puppies list immediately, with the details the buyer provided),
+ * and is flagged in the plugin's review queue. Admins review new entries
+ * on the plugin page (Settings → Ticket Tailor): "Mark reviewed" clears
+ * the flag, "Remove entry" trashes a bogus/voided entry. Voided tickets
+ * are flagged the same way — never auto-deleted (curated collection).
  *
- * KV settings: `settings:key`, `settings:year`, `settings:eventFilter`.
- * Storage `events`: one row per received webhook (audit/debug log).
+ * Publishing uses the site's own REST API (plugins cannot publish
+ * directly): POST /_emdash/api/content/attendees/{id}/publish with a
+ * Bearer API token stored in settings. Without a token entries stay as
+ * drafts (visible in the review queue, not on the public list).
+ *
+ * KV settings: `settings:ttSecret`  — Ticket Tailor webhook signing secret
+ *              `settings:apiToken`  — EmDash API token (content scopes)
+ *              `settings:key`       — legacy URL-key for the fallback route
+ *              `settings:year`, `settings:eventFilter`
+ * Storage: `events` — webhook delivery log
+ *          `queue`  — review flags, id = attendee entry id
  */
 
 interface WebhookEnvelope {
@@ -34,6 +44,7 @@ interface EventLogEntry {
 	event: string;
 	outcome:
 		| "created"
+		| "created_draft"
 		| "duplicate"
 		| "replayed"
 		| "ignored_event"
@@ -44,19 +55,40 @@ interface EventLogEntry {
 	raw: string;
 }
 
+interface QueueEntry {
+	state: "pending" | "voided";
+	createdAt: string;
+	tag: string;
+	code: string;
+	type: string;
+	site: string;
+	telegram: string;
+	bus: string;
+	email: string;
+	holder: string;
+	published: boolean;
+	note?: string;
+}
+
 interface Settings {
+	ttSecret: string | null;
+	apiToken: string | null;
 	key: string | null;
 	year: string;
 	eventFilter: string | null;
 }
 
 async function getSettings(ctx: PluginContext): Promise<Settings> {
-	const [key, year, eventFilter] = await Promise.all([
+	const [ttSecret, apiToken, key, year, eventFilter] = await Promise.all([
+		ctx.kv.get<string>("settings:ttSecret"),
+		ctx.kv.get<string>("settings:apiToken"),
 		ctx.kv.get<string>("settings:key"),
 		ctx.kv.get<string>("settings:year"),
 		ctx.kv.get<string>("settings:eventFilter"),
 	]);
 	return {
+		ttSecret: ttSecret ?? null,
+		apiToken: apiToken ?? null,
 		key: key ?? null,
 		year: year?.trim() || "2026",
 		eventFilter: eventFilter?.trim() || null,
@@ -115,6 +147,63 @@ function extractCustomAnswers(payload: Record<string, unknown>): CustomAnswers {
 	return out;
 }
 
+// =============================================================================
+// Ticket Tailor signature verification (front-door path)
+// =============================================================================
+
+/**
+ * Verify `Tickettailor-Webhook-Signature: t=<unix ts>,s=<hmac>` where the
+ * HMAC-SHA256 is computed over `timestamp + raw body` with the account's
+ * webhook signing secret. Accepts hex or base64 signature encodings and
+ * rejects timestamps outside a 5-minute window (replay protection).
+ */
+async function verifyTicketTailorSignature(
+	raw: string,
+	header: string,
+	secret: string,
+): Promise<{ ok: boolean; reason?: string }> {
+	const parts = new Map<string, string>();
+	for (const piece of header.split(",")) {
+		const [k, ...rest] = piece.split("=");
+		if (k && rest.length) parts.set(k.trim(), rest.join("=").trim());
+	}
+	const timestamp = parts.get("t");
+	const provided = parts.get("s") ?? parts.get("v1");
+	if (!timestamp || !provided) return { ok: false, reason: "malformed signature header" };
+
+	const ts = Number(timestamp);
+	if (!Number.isFinite(ts)) return { ok: false, reason: "bad timestamp" };
+	const skew = Math.abs(Date.now() / 1000 - ts);
+	if (skew > 300) return { ok: false, reason: `timestamp outside 5-minute window (${Math.round(skew)}s)` };
+
+	const enc = new TextEncoder();
+	const cryptoKey = await crypto.subtle.importKey(
+		"raw",
+		enc.encode(secret),
+		{ name: "HMAC", hash: "SHA-256" },
+		false,
+		["sign"],
+	);
+	const mac = new Uint8Array(
+		await crypto.subtle.sign("HMAC", cryptoKey, enc.encode(timestamp + raw)),
+	);
+	const hex = Array.from(mac, (b) => b.toString(16).padStart(2, "0")).join("");
+	let b64 = "";
+	try {
+		b64 = btoa(String.fromCharCode(...mac));
+	} catch {
+		// btoa unavailable — hex comparison still applies
+	}
+	if (timingSafeEqual(provided.toLowerCase(), hex) || timingSafeEqual(provided, b64)) {
+		return { ok: true };
+	}
+	return { ok: false, reason: "signature mismatch" };
+}
+
+// =============================================================================
+// Attendee pipeline
+// =============================================================================
+
 interface AttendeeScan {
 	duplicate: boolean;
 	maxSort: number;
@@ -151,6 +240,41 @@ async function scanAttendees(
 	return result;
 }
 
+/**
+ * Publish an entry through the site's own REST API — plugin content access
+ * cannot change status, so this is the only publish path available to us.
+ */
+async function publishEntry(
+	ctx: PluginContext,
+	settings: Settings,
+	entryId: string,
+	requestOrigin: string,
+): Promise<{ published: boolean; error?: string }> {
+	if (!settings.apiToken) return { published: false, error: "no API token configured" };
+	if (!ctx.http) return { published: false, error: "missing network capability" };
+	try {
+		const path = `/_emdash/api/content/attendees/${entryId}/publish`;
+		// ctx.url() is only absolute once the site_url option is set (prod);
+		// fall back to the incoming request's own origin (dev, fresh installs).
+		let target = ctx.url(path);
+		if (!/^https?:\/\//.test(target)) target = requestOrigin + path;
+		const response = await ctx.http.fetch(
+			target,
+			{
+				method: "POST",
+				headers: { Authorization: `Bearer ${settings.apiToken}` },
+			},
+		);
+		if (!response.ok) {
+			const text = await response.text();
+			return { published: false, error: `HTTP ${response.status}: ${text.slice(0, 300)}` };
+		}
+		return { published: true };
+	} catch (error) {
+		return { published: false, error: error instanceof Error ? error.message : String(error) };
+	}
+}
+
 async function logEvent(ctx: PluginContext, id: string, entry: EventLogEntry): Promise<void> {
 	try {
 		await ctx.storage.events.put(id, entry);
@@ -167,28 +291,13 @@ function truncateRaw(input: unknown): string {
 	}
 }
 
-async function handleWebhook(
+/** Shared processing for both webhook routes (after authentication). */
+async function processWebhook(
 	input: WebhookEnvelope,
-	requestUrl: string,
 	ctx: PluginContext,
+	requestOrigin: string,
 ): Promise<unknown> {
 	const settings = await getSettings(ctx);
-
-	// --- auth ---------------------------------------------------------------
-	if (!settings.key) {
-		throw new Error("Ticket Tailor plugin has no webhook key configured");
-	}
-	let providedKey = "";
-	try {
-		providedKey = new URL(requestUrl).searchParams.get("key") ?? "";
-	} catch {
-		providedKey = "";
-	}
-	if (!timingSafeEqual(providedKey, settings.key)) {
-		ctx.log.warn("Ticket Tailor webhook rejected: bad key");
-		throw new Error("Unauthorized");
-	}
-
 	const webhookId = asString(input?.id) || `no-id-${crypto.randomUUID()}`;
 	const eventName = asString(input?.event).toUpperCase();
 	const payload = (input?.payload ?? {}) as Record<string, unknown>;
@@ -221,13 +330,33 @@ async function handleWebhook(
 	const holder = asString(payload.full_name) || asString(payload.email);
 
 	// Voids need human eyes — the collection is curated, never auto-delete.
+	// Flag them in the review queue so they surface on the plugin page.
 	if (eventName.includes("VOIDED") || asString(payload.status).toLowerCase() === "voided") {
 		await ctx.kv.set(seenKey, now);
+		const detail = `Ticket ${ticketCode || "?"} (${holder || "unknown holder"}) was VOIDED in Ticket Tailor — remove its attendee entry if it exists.`;
+		try {
+			await ctx.storage.queue.put(`voided-${webhookId}`, {
+				state: "voided",
+				createdAt: now,
+				tag: "",
+				code: ticketCode,
+				type: "",
+				site: "",
+				telegram: "",
+				bus: "",
+				email: asString(payload.email),
+				holder,
+				published: false,
+				note: detail,
+			} satisfies QueueEntry);
+		} catch (error) {
+			ctx.log.error("Failed to queue voided ticket", error);
+		}
 		await logEvent(ctx, webhookId, {
 			createdAt: now,
 			event: eventName,
 			outcome: "voided_needs_review",
-			detail: `Ticket ${ticketCode || "?"} (${holder || "unknown holder"}) was voided — remove its attendee entry manually if it exists.`,
+			detail,
 			raw,
 		});
 		ctx.log.warn("Ticket Tailor: ticket voided, manual review needed", { ticketCode });
@@ -286,19 +415,41 @@ async function handleWebhook(
 			sort: scan.maxSort + 10,
 		});
 
+		// Auto-publish so the pup appears on the public list immediately.
+		const publish = await publishEntry(ctx, settings, created.id, requestOrigin);
+
+		// Flag for review on the plugin page regardless of publish outcome.
+		await ctx.storage.queue.put(created.id, {
+			state: "pending",
+			createdAt: now,
+			tag: answers.tagName || "TBD",
+			code: ticketCode,
+			type: ticketType,
+			site,
+			telegram: answers.telegram,
+			bus: normalizeYesNo(answers.bus),
+			email,
+			holder,
+			published: publish.published,
+		} satisfies QueueEntry);
+
 		await ctx.kv.set(seenKey, now);
+		const outcome = publish.published ? "created" : "created_draft";
 		await logEvent(ctx, webhookId, {
 			createdAt: now,
 			event: eventName,
-			outcome: "created",
-			detail: `Draft attendee ${created.id}: tag "${answers.tagName || "TBD"}", ${ticketType}, ticket ${ticketCode} — review & publish in Content → Attendees`,
+			outcome,
+			detail: publish.published
+				? `Attendee published: tag "${answers.tagName || "TBD"}", ${ticketType}, ticket ${ticketCode} — flagged for review`
+				: `Attendee saved as DRAFT (publish failed: ${publish.error}) — tag "${answers.tagName || "TBD"}", ticket ${ticketCode}`,
 			raw,
 		});
-		ctx.log.info("Ticket Tailor: draft attendee created", {
+		ctx.log.info("Ticket Tailor: attendee created", {
 			id: created.id,
 			ticketCode,
+			published: publish.published,
 		});
-		return { ok: true, outcome: "created", id: created.id };
+		return { ok: true, outcome, id: created.id };
 	} catch (error) {
 		const message = error instanceof Error ? error.message : String(error);
 		await logEvent(ctx, webhookId, {
@@ -320,7 +471,8 @@ async function handleWebhook(
 // =============================================================================
 
 const OUTCOME_LABELS: Record<string, string> = {
-	created: "Draft created",
+	created: "Published",
+	created_draft: "Draft only",
 	duplicate: "Duplicate ticket",
 	replayed: "Replayed delivery",
 	ignored_event: "Ignored event",
@@ -329,49 +481,114 @@ const OUTCOME_LABELS: Record<string, string> = {
 	error: "Error",
 };
 
+function describeQueueEntry(entry: QueueEntry): string {
+	if (entry.state === "voided") {
+		return `🚫 ${entry.note ?? `Ticket ${entry.code} was voided — remove its entry if it exists.`}`;
+	}
+	const bits = [
+		`**${entry.tag}** — ${entry.type}`,
+		`ticket ${entry.code}`,
+		`site ${entry.site}`,
+	];
+	if (entry.telegram) bits.push(`telegram ${entry.telegram}`);
+	if (entry.bus) bits.push(`bus ${entry.bus}`);
+	if (entry.email) bits.push(entry.email);
+	if (entry.holder) bits.push(`buyer ${entry.holder}`);
+	const status = entry.published
+		? "live on the public list"
+		: "⚠️ DRAFT — not public (publish failed; check the API token setting)";
+	return `${bits.join(" · ")}\n_${status}_`;
+}
+
 async function buildSettingsPage(ctx: PluginContext) {
 	const settings = await getSettings(ctx);
-	const webhookPath = "/_emdash/api/plugins/tickettailor/webhook";
-	const webhookUrl = settings.key
-		? ctx.url(`${webhookPath}?key=${encodeURIComponent(settings.key)}`)
-		: null;
+	const signedUrl = ctx.url("/api/tickettailor-webhook");
 
-	const recent = await ctx.storage.events.query({
-		orderBy: { createdAt: "desc" },
-		limit: 15,
-	});
+	const [queueResult, recent] = await Promise.all([
+		ctx.storage.queue.query({ orderBy: { createdAt: "asc" }, limit: 50 }),
+		ctx.storage.events.query({ orderBy: { createdAt: "desc" }, limit: 15 }),
+	]);
+	const queue = queueResult.items as Array<{ id: string; data: QueueEntry }>;
+
+	const reviewBlocks =
+		queue.length === 0
+			? [
+					{
+						type: "section" as const,
+						text: "_Nothing awaiting review — new bookings will appear here automatically._",
+					},
+				]
+			: queue.flatMap((item) => [
+					{ type: "section" as const, text: describeQueueEntry(item.data) },
+					{
+						type: "actions" as const,
+						elements: [
+							{
+								type: "button" as const,
+								action_id: "approve_entry",
+								label: item.data.state === "voided" ? "Dismiss flag" : "Mark reviewed",
+								style: "primary" as const,
+								value: item.id,
+							},
+							...(item.data.state === "pending"
+								? [
+										{
+											type: "button" as const,
+											action_id: "remove_entry",
+											label: "Remove entry",
+											style: "danger" as const,
+											value: item.id,
+											confirm: {
+												title: "Remove attendee entry?",
+												text: `This trashes the entry for "${item.data.tag}" (ticket ${item.data.code}). Use for bogus or refunded bookings.`,
+												confirm: "Remove",
+												deny: "Cancel",
+											},
+										},
+									]
+								: []),
+						],
+					},
+					{ type: "divider" as const },
+				]);
 
 	return {
 		blocks: [
-			{ type: "header", text: "Ticket Tailor" },
+			{ type: "header", text: `Pending review (${queue.length})` },
 			{
 				type: "section",
-				text: "New Ticket Tailor bookings automatically become **draft** entries in the Attendees collection. Review the tag name and site, then publish the draft to add the pup to the public ticketed-puppies list. Voided tickets are never removed automatically — they show up in the log below for manual cleanup.",
+				text: "New Ticket Tailor bookings are added to the public attendee list immediately with the details the buyer provided, and flagged here for review. Fix anything odd (tag name, site) in Content → Attendees, then mark the entry reviewed. Voided tickets are flagged too — nothing is ever removed automatically.",
 			},
-			...(webhookUrl
-				? [
-						{
-							type: "section" as const,
-							text: `**Webhook URL** (Ticket Tailor → Settings → API & webhooks → Add webhook, event \`Issued ticket → Created\`):\n\`${webhookUrl}\`\n\nThe \`key\` parameter is the only authentication on this endpoint — treat the full URL as a secret.`,
-						},
-					]
-				: [
-						{
-							type: "section" as const,
-							text: "⚠️ **No webhook key set.** Save a key below, then copy the webhook URL that appears here into Ticket Tailor.",
-						},
-					]),
+			...reviewBlocks,
+			{ type: "header", text: "Settings" },
+			{
+				type: "section",
+				text: `**Webhook URL** for Ticket Tailor (Settings → API & webhooks → Add webhook):\n\`${signedUrl}\`\nDeliveries are verified with your Ticket Tailor **webhook signing secret** below — no secret in the URL needed.`,
+			},
 			{
 				type: "form",
 				block_id: "settings",
 				fields: [
 					{
 						type: "secret_input",
+						action_id: "ttSecret",
+						label: "Ticket Tailor webhook signing secret",
+						placeholder: "Shown by Ticket Tailor when you create the webhook",
+						has_value: !!settings.ttSecret,
+					},
+					{
+						type: "secret_input",
+						action_id: "apiToken",
+						label: "EmDash API token (content scopes) — used to auto-publish entries",
+						placeholder: "ec_pat_…  (admin → Settings → API Tokens)",
+						has_value: !!settings.apiToken,
+					},
+					{
+						type: "secret_input",
 						action_id: "key",
-						label: "Webhook key",
-						placeholder: "Any long random string, e.g. from a password generator",
+						label: "Fallback URL key (legacy /webhook?key=… route)",
+						placeholder: "Any long random string; leave unchanged if already set",
 						has_value: !!settings.key,
-						required: true,
 					},
 					{
 						type: "text_input",
@@ -420,16 +637,12 @@ async function buildSettingsPage(ctx: PluginContext) {
 type FormValues = Record<string, unknown>;
 
 async function saveSettings(ctx: PluginContext, values: FormValues) {
-	const key = asString(values.key);
-	// The secret input echoes a mask when unchanged — only store real values.
-	if (key && key !== "********") {
-		if (key.length < 16) {
-			return {
-				...(await buildSettingsPage(ctx)),
-				toast: { message: "Webhook key must be at least 16 characters", type: "error" },
-			};
+	// Secret inputs echo a mask when unchanged — only store real values.
+	for (const field of ["ttSecret", "apiToken", "key"] as const) {
+		const value = asString(values[field]);
+		if (value && value !== "********") {
+			await ctx.kv.set(`settings:${field}`, value);
 		}
-		await ctx.kv.set("settings:key", key);
 	}
 
 	const year = asString(values.year);
@@ -455,18 +668,114 @@ interface AdminInteraction {
 	type: string;
 	page?: string;
 	action_id?: string;
+	value?: unknown;
 	values?: FormValues;
+}
+
+async function handleReviewAction(ctx: PluginContext, interaction: AdminInteraction) {
+	const entryId = asString(interaction.value);
+	if (!entryId) {
+		return {
+			...(await buildSettingsPage(ctx)),
+			toast: { message: "Missing entry reference", type: "error" },
+		};
+	}
+
+	if (interaction.action_id === "approve_entry") {
+		await ctx.storage.queue.delete(entryId);
+		return {
+			...(await buildSettingsPage(ctx)),
+			toast: { message: "Marked reviewed", type: "success" },
+		};
+	}
+
+	if (interaction.action_id === "remove_entry") {
+		try {
+			const removed = (await ctx.content?.delete?.("attendees", entryId)) ?? false;
+			await ctx.storage.queue.delete(entryId);
+			return {
+				...(await buildSettingsPage(ctx)),
+				toast: {
+					message: removed ? "Entry removed" : "Entry was already gone — flag cleared",
+					type: "success",
+				},
+			};
+		} catch (error) {
+			ctx.log.error("Failed to remove attendee entry", error);
+			return {
+				...(await buildSettingsPage(ctx)),
+				toast: {
+					message: `Remove failed: ${error instanceof Error ? error.message : error}`,
+					type: "error",
+				},
+			};
+		}
+	}
+
+	return buildSettingsPage(ctx);
 }
 
 export default {
 	routes: {
+		/**
+		 * Signed webhook target, fed by the site front door with the raw
+		 * body bytes so Ticket Tailor's HMAC can be verified for real.
+		 */
+		"webhook-signed": {
+			public: true,
+			handler: async (routeCtx, ctx) => {
+				const input = routeCtx.input as { raw?: string; signature?: string };
+				const raw = typeof input?.raw === "string" ? input.raw : "";
+				const signature = asString(input?.signature);
+				const settings = await getSettings(ctx);
+
+				if (!settings.ttSecret) {
+					throw new Error(
+						"Ticket Tailor signing secret not configured (Settings → Ticket Tailor)",
+					);
+				}
+				if (!raw || !signature) {
+					throw new Error("Missing body or Tickettailor-Webhook-Signature header");
+				}
+
+				const verdict = await verifyTicketTailorSignature(raw, signature, settings.ttSecret);
+				if (!verdict.ok) {
+					ctx.log.warn("Ticket Tailor signature rejected", { reason: verdict.reason });
+					throw new Error(`Signature verification failed: ${verdict.reason}`);
+				}
+
+				let envelope: WebhookEnvelope;
+				try {
+					envelope = JSON.parse(raw) as WebhookEnvelope;
+				} catch {
+					throw new Error("Webhook body is not valid JSON");
+				}
+				return processWebhook(envelope, ctx, new URL(routeCtx.request.url).origin);
+			},
+		},
+
+		/** Legacy/fallback target authenticated by a `?key=` URL secret. */
 		webhook: {
 			public: true,
 			handler: async (routeCtx, ctx) => {
-				return handleWebhook(
+				const settings = await getSettings(ctx);
+				if (!settings.key) {
+					throw new Error("Ticket Tailor plugin has no webhook key configured");
+				}
+				let providedKey = "";
+				try {
+					providedKey = new URL(routeCtx.request.url).searchParams.get("key") ?? "";
+				} catch {
+					providedKey = "";
+				}
+				if (!timingSafeEqual(providedKey, settings.key)) {
+					ctx.log.warn("Ticket Tailor webhook rejected: bad key");
+					throw new Error("Unauthorized");
+				}
+				return processWebhook(
 					routeCtx.input as WebhookEnvelope,
-					routeCtx.request.url,
 					ctx,
+					new URL(routeCtx.request.url).origin,
 				);
 			},
 		},
@@ -479,6 +788,12 @@ export default {
 			}
 			if (interaction.type === "form_submit" && interaction.action_id === "save_settings") {
 				return saveSettings(ctx, interaction.values ?? {});
+			}
+			if (
+				interaction.type === "block_action" &&
+				(interaction.action_id === "approve_entry" || interaction.action_id === "remove_entry")
+			) {
+				return handleReviewAction(ctx, interaction);
 			}
 			// Table pagination and anything else: re-render the page.
 			return buildSettingsPage(ctx);
