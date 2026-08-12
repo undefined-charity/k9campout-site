@@ -477,7 +477,7 @@ function describeQueueEntry(entry: QueueEntry, entryStatus: string | null): stri
 
 async function buildSettingsPage(ctx: PluginContext) {
 	const settings = await getSettings(ctx);
-	const signedUrl = ctx.url("/_emdash/api/plugins/tickettailor/ingest");
+	const signedUrl = ctx.url("/api/tickettailor-webhook");
 
 	const [queueResult, recent] = await Promise.all([
 		ctx.storage.queue.query({ orderBy: { createdAt: "asc" }, limit: 50 }),
