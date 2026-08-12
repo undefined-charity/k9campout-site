@@ -13,6 +13,23 @@ import { tickettailorPlugin } from "emdash-tickettailor";
 // Default → Node build (SQLite + local uploads) for `npm run dev` and Docker.
 const isCloudflare = process.env.EMDASH_TARGET === "cloudflare";
 
+// Ticket Tailor webhook front door. Lives under /_emdash/api/plugins/ so it
+// gets the full EmDash runtime surface (needed for in-process publish) and
+// Origin-based CSRF (webhooks can't send the X-EmDash-Request header), and
+// is injected here because Astro ignores _underscore dirs in src/pages.
+const tickettailorIngest = {
+	name: "tickettailor-ingest",
+	hooks: {
+		"astro:config:setup": ({ injectRoute }) => {
+			injectRoute({
+				pattern: "/_emdash/api/plugins/tickettailor/ingest",
+				entrypoint: "./src/server/tickettailor-ingest.ts",
+				prerender: false,
+			});
+		},
+	},
+};
+
 export default defineConfig({
 	site: "https://k9campout.com",
 	output: "server",
@@ -37,6 +54,7 @@ export default defineConfig({
 	},
 	integrations: [
 		react(),
+		tickettailorIngest,
 		emdash({
 			// Postal email transport (invites, magic links) — configure the
 			// server URL/credential in the admin UI under Settings → Postal.

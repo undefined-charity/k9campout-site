@@ -4,7 +4,7 @@ import type { PluginContext, SandboxedPlugin } from "emdash/plugin";
  * Runtime entry for the Ticket Tailor webhook plugin.
  *
  * Flow: Ticket Tailor POSTs a webhook per issued ticket. The site-level
- * front door (src/pages/api/tickettailor-webhook.ts) captures the RAW
+ * front door (src/pages/_emdash/api/plugins/tickettailor/ingest.ts) captures the RAW
  * request body — which EmDash plugin routes never see — and forwards
  * `{ raw, signature }` to the public `webhook-signed` route here, where the
  * HMAC signature is verified against the Ticket Tailor signing secret
@@ -18,13 +18,13 @@ import type { PluginContext, SandboxedPlugin } from "emdash/plugin";
  * the flag, "Remove entry" trashes a bogus/voided entry. Voided tickets
  * are flagged the same way — never auto-deleted (curated collection).
  *
- * Publishing uses the site's own REST API (plugins cannot publish
- * directly): POST /_emdash/api/content/attendees/{id}/publish with a
- * Bearer API token stored in settings. Without a token entries stay as
- * drafts (visible in the review queue, not on the public list).
+ * Publishing: plugins cannot change content status, and a Worker cannot
+ * fetch() its own hostname (Cloudflare blocks self-calls with a 522), so
+ * the FRONT DOOR publishes the entry in-process via
+ * locals.emdash.handleContentPublish after this plugin returns the new
+ * entry id. The review UI derives live/draft status live from the entry.
  *
  * KV settings: `settings:ttSecret`  — Ticket Tailor webhook signing secret
- *              `settings:apiToken`  — EmDash API token (content scopes)
  *              `settings:year`, `settings:eventFilter`
  * Storage: `events` — webhook delivery log
  *          `queue`  — review flags, id = attendee entry id
@@ -64,27 +64,23 @@ interface QueueEntry {
 	bus: string;
 	email: string;
 	holder: string;
-	published: boolean;
 	note?: string;
 }
 
 interface Settings {
 	ttSecret: string | null;
-	apiToken: string | null;
 	year: string;
 	eventFilter: string | null;
 }
 
 async function getSettings(ctx: PluginContext): Promise<Settings> {
-	const [ttSecret, apiToken, year, eventFilter] = await Promise.all([
+	const [ttSecret, year, eventFilter] = await Promise.all([
 		ctx.kv.get<string>("settings:ttSecret"),
-		ctx.kv.get<string>("settings:apiToken"),
 		ctx.kv.get<string>("settings:year"),
 		ctx.kv.get<string>("settings:eventFilter"),
 	]);
 	return {
 		ttSecret: ttSecret ?? null,
-		apiToken: apiToken ?? null,
 		year: year?.trim() || "2026",
 		eventFilter: eventFilter?.trim() || null,
 	};
@@ -235,41 +231,6 @@ async function scanAttendees(
 	return result;
 }
 
-/**
- * Publish an entry through the site's own REST API — plugin content access
- * cannot change status, so this is the only publish path available to us.
- */
-async function publishEntry(
-	ctx: PluginContext,
-	settings: Settings,
-	entryId: string,
-	requestOrigin: string,
-): Promise<{ published: boolean; error?: string }> {
-	if (!settings.apiToken) return { published: false, error: "no API token configured" };
-	if (!ctx.http) return { published: false, error: "missing network capability" };
-	try {
-		const path = `/_emdash/api/content/attendees/${entryId}/publish`;
-		// ctx.url() is only absolute once the site_url option is set (prod);
-		// fall back to the incoming request's own origin (dev, fresh installs).
-		let target = ctx.url(path);
-		if (!/^https?:\/\//.test(target)) target = requestOrigin + path;
-		const response = await ctx.http.fetch(
-			target,
-			{
-				method: "POST",
-				headers: { Authorization: `Bearer ${settings.apiToken}` },
-			},
-		);
-		if (!response.ok) {
-			const text = await response.text();
-			return { published: false, error: `HTTP ${response.status}: ${text.slice(0, 300)}` };
-		}
-		return { published: true };
-	} catch (error) {
-		return { published: false, error: error instanceof Error ? error.message : String(error) };
-	}
-}
-
 async function logEvent(ctx: PluginContext, id: string, entry: EventLogEntry): Promise<void> {
 	try {
 		await ctx.storage.events.put(id, entry);
@@ -287,11 +248,7 @@ function truncateRaw(input: unknown): string {
 }
 
 /** Shared processing for both webhook routes (after authentication). */
-async function processWebhook(
-	input: WebhookEnvelope,
-	ctx: PluginContext,
-	requestOrigin: string,
-): Promise<unknown> {
+async function processWebhook(input: WebhookEnvelope, ctx: PluginContext): Promise<unknown> {
 	const settings = await getSettings(ctx);
 	const webhookId = asString(input?.id) || `no-id-${crypto.randomUUID()}`;
 	const eventName = asString(input?.event).toUpperCase();
@@ -350,7 +307,6 @@ async function processWebhook(
 				bus: "",
 				email: asString(payload.email),
 				holder,
-				published: false,
 				note: detail,
 			} satisfies QueueEntry);
 		} catch (error) {
@@ -419,10 +375,8 @@ async function processWebhook(
 			sort: scan.maxSort + 10,
 		});
 
-		// Auto-publish so the pup appears on the public list immediately.
-		const publish = await publishEntry(ctx, settings, created.id, requestOrigin);
-
-		// Flag for review on the plugin page regardless of publish outcome.
+		// Flag for review on the plugin page. The front door publishes the
+		// entry right after this handler returns (see file header).
 		await ctx.storage.queue.put(created.id, {
 			state: "pending",
 			createdAt: now,
@@ -434,26 +388,18 @@ async function processWebhook(
 			bus: normalizeYesNo(answers.bus),
 			email,
 			holder,
-			published: publish.published,
 		} satisfies QueueEntry);
 
 		await ctx.kv.set(seenKey, now);
-		const outcome = publish.published ? "created" : "created_draft";
 		await logEvent(ctx, webhookId, {
 			createdAt: now,
 			event: eventName,
-			outcome,
-			detail: publish.published
-				? `Attendee published: tag "${answers.tagName || "TBD"}", ${ticketType}, ticket ${ticketCode} — flagged for review`
-				: `Attendee saved as DRAFT (publish failed: ${publish.error}) — tag "${answers.tagName || "TBD"}", ticket ${ticketCode}`,
+			outcome: "created",
+			detail: `Attendee created: tag "${answers.tagName || "TBD"}", ${ticketType}, ticket ${ticketCode} — flagged for review`,
 			raw,
 		});
-		ctx.log.info("Ticket Tailor: attendee created", {
-			id: created.id,
-			ticketCode,
-			published: publish.published,
-		});
-		return { ok: true, outcome, id: created.id };
+		ctx.log.info("Ticket Tailor: attendee created", { id: created.id, ticketCode });
+		return { ok: true, outcome: "created", id: created.id, collection: "attendees" };
 	} catch (error) {
 		const message = error instanceof Error ? error.message : String(error);
 		await logEvent(ctx, webhookId, {
@@ -485,7 +431,7 @@ const OUTCOME_LABELS: Record<string, string> = {
 	error: "Error",
 };
 
-function describeQueueEntry(entry: QueueEntry): string {
+function describeQueueEntry(entry: QueueEntry, entryStatus: string | null): string {
 	if (entry.state === "voided") {
 		return `🚫 ${entry.note ?? `Ticket ${entry.code} was voided — remove its entry if it exists.`}`;
 	}
@@ -498,21 +444,35 @@ function describeQueueEntry(entry: QueueEntry): string {
 	if (entry.bus) bits.push(`bus ${entry.bus}`);
 	if (entry.email) bits.push(entry.email);
 	if (entry.holder) bits.push(`buyer ${entry.holder}`);
-	const status = entry.published
-		? "live on the public list"
-		: "⚠️ DRAFT — not public (publish failed; check the API token setting)";
+	const status =
+		entryStatus === "published"
+			? "live on the public list"
+			: entryStatus === null
+				? "⚠️ entry no longer exists — dismiss this flag"
+				: `⚠️ ${entryStatus.toUpperCase()} — not on the public list (publish it in Content → Attendees)`;
 	return `${bits.join(" · ")}\n_${status}_`;
 }
 
 async function buildSettingsPage(ctx: PluginContext) {
 	const settings = await getSettings(ctx);
-	const signedUrl = ctx.url("/api/tickettailor-webhook");
+	const signedUrl = ctx.url("/_emdash/api/plugins/tickettailor/ingest");
 
 	const [queueResult, recent] = await Promise.all([
 		ctx.storage.queue.query({ orderBy: { createdAt: "asc" }, limit: 50 }),
 		ctx.storage.events.query({ orderBy: { createdAt: "desc" }, limit: 15 }),
 	]);
 	const queue = queueResult.items as Array<{ id: string; data: QueueEntry }>;
+
+	// Live entry status per pending flag (published / draft / gone) so the
+	// queue never shows stale state.
+	const statuses = new Map<string, string | null>();
+	await Promise.all(
+		queue.map(async (item) => {
+			if (item.data.state !== "pending") return;
+			const entry = await ctx.content?.get("attendees", item.id);
+			statuses.set(item.id, entry?.status ?? null);
+		}),
+	);
 
 	const reviewBlocks =
 		queue.length === 0
@@ -523,7 +483,7 @@ async function buildSettingsPage(ctx: PluginContext) {
 					},
 				]
 			: queue.flatMap((item) => [
-					{ type: "section" as const, text: describeQueueEntry(item.data) },
+					{ type: "section" as const, text: describeQueueEntry(item.data, statuses.get(item.id) ?? null) },
 					{
 						type: "actions" as const,
 						elements: [
@@ -581,13 +541,6 @@ async function buildSettingsPage(ctx: PluginContext) {
 						has_value: !!settings.ttSecret,
 					},
 					{
-						type: "secret_input",
-						action_id: "apiToken",
-						label: "EmDash API token (content scopes) — used to auto-publish entries",
-						placeholder: "ec_pat_…  (admin → Settings → API Tokens)",
-						has_value: !!settings.apiToken,
-					},
-					{
 						type: "text_input",
 						action_id: "year",
 						label: "Event year",
@@ -635,7 +588,7 @@ type FormValues = Record<string, unknown>;
 
 async function saveSettings(ctx: PluginContext, values: FormValues) {
 	// Secret inputs echo a mask when unchanged — only store real values.
-	for (const field of ["ttSecret", "apiToken"] as const) {
+	for (const field of ["ttSecret"] as const) {
 		const value = asString(values[field]);
 		if (value && value !== "********") {
 			await ctx.kv.set(`settings:${field}`, value);
@@ -747,7 +700,7 @@ export default {
 				} catch {
 					throw new Error("Webhook body is not valid JSON");
 				}
-				return processWebhook(envelope, ctx, new URL(routeCtx.request.url).origin);
+				return processWebhook(envelope, ctx);
 			},
 		},
 

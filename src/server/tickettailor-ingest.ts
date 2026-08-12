@@ -8,7 +8,16 @@
  * plugin's public `webhook-signed` route, which owns the signing secret
  * and does the actual verification + attendee creation.
  *
- * Point Ticket Tailor's webhook at:  https://k9campout.com/api/tickettailor-webhook
+ * Point Ticket Tailor's webhook at:  https://k9campout.com/_emdash/api/plugins/tickettailor/ingest
+ *
+ * The path matters twice over: EmDash's middleware only attaches the full
+ * runtime surface (including handleContentPublish) to /_emdash requests,
+ * and only the /_emdash/api/plugins/ namespace uses Origin-based CSRF
+ * (which server-to-server webhooks pass) instead of requiring the
+ * X-EmDash-Request header (which Ticket Tailor cannot send). Astro ignores
+ * underscore-prefixed dirs in src/pages, so astro.config.mjs injects this
+ * route explicitly; its static segments outrank EmDash's dynamic
+ * [pluginId]/[...path] catch-all.
  */
 import type { APIRoute } from "astro";
 
@@ -50,7 +59,26 @@ export const POST: APIRoute = async ({ request, locals }) => {
 		});
 	}
 
-	return new Response(JSON.stringify(result.data ?? { ok: true }), {
+	// Publish the entry the plugin just created. This must happen here:
+	// plugin content access cannot change status, and a Worker cannot
+	// fetch() its own hostname (Cloudflare rejects self-calls with a 522),
+	// so in-process is the only reliable publish path. Only ids returned by
+	// the plugin's just-verified webhook are ever published.
+	const data = (result.data ?? {}) as {
+		ok?: boolean;
+		outcome?: string;
+		id?: string;
+		collection?: string;
+	};
+	let published = false;
+	let publishError: string | undefined;
+	if (data.outcome === "created" && data.id && emdash.handleContentPublish) {
+		const pub = await emdash.handleContentPublish(data.collection ?? "attendees", data.id);
+		published = pub.success;
+		if (!pub.success) publishError = pub.error?.message ?? "publish failed";
+	}
+
+	return new Response(JSON.stringify({ ...data, published, publishError }), {
 		status: 200,
 		headers: { "Content-Type": "application/json" },
 	});
