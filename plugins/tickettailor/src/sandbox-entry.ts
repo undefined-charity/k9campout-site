@@ -253,6 +253,38 @@ async function scanAttendees(
 	return result;
 }
 
+/**
+ * Archive the complete raw issued-ticket payload, keyed by Ticket Tailor's
+ * it_… id. Private plugin storage — never rendered publicly. Retains what
+ * the attendee entry drops (buyer names, ALL custom-question answers like
+ * TRC member number/type, TT API ids, QR/barcode URLs, price, check-in
+ * state) so future tooling — e.g. a self-service "update your answers"
+ * flow — has full data and the API handle to work from.
+ */
+async function archiveTicket(
+	ctx: PluginContext,
+	payload: Record<string, unknown>,
+	extra: { entryId?: string; voidedAt?: string },
+): Promise<void> {
+	const ticketId = asString(payload.id);
+	if (!ticketId) return;
+	try {
+		const existing = (await ctx.storage.tickets.get(ticketId)) as Record<string, unknown> | null;
+		await ctx.storage.tickets.put(ticketId, {
+			...(existing ?? {}),
+			entryId: extra.entryId ?? (existing?.entryId as string | undefined) ?? "",
+			barcode: asString(payload.barcode),
+			orderId: asString(payload.order_id),
+			email: asString(payload.email),
+			receivedAt: new Date().toISOString(),
+			...(extra.voidedAt ? { voidedAt: extra.voidedAt } : {}),
+			payload,
+		});
+	} catch (error) {
+		ctx.log.error("Failed to archive Ticket Tailor payload", error);
+	}
+}
+
 async function logEvent(ctx: PluginContext, id: string, entry: EventLogEntry): Promise<void> {
 	try {
 		await ctx.storage.events.put(id, entry);
@@ -334,6 +366,7 @@ async function processWebhook(input: WebhookEnvelope, ctx: PluginContext): Promi
 		} catch (error) {
 			ctx.log.error("Failed to queue voided ticket", error);
 		}
+		await archiveTicket(ctx, payload, { voidedAt: now });
 		await logEvent(ctx, webhookId, {
 			createdAt: now,
 			event: eventName,
@@ -411,6 +444,8 @@ async function processWebhook(input: WebhookEnvelope, ctx: PluginContext): Promi
 			email,
 			holder,
 		} satisfies QueueEntry);
+
+		await archiveTicket(ctx, payload, { entryId: created.id });
 
 		await ctx.kv.set(seenKey, now);
 		await logEvent(ctx, webhookId, {

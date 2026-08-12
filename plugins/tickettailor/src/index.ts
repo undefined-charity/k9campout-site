@@ -23,6 +23,11 @@ export function tickettailorPlugin(options = {}): PluginDescriptor {
 		storage: {
 			events: { indexes: ["createdAt", "outcome"] },
 			queue: { indexes: ["createdAt", "state"] },
+			// Full raw issued-ticket payloads, keyed by Ticket Tailor's it_…
+			// id — private archive (buyer names, all custom-question answers,
+			// TT API ids) so future tooling (e.g. self-service answer updates)
+			// has complete data to work from.
+			tickets: { indexes: ["entryId", "barcode", "orderId", "email"] },
 		},
 		adminPages: [{ path: "/settings", label: "Ticket Tailor", icon: "link" }],
 	};
