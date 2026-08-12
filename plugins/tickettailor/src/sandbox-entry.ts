@@ -525,14 +525,80 @@ function queueEntryBlocks(entry: QueueEntry, entryStatus: string | null): unknow
 	];
 }
 
-async function buildSettingsPage(ctx: PluginContext) {
+interface ArchivedTicket {
+	entryId: string;
+	barcode: string;
+	orderId: string;
+	email: string;
+	receivedAt: string;
+	voidedAt?: string;
+	payload: Record<string, unknown>;
+}
+
+/** Flatten an archived payload into field/value table rows for inspection. */
+function ticketPayloadRows(rec: ArchivedTicket): Array<Record<string, unknown>> {
+	const rows: Array<Record<string, unknown>> = [];
+	const p = rec.payload ?? {};
+	for (const [key, value] of Object.entries(p)) {
+		if (key === "custom_questions" && Array.isArray(value)) {
+			for (const q of value) {
+				const qq = q as Record<string, unknown>;
+				rows.push({ field: `Q: ${asString(qq.question)}`, value: asString(qq.answer) });
+			}
+			continue;
+		}
+		if (value === null || value === undefined || value === "") continue;
+		rows.push({
+			field: key,
+			value: typeof value === "object" ? JSON.stringify(value) : String(value),
+		});
+	}
+	rows.push({ field: "(attendee entry id)", value: rec.entryId || "—" });
+	if (rec.voidedAt) rows.push({ field: "(voided at)", value: rec.voidedAt });
+	return rows;
+}
+
+/** Find an archived ticket by it_… id, barcode, order id, or email. */
+async function findArchivedTicket(
+	ctx: PluginContext,
+	query: string,
+): Promise<{ id: string; data: ArchivedTicket } | null> {
+	const q = query.trim().toLowerCase();
+	if (!q) return null;
+	let cursor: string | undefined;
+	do {
+		const page = await ctx.storage.tickets.query({ limit: 100, cursor });
+		for (const item of page.items) {
+			const data = item.data as ArchivedTicket;
+			if (
+				item.id.toLowerCase() === q ||
+				data.barcode?.toLowerCase() === q ||
+				data.orderId?.toLowerCase() === q ||
+				data.orderId?.toLowerCase() === `or_${q}` ||
+				data.email?.toLowerCase() === q
+			) {
+				return { id: item.id, data };
+			}
+		}
+		cursor = page.hasMore ? page.cursor : undefined;
+	} while (cursor);
+	return null;
+}
+
+async function buildSettingsPage(ctx: PluginContext, inspect?: { id: string; data: ArchivedTicket }) {
 	const settings = await getSettings(ctx);
 	const signedUrl = ctx.url("/api/tickettailor-webhook");
 
-	const [queueResult, recent] = await Promise.all([
+	const [queueResult, recent, archiveResult] = await Promise.all([
 		ctx.storage.queue.query({ orderBy: { createdAt: "asc" }, limit: 50 }),
 		ctx.storage.events.query({ orderBy: { createdAt: "desc" }, limit: 15 }),
+		// Plain scan + JS sort: receivedAt isn't a declared index, and the
+		// earliest rows were backfilled via SQL without index rows anyway.
+		ctx.storage.tickets.query({ limit: 100 }),
 	]);
+	const archive = (archiveResult.items as Array<{ id: string; data: ArchivedTicket }>)
+		.sort((a, b) => (b.data.receivedAt ?? "").localeCompare(a.data.receivedAt ?? ""))
+		.slice(0, 10);
 	const queue = queueResult.items as Array<{ id: string; data: QueueEntry }>;
 
 	// Live entry status per pending flag (published / draft / gone) so the
@@ -633,6 +699,64 @@ async function buildSettingsPage(ctx: PluginContext) {
 					},
 				],
 				submit: { label: "Save Settings", action_id: "save_settings" },
+			},
+			{ type: "divider" },
+			{ type: "header", text: "Raw ticket archive" },
+			{
+				type: "context",
+				text: "Every webhook's complete payload is retained privately (buyer names, all custom-question answers, Ticket Tailor API ids). Look one up by ticket code, order number, email, or it_… id.",
+			},
+			{
+				type: "form",
+				block_id: "inspect",
+				fields: [
+					{
+						type: "text_input",
+						action_id: "ticket_query",
+						label: "Inspect a ticket",
+						placeholder: "e.g. tK5cpYb, 81068871, name@example.com, or it_133058078",
+					},
+				],
+				submit: { label: "Show Raw Data", action_id: "inspect_ticket" },
+			},
+			...(inspect
+				? [
+						{ type: "header" as const, text: `Raw data: ${inspect.id}` },
+						{
+							type: "table" as const,
+							columns: [
+								{ key: "field", label: "Field" },
+								{ key: "value", label: "Value", format: "code" as const },
+							],
+							rows: ticketPayloadRows(inspect.data),
+							page_action_id: "inspect_page",
+							empty_text: "No payload stored.",
+						},
+					]
+				: []),
+			{
+				type: "table",
+				columns: [
+					{ key: "when", label: "Received", format: "relative_time" },
+					{ key: "code", label: "Ticket", format: "code" },
+					{ key: "holder", label: "Holder" },
+					{ key: "email", label: "Email" },
+					{ key: "order", label: "Order" },
+					{ key: "status", label: "Status", format: "badge" },
+				],
+				rows: archive.map((item) => {
+					const p = item.data.payload ?? {};
+					return {
+						when: item.data.receivedAt,
+						code: item.data.barcode,
+						holder: asString((p as Record<string, unknown>).full_name),
+						email: item.data.email,
+						order: normalizeOrderId(item.data.orderId),
+						status: item.data.voidedAt ? "Voided" : asString((p as Record<string, unknown>).status) || "valid",
+					};
+				}),
+				page_action_id: "archive_page",
+				empty_text: "No tickets archived yet.",
 			},
 			{ type: "divider" },
 			{ type: "header", text: "Recent webhook deliveries" },
@@ -788,6 +912,17 @@ export default {
 			}
 			if (interaction.type === "form_submit" && interaction.action_id === "save_settings") {
 				return saveSettings(ctx, interaction.values ?? {});
+			}
+			if (interaction.type === "form_submit" && interaction.action_id === "inspect_ticket") {
+				const query = asString(interaction.values?.ticket_query);
+				const found = await findArchivedTicket(ctx, query);
+				if (!found) {
+					return {
+						...(await buildSettingsPage(ctx)),
+						toast: { message: `No archived ticket matches "${query}"`, type: "error" },
+					};
+				}
+				return buildSettingsPage(ctx, found);
 			}
 			if (
 				interaction.type === "block_action" &&
