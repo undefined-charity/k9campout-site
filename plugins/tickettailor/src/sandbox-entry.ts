@@ -55,6 +55,8 @@ interface EventLogEntry {
 
 interface QueueEntry {
 	state: "pending" | "voided";
+	/** Attendee entry this flag refers to (voided flags: looked up by code). */
+	entryId?: string;
 	createdAt: string;
 	tag: string;
 	code: string;
@@ -253,6 +255,31 @@ async function scanAttendees(
 	return result;
 }
 
+
+/** Find the live attendee entry for a ticket code (exact, case-insensitive). */
+async function findAttendeeByCode(
+	ctx: PluginContext,
+	year: string,
+	ticketCode: string,
+): Promise<{ id: string; tag: string } | null> {
+	if (!ctx.content || !ticketCode) return null;
+	let cursor: string | undefined;
+	do {
+		const page = await ctx.content.list("attendees", { limit: 100, cursor });
+		for (const item of page.items) {
+			const data = (item.data ?? {}) as Record<string, unknown>;
+			if (
+				asString(data.year) === year &&
+				asString(data.ticket_code).toLowerCase() === ticketCode.toLowerCase()
+			) {
+				return { id: item.id, tag: asString(data.tag_name) };
+			}
+		}
+		cursor = page.hasMore ? page.cursor : undefined;
+	} while (cursor);
+	return null;
+}
+
 /**
  * Archive the complete raw issued-ticket payload, keyed by Ticket Tailor's
  * it_… id. Private plugin storage — never rendered publicly. Retains what
@@ -348,12 +375,21 @@ async function processWebhook(input: WebhookEnvelope, ctx: PluginContext): Promi
 	// Flag them in the review queue so they surface on the plugin page.
 	if (eventName.includes("VOIDED") || asString(payload.status).toLowerCase() === "voided") {
 		await ctx.kv.set(seenKey, now);
-		const detail = `Ticket ${ticketCode || "?"} (${holder || "unknown holder"}) was VOIDED in Ticket Tailor — remove its attendee entry if it exists.`;
+		const existing = await findAttendeeByCode(ctx, settings.year, ticketCode);
+		const detail = existing
+			? `Ticket ${ticketCode} (${holder || "unknown holder"}) was VOIDED in Ticket Tailor — "${existing.tag}" is still on the attendee list.`
+			: `Ticket ${ticketCode || "?"} (${holder || "unknown holder"}) was VOIDED in Ticket Tailor — no matching attendee entry found.`;
 		try {
-			await ctx.storage.queue.put(`voided-${webhookId}`, {
+			// A pending "new booking" flag for the same entry is superseded
+			// by the voided flag — drop it so only one card shows.
+			if (existing) await ctx.storage.queue.delete(existing.id);
+			// Key by ticket code so repeat void deliveries update one flag
+			// instead of stacking duplicates.
+			await ctx.storage.queue.put(`voided-${ticketCode || webhookId}`, {
 				state: "voided",
+				entryId: existing?.id ?? "",
 				createdAt: now,
-				tag: "",
+				tag: existing?.tag ?? "",
 				code: ticketCode,
 				type: "",
 				site: "",
@@ -495,11 +531,21 @@ const OUTCOME_LABELS: Record<string, string> = {
  */
 function queueEntryBlocks(entry: QueueEntry, entryStatus: string | null): unknown[] {
 	if (entry.state === "voided") {
+		const fields: Array<{ label: string; value: string }> = [
+			{ label: "Ticket", value: entry.code || "?" },
+		];
+		if (entry.tag) fields.push({ label: "Tag name", value: entry.tag });
+		if (entry.holder) fields.push({ label: "Ticket holder", value: entry.holder });
+		if (entry.email) fields.push({ label: "Email", value: entry.email });
+		const status =
+			entryStatus === "published"
+				? "🚫 VOIDED in Ticket Tailor — still on the public attendee list"
+				: entryStatus === null && entry.entryId
+					? "🚫 VOIDED in Ticket Tailor — entry already removed"
+					: "🚫 VOIDED in Ticket Tailor — no matching attendee entry found";
 		return [
-			{
-				type: "section",
-				text: `🚫 ${entry.note ?? `Ticket ${entry.code} was voided — remove its entry if it exists.`}`,
-			},
+			{ type: "fields", fields },
+			{ type: "context", text: status },
 		];
 	}
 	const fields: Array<{ label: string; value: string }> = [
@@ -606,8 +652,9 @@ async function buildSettingsPage(ctx: PluginContext, inspect?: { id: string; dat
 	const statuses = new Map<string, string | null>();
 	await Promise.all(
 		queue.map(async (item) => {
-			if (item.data.state !== "pending") return;
-			const entry = await ctx.content?.get("attendees", item.id);
+			const targetId = item.data.state === "pending" ? item.id : item.data.entryId;
+			if (!targetId) return;
+			const entry = await ctx.content?.get("attendees", targetId);
 			statuses.set(item.id, entry?.status ?? null);
 		}),
 	);
@@ -632,17 +679,17 @@ async function buildSettingsPage(ctx: PluginContext, inspect?: { id: string; dat
 								style: "primary" as const,
 								value: item.id,
 							},
-							...(item.data.state === "pending"
+							...(item.data.state === "pending" || (item.data.entryId && statuses.get(item.id) === "published")
 								? [
 										{
 											type: "button" as const,
 											action_id: "remove_entry",
-											label: "Remove entry",
+											label: item.data.state === "voided" ? "Remove from list" : "Remove entry",
 											style: "danger" as const,
 											value: item.id,
 											confirm: {
 												title: "Remove attendee entry?",
-												text: `This trashes the entry for "${item.data.tag}" (ticket ${item.data.code}). Use for bogus or refunded bookings.`,
+												text: `This trashes the entry for "${item.data.tag || item.data.code}" (ticket ${item.data.code}) and takes it off the public list. Use for voided, bogus, or refunded bookings.`,
 												confirm: "Remove",
 												deny: "Cancel",
 											},
@@ -841,12 +888,20 @@ async function handleReviewAction(ctx: PluginContext, interaction: AdminInteract
 
 	if (interaction.action_id === "remove_entry") {
 		try {
-			const removed = (await ctx.content?.delete?.("attendees", entryId)) ?? false;
+			// The button value is the QUEUE record id. For pending flags that
+			// IS the attendee entry id; voided flags carry the entry id they
+			// resolved at webhook time.
+			const queueRec = (await ctx.storage.queue.get(entryId)) as QueueEntry | null;
+			const targetId =
+				queueRec?.state === "voided" ? asString(queueRec.entryId) : entryId;
+			const removed = targetId
+				? ((await ctx.content?.delete?.("attendees", targetId)) ?? false)
+				: false;
 			await ctx.storage.queue.delete(entryId);
 			return {
 				...(await buildSettingsPage(ctx)),
 				toast: {
-					message: removed ? "Entry removed" : "Entry was already gone — flag cleared",
+					message: removed ? "Entry removed from the list" : "Entry was already gone — flag cleared",
 					type: "success",
 				},
 			};
