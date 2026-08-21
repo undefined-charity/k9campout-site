@@ -104,6 +104,22 @@ runtime is required (GitHub Pages cannot host this).
 - Keep the Minimal Mistakes markup classes intact -- the design comes from the
   compiled `main.css`; changing class names silently unstyles things.
 
+## Monitoring
+
+UptimeRobot (same account/pattern as the Chateau Woofy site) watches three
+keyword monitors at 5-minute intervals, alerting via the n8n webhook + push:
+
+- **K9 Campout Site** — `/` must contain "K9 Campout" (catches broken
+  renders, not just hard downtime).
+- **K9 Campout Attendee List** — `/2026/ticketed-puppies` must contain
+  "Tag Name" (proves the D1 → collection-table render path).
+- **K9 Campout TT Webhook** — GET `/api/tickettailor-webhook` must contain
+  "webhook endpoint" (proves the rewrite + injected route + plugin registry).
+
+The pre-migration plain-HTTP "K9 Campout" monitor is paused (kept for its
+uptime history). Monitors are managed via the UptimeRobot API; the key is
+NOT stored in this repo.
+
 ## Skills
 
 Agent skills are in `.agents/skills/`. Load them when working on specific tasks:
