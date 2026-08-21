@@ -116,9 +116,8 @@ keyword monitors at 5-minute intervals, alerting via the n8n webhook + push:
 - **K9 Campout TT Webhook** — GET `/api/tickettailor-webhook` must contain
   "webhook endpoint" (proves the rewrite + injected route + plugin registry).
 
-The pre-migration plain-HTTP "K9 Campout" monitor is paused (kept for its
-uptime history). Monitors are managed via the UptimeRobot API; the key is
-NOT stored in this repo.
+Monitors are managed via the UptimeRobot API; the key is NOT stored in
+this repo.
 
 ## Skills
 
