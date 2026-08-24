@@ -30,7 +30,7 @@
 	],
 	// Drives scheduled publishing, plugin cron, and maintenance (see src/worker.ts)
 	"triggers": {
-		"crons": ["* * * * *"],
+		"crons": ["*/5 * * * *"],
 	},
 	"observability": {
 		"enabled": true,
